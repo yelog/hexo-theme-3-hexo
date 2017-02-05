@@ -14,6 +14,9 @@ $(document).on({
   },
   'pjax:end': function() {
     content.scrollTop(0);
+    $('pre code').each(function(i, block) {
+      hljs.highlightBlock(block);
+    });
     content.css({'opacity':1}).removeClass('fadeOuts').addClass('fadeIns');
   }
 });
