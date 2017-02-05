@@ -47,3 +47,40 @@
       .article-title
         margin: 0;
         font-size: 2em;
+      blockquote
+        padding: 20px;
+        margin-bottom: 25px;
+        background-color: #f7f7f7;
+        border-left: 6px solid #b4b4b4;
+        word-break: break-word;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 30px;
+      table
+        padding: 0;
+        border-spacing: 0;
+        border-collapse: collapse;
+        tr
+          border-top: 1px solid #cccccc;
+          background-color: white;
+          margin: 0;
+          padding: 0;
+          &:nth-child(2n)
+            background-color: #f8f8f8;
+          th
+            font-weight: bold;
+            border: 1px solid #cccccc;
+            text-align: left;
+            margin: 0;
+            padding: 6px 13px;
+            &:first-child, &:last-child
+              margin-top: 0;
+              margin-bottom: 0;
+          td
+            border: 1px solid #ddd;
+            text-align: left;
+            margin: 0;
+            padding: 6px 13px;
+            &:first-child, &:last-child
+              margin-top: 0;
+              margin-bottom: 0;
