@@ -2,13 +2,14 @@ hexo-theme-yilia
 ================
 3-hexo 是为[hexo](https://github.com/tommy351/hexo)制作的主题。
 
-——————————————
+——————————————  
 **关于主题：**
 
 1. 极简体验      
 2. 三段式设计
-3. 通过文章分类、标签或标题关键字检索
-——————————————
+3. 通过文章分类、标签或标题关键字检索  
+
+——————————————  
 **todo：**
 
 1. 文章toc
@@ -27,4 +28,4 @@ git pull
 ```
 
 ### 致谢
- 作者Peiwen Lu的[3-jekyll](https://github.com/P233/3-Jekyll)主题的设计思路
+ 作者Peiwen Lu的jekyll主题：[3-jekyll](https://github.com/P233/3-Jekyll)主题的设计思路
