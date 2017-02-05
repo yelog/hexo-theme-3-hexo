@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<%- partial('_partial/header') %>
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <%- partial('_partial/nav-left') %>
+    </div>
+    <div class="nav-right">
+        <%- partial('_partial/nav-right') %>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <%- partial('_partial/article', {post: page, index: false}) %>
+    </div>
+</div>
+</body>
+<%- partial('_partial/footer') %>
+</html>

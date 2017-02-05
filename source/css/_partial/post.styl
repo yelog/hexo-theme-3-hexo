@@ -1,0 +1,49 @@
+.post
+  height: 100%;
+  font-size: 18px;
+  line-height: 1.6;
+  background: white;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  color: #2f2f2f;
+  font-weight: normal;
+  & ::selection
+    color: white;
+    background: #33caa6;
+    text-shadow: none;
+  .pjax
+    padding: 0 5% 30px;
+    overflow-y: auto;
+    &.fadeIns
+      -webkit-animation: fadeIns .3s;
+      -moz-animation: fadeIns .3s;
+      -ms-animation: fadeIns .3s;
+      -o-animation: fadeIns .3s;
+      animation: fadeIns .3s;
+    &.fadeOuts
+      -webkit-animation: fadeOuts .2s;
+      -moz-animation: fadeOuts .2s;
+      -ms-animation: fadeOuts .2s;
+      -o-animation: fadeOuts .2s;
+      animation: fadeOuts .2s;
+    #post__content a
+      color: #BF1827;
+      word-break: break-all;
+      font-family: sans-serif;
+      font-weight: bold;
+    .article
+      padding-top: 2.5em;
+      .article-meta
+        font-size: .9em;
+        color: #BCC1C4;
+        .date
+          &:before
+            content: "\e94e";
+        .tag
+          margin-left: 1em;
+          &:before
+            content: "\e936";
+      .article-title
+        margin: 0;
+        font-size: 2em;

@@ -1,0 +1,76 @@
+.nav-right
+  width: 420px
+  height: 100%
+  background: rgba(250, 250, 250, 0.95)
+  border-right: 1px solid #e5e8ec
+  float: left
+  position: relative
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  -o-user-select: none
+  user-select: none
+  form
+    height: 65px
+    border-bottom: 1px solid #e5e8ec
+    input
+      width 100%
+      margin-top: 12px
+      padding: 20px 20px 0
+      color: #2eb695
+      font-size: 18px
+      font-family: inherit
+      background: inherit
+      border: none
+      outline: none
+  nav
+    padding-top: 7px
+    padding-bottom: 10px
+    color: #64717f
+    text-shadow: -1px 1px 0 rgba(125, 139, 153, 0.1)
+    overflow-y: auto
+    position: absolute
+    top: 65px
+    bottom: 0
+    left: 0
+    right: -1px
+    -webkit-overflow-scrolling: touch
+    &::-webkit-scrollbar
+      width: 3px
+    &::-webkit-scrollbar-thumb
+      background: #309E85
+    a
+      display: block
+      height: 32px
+      color : inherit
+      .post-title
+        position: relative
+        float: left
+        clear: both
+        margin: 5px 0
+        padding: 0 15px 0 32px
+        font-size: 16px
+        line-height: 22px
+        white-space: nowrap
+        text-decoration: none
+        text-overflow: ellipsis
+        color: #55606F
+        overflow: hidden
+        outline: none
+        &:before
+          content: "\e901"
+          position: absolute
+          top: 2px
+          left: 12px
+          z-index: 1
+          font-size: 18px
+          color: #309E85
+          transition: transform .15s linear,left .15s linear
+        &:hover:before
+          animation: joggle .6s linear
+      .post-date
+        font-size: 15px
+        margin: 8px 0px
+        padding: 0px 3px
+        color: #9aa4af
+        float: right

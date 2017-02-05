@@ -1,0 +1,10 @@
+<form onkeydown="if(event.keyCode==13){return false;}">
+    <input type="text" placeholder="Search..." autocomplete="off">
+</form>
+<nav>
+    <% site.posts.forEach(function(post, i){  %>
+    <a class="<% post.categories.forEach(function(category, i){ %><%=category.name%> <% }) %>" href="<%- url_for(post.path) %>">
+        <span class="post-title"><%=post.title %></span><span class="post-date"><%= date(post.date, 'YYYY/MM/DD') %></span>
+    </a>
+    <% }) %>
+</nav>
