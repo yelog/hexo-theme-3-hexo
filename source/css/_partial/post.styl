@@ -53,7 +53,10 @@
       .toc-ref
         display: none
       img
-        width 100%
+        max-width: 100%
+      strong
+        color: #653f3f
+        font-size: 1.1em
       blockquote
         padding: 20px
         margin-bottom: 25px
@@ -63,6 +66,10 @@
         font-size: 16px
         font-weight: 400
         line-height: 30px
+        .hljs-keyword
+          color: #C678DD;
+        p
+          margin: 0px
       table
         padding: 0
         border-spacing: 0
@@ -93,9 +100,9 @@
               margin-bottom: 0
       /* Inline code */
       :not(pre) > code
-        color: #18bfa8;
+        color: #339999;
         word-break: break-all;
         font-family: sans-serif;
         font-weight: bold;
 
-
+        

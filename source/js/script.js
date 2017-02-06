@@ -4,6 +4,7 @@ jQuery.expr[':'].contains = function(a, i, m){
 };
 
 var content = $(".pjax");
+var container = $(".post");
 $(document).pjax('.nav-right nav a', '.pjax', {fragment:'.pjax', timeout:8000});
 $(document).on({
   'pjax:click': function() {
@@ -13,7 +14,7 @@ $(document).on({
     content.css({'opacity':0});
   },
   'pjax:end': function() {
-    content.scrollTop(0);
+    container.scrollTop(0);
     $('pre code').each(function(i, block) {
       hljs.highlightBlock(block);
     });
