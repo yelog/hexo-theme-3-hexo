@@ -32,7 +32,7 @@ function afterPjax() {
 }
 
 $(".nav-left ul li").on("click",function (e) {
-  $(".nav-right form input").val("");
+  $(".nav-right form .search").val("");
   $(this).siblings(".active").removeClass("active");
   $(this).addClass("active");
   var $handle = $(".nav-right nav a");
@@ -44,10 +44,10 @@ $(".nav-left ul li").on("click",function (e) {
   }
 });
 
-$(".nav-right form input").on("input",function (e) {
+$(".nav-right form .search").on("input",function (e) {
   inputChange(e);
 });
-$(".nav-right form input").on("change",function (e) {
+$(".nav-right form .search").on("change",function (e) {
   inputChange(e);
 });
 function inputChange(e) {
@@ -56,12 +56,16 @@ function inputChange(e) {
     $(".nav-right nav a").css("display","block");
   }else if(val.substr(0,1)=="#"){
     $(".nav-right nav a").css("display","none");
-    $(".nav-right").find("a:Contains('"+val.substr(1)+"')").css("display","block");
+    $(".nav-right nav").find("a:Contains('"+val.substr(1)+"')").css("display","block");
   }else{
     $(".nav-right nav a").css("display","none");
-    $(".nav-right").find("a:contains('"+val+"')").css("display","block");
+    $(".nav-right nav").find("a:contains('"+val+"')").css("display","block");
   }
 }
+
+$(".nav-right form span input[type=checkbox]").on("change",function (e) {
+  $(".nav-right .tags-list").css("display",$(this).prop("checked")?"block":"none");
+});
 
 var flag = 0;//click触发两次，不知为何，所以出此下策
 $(".full-toc .full").click(function (e) {
@@ -101,3 +105,6 @@ function bind() {
     $(".nav-right form input").val("#"+$(this).text().trim()).change();
   });
 }
+$(".nav-right .tags-list li a").on("click",function (e) {
+  $(".nav-right form input").val("#"+$(this).text().trim()).change();
+});
