@@ -20,8 +20,8 @@ hexo-theme-yilia
 git clone https://github.com/yelog/3-hexo.git theme/3-hexo
 ```
 >将hexo根目录的_config.yml中的修改两处  
-1. theme改为3-hexo  
-2. highlight enable改为 false  
+1. **theme** 改为 `3-hexo`   
+2. **highlight enable** 改为 `false`  
 
 ### 更新
 ```bash
