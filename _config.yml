@@ -5,7 +5,7 @@ menu:
 rss: /atom.xml
 
 # 你的头像url
-avatar: http://dev:78/header.jpg
+avatar: /avatar.jpg
 
 # Sidebar
 sidebar: right
@@ -23,12 +23,11 @@ show_count: false
 
 # Table of contents | 文章目录
 toc:
-  list_number: true # 目录序号
   max_depth: 3  # 1 - 6 (h1-h6) 目录最大级数
 
 # Miscellaneous
 google_analytics:
-favicon: /favicon.png
+favicon: /avatar.jpg
 twitter:
 google_plus:
 fb_admins:
