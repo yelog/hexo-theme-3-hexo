@@ -30,12 +30,14 @@
       -ms-animation: fadeOuts .2s
       -o-animation: fadeOuts .2s
       animation: fadeOuts .2s
-    #post__content a
-      color: #BF1827
+    a
+      color: #bf1827;
       word-break: break-all
       font-family: sans-serif
       font-weight: bold
-    .article
+      &:hover
+        color: #2EB695
+    article
       padding-top: 2.5em
       .article-meta
         font-size: .9em
@@ -47,8 +49,6 @@
           margin-left: 1em
           &:before
             content: "\e936"
-          a:hover
-            color: #2EB695;
       .article-title
         margin: 0
         font-size: 2em
