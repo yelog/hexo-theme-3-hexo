@@ -1,34 +1,16 @@
-# Header
-menu:
-  Home: /
-  Archives: /archives
-rss: /atom.xml
-
 # 你的头像url
 avatar: /avatar.jpg
+favicon: /avatar.jpg
 
-# Sidebar
-sidebar: right
-widgets:
-
-# display widgets at the bottom of index pages (pagination == 2)
-index_widgets:
-# - category
-# - tagcloud
-# - archive
-
-# widget behavior
-archive_type: 'monthly'
-show_count: false
 
 # Table of contents | 文章目录
 toc:
   max_depth: 3  # 1 - 6 (h1-h6) 目录最大级数
 
-# Miscellaneous
-google_analytics:
-favicon: /avatar.jpg
-twitter:
-google_plus:
-fb_admins:
-fb_app_id:
+
+CDN:
+  jquery: //cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js
+  highlight: //cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js
+  pjax: //cdnjs.cloudflare.com/ajax/libs/jquery.pjax/1.9.6/jquery.pjax.min.js
+  animate: https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css
+

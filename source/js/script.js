@@ -67,24 +67,20 @@ $(".nav-right form span input[type=checkbox]").on("change",function (e) {
   $(".nav-right .tags-list").css("display",$(this).prop("checked")?"block":"none");
 });
 
-var flag = 0;//click触发两次，不知为何，所以出此下策
 $(".full-toc .full").click(function (e) {
-  if(flag%2==0){
-    if ($(this).children().hasClass("min")) {
-      $(this).children().removeClass("min").addClass("max");
-      $(".nav").addClass("fullscreen");
-      content.delay(200).queue(function(){
-        $(this).addClass('fullscreen').dequeue();
-      });
-    } else {
-      $(this).children().removeClass("max").addClass("min");
-      $(".nav").removeClass("fullscreen");
-      content.delay(300).queue(function(){
-        $(this).removeClass('fullscreen').dequeue();
-      });
-    }
+  if ($(this).children().hasClass("min")) {
+    $(this).children().removeClass("min").addClass("max");
+    $(".nav").addClass("fullscreen");
+    content.delay(200).queue(function(){
+      $(this).addClass('fullscreen').dequeue();
+    });
+  } else {
+    $(this).children().removeClass("max").addClass("min");
+    $(".nav").removeClass("fullscreen");
+    content.delay(300).queue(function(){
+      $(this).removeClass('fullscreen').dequeue();
+    });
   }
-  flag++;
 });
 
 $(function () {
@@ -92,12 +88,8 @@ $(function () {
   $(".post-toc-content").html($(".post .pjax article .toc-ref .toc").clone());
 });
 // right toc
-var flagtoc = 0;
 $(".full-toc .post-toc-menu").on('click', function() {
-  if(flagtoc%2==0){
-    $('.post-toc').toggleClass('open');
-  }
-  flagtoc++
+  $('.post-toc').toggleClass('open');
 });
 
 function bind() {
