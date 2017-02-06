@@ -30,13 +30,6 @@
       -ms-animation: fadeOuts .2s
       -o-animation: fadeOuts .2s
       animation: fadeOuts .2s
-    a
-      color: #bf1827;
-      word-break: break-all
-      font-family: sans-serif
-      font-weight: bold
-      &:hover
-        color: #2EB695
     article
       padding-top: 2.5em
       .article-meta
@@ -49,11 +42,69 @@
           margin-left: 1em
           &:before
             content: "\e936"
+          a
+            height: 18px
+            line-height: 18px
+            font-size: 0.9em
+            padding: 0 5px 0 10px
+            color: #fff
+            position: relative
+            border-radius: 0 5px 5px 0
+            margin: 5px 9px 5px 8px
+            &:hover
+              text-decoration: none
+            &:before
+              content: " "
+              width: 0
+              height: 0
+              position: absolute
+              top: 0
+              left: -18px
+              border: 9px solid transparent
+              border-right-color: #d0d0d0
+            &:after
+              content: " "
+              width: 4px
+              height: 4px
+              background-color: #fff
+              border-radius: 4px
+              box-shadow: 0 0 0 1px rgba(0,0,0,.3)
+              position: absolute
+              top: 7px
+              left: 2px
+            &.color1
+              background:  #FF945C
+              &:before
+                border-right-color: #FF945C
+            &.color2
+              background:  #cc8167
+              &:before
+                border-right-color: #cc8167
+            &.color3
+              background:  #BA8F6C
+              &:before
+                border-right-color: #BA8F6C
+            &.color4
+              background: #94635c
+              &:before
+                border-right-color:#94635c
+            &.color5
+              background: #7B5D5F
+              &:before
+                border-right-color:#7B5D5F
       .article-title
         margin: 0
         font-size: 2em
       .toc-ref
         display: none
+      a
+        color: #3194d0;
+        word-break: break-all
+        font-family: sans-serif
+        font-weight: bold
+        &:hover
+          color: #3194d0;
+          text-decoration: underline
       img
         max-width: 100%
       strong
@@ -62,6 +113,7 @@
       blockquote
         padding: 20px
         margin-bottom: 25px
+        margin-left: 0px
         background-color: #f7f7f7
         border-left: 6px solid #b4b4b4
         word-break: break-word
@@ -102,7 +154,7 @@
               margin-bottom: 0
       /* Inline code */
       :not(pre) > code
-        color: #339999;
+        color: #BF1827;
         word-break: break-all;
         font-family: sans-serif;
         font-weight: bold;

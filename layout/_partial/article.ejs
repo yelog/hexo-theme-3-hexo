@@ -6,7 +6,7 @@
       <% if (post.tags && post.tags.length){ %>
       <span class="tag">
         <% post.tags.forEach(function(tag, i){ %>
-      <a href="javascript:"><%=tag.name%></a><% if (i+1<post.tags.length){%>,<%}%>
+      <a href="javascript:" class="color<%= tag.name.length % 5 + 1 %>"><%=tag.name%></a>
         <% }) %>
       </span>
       <% } %>
