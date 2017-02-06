@@ -3,7 +3,7 @@
 </form>
 <nav>
     <% site.posts.forEach(function(post, i){  %>
-    <a class="<% post.categories.forEach(function(category, i){ %><%=category.name%> <% }) %>" href="<%- url_for(post.path) %>">
+    <a class="<% post.categories.forEach(function(category, i){ %><%=category.name%> <% }) %>" href="<%- url_for(post.path) %>" data-tag="<% post.tags.forEach(function(tag, i){ %><%=tag.name%><% if (i+1<post.tags.length){%>,<%}})%>">
         <span class="post-title"><%=post.title %></span><span class="post-date"><%= date(post.date, 'YYYY/MM/DD') %></span>
     </a>
     <% }) %>
