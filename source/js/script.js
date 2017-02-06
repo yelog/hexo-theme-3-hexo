@@ -18,6 +18,7 @@ $(document).on({
       hljs.highlightBlock(block);
     });
     content.css({'opacity':1}).removeClass('fadeOuts').addClass('fadeIns');
+    $(".post-toc-content").html($(".post .pjax article .toc-ref .toc").clone());
   }
 });
 
@@ -64,4 +65,16 @@ $(".full-toc .full").click(function (e) {
     }
   }
   flag++;
+});
+
+$(function () {
+  $(".post-toc-content").html($(".post .pjax article .toc-ref .toc").clone());
+})
+// right toc
+var flagtoc = 0;
+$(".full-toc .post-toc-menu").on('click', function() {
+  if(flagtoc%2==0){
+    $('.post-toc').toggleClass('open');
+  }
+  flagtoc++
 });

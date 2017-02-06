@@ -10,11 +10,6 @@ avatar: http://dev:78/header.jpg
 # Sidebar
 sidebar: right
 widgets:
-- category
-- tag
-- tagcloud
-- archive
-- recent_posts
 
 # display widgets at the bottom of index pages (pagination == 2)
 index_widgets:
@@ -25,6 +20,11 @@ index_widgets:
 # widget behavior
 archive_type: 'monthly'
 show_count: false
+
+# Table of contents | 文章目录
+toc:
+  list_number: true # 目录序号
+  max_depth: 3  # 1 - 6 (h1-h6) 目录最大级数
 
 # Miscellaneous
 google_analytics:
