@@ -46,3 +46,22 @@ $(".nav-right form input").on("input",function (e) {
     $(".nav-right").find("a:contains('"+val+"')").css("display","block");
   }
 })
+var flag = 0;//click触发两次，不知为何，所以出此下策
+$(".full-toc .full").click(function (e) {
+  if(flag%2==0){
+    if ($(this).children().hasClass("min")) {
+      $(this).children().removeClass("min").addClass("max");
+      $(".nav").addClass("fullscreen");
+      content.delay(200).queue(function(){
+        $(this).addClass('fullscreen').dequeue();
+      });
+    } else {
+      $(this).children().removeClass("max").addClass("min");
+      $(".nav").removeClass("fullscreen");
+      content.delay(300).queue(function(){
+        $(this).removeClass('fullscreen').dequeue();
+      });
+    }
+  }
+  flag++;
+});

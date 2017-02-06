@@ -1,0 +1,36 @@
+.full-toc
+  .full
+    display: block
+    position: fixed
+    top: 20px
+    right: 30px
+    z-index: 30
+    width: 42px
+    height: 42px
+    padding: 0
+    background: transparent
+    border: none
+    border-radius: 2px
+    outline: none
+    overflow: hidden
+    cursor: pointer
+    .min ,.max
+      transform: translateX(50%)
+      padding-top: 9px
+      display: block
+      width: 200%
+      height: 42px
+      margin-left: -100%
+      font-size: 24px
+      line-height: 42px
+      color: #fff
+      background: #474d57
+      overflow: hidden
+    .min:before
+      float: left
+      width: 50%
+      content: "\e98b"
+    .max:before
+      float: left
+      width: 50%
+      content: "\e98c"
