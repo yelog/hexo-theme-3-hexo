@@ -12,15 +12,17 @@ hexo-theme-yilia
 ——————————————  
 **todo：**
 
-1. 文章toc
-2. 评论
-3. 参数自定义
-4. 多语言
+1. 评论
+2. 多语言
 
 ### 安装
 ```bash
 git clone https://github.com/yelog/3-hexo.git theme/3-hexo
 ```
+>将hexo根目录的_config.yml中的修改两处  
+1. **theme** 改为 `3-hexo`   
+2. **highlight enable** 改为 `false`  
+
 ### 更新
 ```bash
 cd theme/3-hexo
