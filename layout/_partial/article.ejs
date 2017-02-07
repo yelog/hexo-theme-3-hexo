@@ -1,7 +1,7 @@
 <article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
   <div class="article-meta">
       <% if (post.date){ %>
-      <time class="date" datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date, 'YYYY MMMM DD') %></time>
+      <time class="date" title="<%= date(post.date, 'YYYY-MM-DD HH:mm:ss')%>"><%= date(post.date, 'YYYY MMMM DD') %></time>
       <% } %>
       <% if (post.tags && post.tags.length){ %>
       <span class="tag">
