@@ -166,8 +166,18 @@
       display: block
       height: 32px
       color : inherit
+      position: relative
+      &:before
+        content: "\e901"
+        position: absolute
+        top: 7px
+        left: 12px
+        z-index: 1
+        font-size: 18px
+        color: #309E85
+      &:hover:before
+        animation: shake 2s linear
       .post-title
-        position: relative
         width: 280px
         float: left
         clear: both
@@ -181,17 +191,6 @@
         color: #55606F
         overflow: hidden
         outline: none
-        &:before
-          content: "\e901"
-          position: absolute
-          top: 2px
-          left: 12px
-          z-index: 1
-          font-size: 18px
-          color: #309E85
-          transition: transform .15s linear,left .15s linear
-        &:hover:before
-          animation: joggle .6s linear
       .post-date
         font-size: 15px
         margin: 8px 0px
