@@ -27,7 +27,6 @@ function afterPjax() {
     hljs.highlightBlock(block);
   });
   content.css({'opacity':1}).removeClass('fadeOuts').addClass('fadeIns');
-  $(".post-toc-content").html($(".post .pjax article .toc-ref .toc").clone());
   bind();
 }
 
@@ -90,18 +89,29 @@ $(".full-toc .full").click(function (e) {
 
 $(function () {
   bind();
-  $(".post-toc-content").html($(".post .pjax article .toc-ref .toc").clone());
-});
-// right toc
-$(".full-toc .post-toc-menu").on('click', function() {
-  $('.post-toc').toggleClass('open');
-});
-
-function bind() {
-  $(".post .pjax article .article-meta .tag a").on("click",function (e) {
+  //搜索框下的tag搜索事件
+  $(".nav-right .tags-list li a").on("click",function (e) {
     $(".nav-right form input").val("#"+$(this).text().trim()).change();
   });
-}
-$(".nav-right .tags-list li a").on("click",function (e) {
-  $(".nav-right form input").val("#"+$(this).text().trim()).change();
+  //文章toc的显示点击事件
+  $(".full-toc .post-toc-menu").on('click', function() {
+    $('.post-toc').toggleClass('open');
+  });
 });
+
+
+function bind() {
+  //绑定文章内tag的搜索事件
+  $(".post .pjax article .article-meta .tag a").on("click", function (e) {
+    $(".nav-right form input").val("#" + $(this).text().trim()).change();
+  });
+  //初始化文章toc
+  $(".post-toc-content").html($(".post .pjax article .toc-ref .toc").clone());
+  //绑定文章toc的滚动事件
+  $(".full-toc .post-toc .post-toc-content .toc-link").click(function () {
+    var target = $(this.hash);
+    $(".post").animate({scrollTop: $(target).offset().top+$(".post").scrollTop()}, 500);
+    return false;
+  });
+  $(document).pjax('.post .pjax article a[target!=_blank]', '.pjax', {fragment:'.pjax', timeout:8000});
+}
