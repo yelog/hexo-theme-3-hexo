@@ -1,0 +1,30 @@
+<div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="<%=key%>" data-title="<%=title%>" data-url="<%=url%>"></div>
+    <script>
+        var duoshuoQuery = {short_name:"<%=theme.duoshuo.domain%>"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = 'https://static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        <% if (!theme.preload_comment) { %>
+        // Add comment count
+        $(function(){
+            var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=<%=theme.duoshuo.domain%>&threads=<%=key%>&callback=?";
+            $.getJSON(jsonUrl, function(result){
+                $.each(result.response, function(i, field){
+                    var value = field.comments;
+                    if (value > 0) {
+                        $(".count-comment").text(value);
+                        return;
+                    }
+                })
+            })
+        })
+        <% } %>
+    </script>
+    <%- partial('click2show') %>
+</div>

@@ -17,9 +17,17 @@ toc:
   max_depth: 3  # 1 - 6 (h1-h6) 目录最大级数
 
 
+preload_comment: false
+## false: 当点击评论条等区域时再加载评论模块
+
+duoshuo:
+  on: true
+  domain: jaytp
+
 CDN:
   jquery: //cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js
   highlight: //cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js
   pjax: //cdnjs.cloudflare.com/ajax/libs/jquery.pjax/1.9.6/jquery.pjax.min.js
-  animate: https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css
+  animate: //cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css
+  font_awsome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
 
