@@ -95,7 +95,8 @@ $(function () {
   });
   //文章toc的显示点击事件
   $(".full-toc .post-toc-menu").on('click', function() {
-    $('.post-toc').toggleClass('open');
+      $('.post-toc').toggleClass('open');
+      $(".post .pjax").toggleClass('toc');
   });
 });
 
