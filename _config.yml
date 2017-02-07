@@ -2,6 +2,15 @@
 avatar: /avatar.jpg
 favicon: /avatar.jpg
 
+#链接图标，链接为空则不显示
+link:
+  github: https://github.com/yelog
+  weibo: http://weibo.com/u/2307534817
+  twitter:
+  linkedin:
+  instagram:
+  mail: jaytp@qq.com
+
 
 # Table of contents | 文章目录
 toc:

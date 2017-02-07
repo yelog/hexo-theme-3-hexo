@@ -14,7 +14,7 @@
   .avatar
     width: 100px;
     height: 100px;
-    margin: 55px auto 35px;
+    margin: 55px auto 15px;
     border-radius: 50%;
     box-shadow: 0 0 0px 4px white, 0 0 4px 4px #eee;
     background-repeat: no-repeat;
@@ -23,6 +23,32 @@
     &:hover
       -webkit-animation: rubberBand 1s;
       animation: rubberBand 1s;
+  .author
+    text-align center
+    height 27px
+    color white
+  .icon
+    width 100px
+    text-align center
+    margin 0 auto 5px
+    a
+      color white
+      line-height: 19px;
+      &:hover
+        color #309e85
+      &.github:before
+        content: "\eab0"
+      &.twitter:before
+        content: "\ea96";
+      &.weibo:before
+        content: "\ea9a";
+      &.linkedin:before
+        content: "\eac9";
+      &.instagram:before
+        content: "\ea92";
+      &.mail:before
+        content: "\e945";
+
   ul
     margin: 0;
     padding: 0;

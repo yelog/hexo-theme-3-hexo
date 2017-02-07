@@ -1,4 +1,27 @@
 <a href="/" class="avatar" style="background-image:url(<%=theme.avatar%>)"></a>
+<div class="author">
+    <span><%=config.author%></span>
+</div>
+<div class="icon">
+    <% if(theme.link.github){%>
+    <a class="github" title="github" href="<%= theme.link.github %>" target="_blank"></a>
+    <%}%>
+    <% if(theme.link.weibo){%>
+    <a class="weibo" title="weibo" href="<%= theme.link.weibo %>" target="_blank"></a>
+    <%}%>
+    <% if(theme.link.twitter){%>
+    <a class="twitter" title="twitter" href="<%= theme.link.twitter %>" target="_blank"></a>
+    <%}%>
+    <% if(theme.link.linkedin){%>
+    <a class="linkedin" title="linkedin" href="<%= theme.link.linkedin %>" target="_blank"></a>
+    <%}%>
+    <% if(theme.link.instagram){%>
+    <a class="instagram" title="instagram" href="<%= theme.link.instagram %>" target="_blank"></a>
+    <%}%>
+    <% if(theme.link.mail){%>
+    <a class="mail" title="mail" href="mailto:<%= theme.link.mail %>"></a>
+    <%}%>
+</div>
 <ul>
     <li class="all active">全部文章</li>
     <% site.categories.forEach(function(category, i){ %>
