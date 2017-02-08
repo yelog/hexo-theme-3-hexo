@@ -18,4 +18,11 @@
   <script>
     hljs.initHighlightingOnLoad();
   </script>
+  <% if (theme.disqus.on && !theme.preload_comment) {%>
+  <script id="dsq-count-scr" src="//<%= theme.disqus.shortname%>.disqus.com/count.js" async></script>
+  <% } %>
 </head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="<%=theme.disqus.on%>">
+  <input class="theme_preload_comment" value="<%=theme.preload_comment%>">
+</div>

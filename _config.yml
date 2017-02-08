@@ -17,12 +17,26 @@ toc:
   max_depth: 3  # 1 - 6 (h1-h6) 目录最大级数
 
 
-preload_comment: false
+preload_comment: true
 ## false: 当点击评论条等区域时再加载评论模块
 
 duoshuo:
   on: true
   domain: jaytp
+  # 是否开启多说评论，http://duoshuo.com/create-site/
+  # 使用上面网址登陆你的多说，然后创建站点，在 domain 中填入你设定的域名前半部分
+  # http://<要填的部分>.duoshuo.com (domain只填上<>里的内容，不要填整个网址)
+
+disqus:
+  on: false
+  shortname: yelog
+  # https://help.disqus.com/customer/en/portal/articles/466208-what-s-a-shortname-
+  # It is unnecessary to enable disqus here if
+  # you have set "disqus_shortname" in your site's "_config.yml"
+
+youyan:
+  on: false
+
 
 CDN:
   jquery: //cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js

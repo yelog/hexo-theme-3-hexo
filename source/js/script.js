@@ -28,6 +28,9 @@ function afterPjax() {
   });
   content.css({'opacity':1}).removeClass('fadeOuts').addClass('fadeIns');
   bind();
+  if($(".theme_disqus_on").val()=="true" && $(".theme_preload_comment").val()=="false"){
+    DISQUSWIDGETS.getCount({reset: true});
+  }
 }
 
 $(".nav-left ul li").on("click",function (e) {
@@ -114,5 +117,14 @@ function bind() {
     $(".post").animate({scrollTop: $(target).offset().top+$(".post").scrollTop()}, 500);
     return false;
   });
+  if($("#comments").hasClass("disqus")){
+    $(".disqus-comment-count").hide();
+    var $disqusCount = $(".disqus-comment-count");
+    $disqusCount.bind("DOMNodeInserted", function(e) {
+      $(".count-comment").text(
+          $(this).text().replace(/[^0-9]/ig,"")
+      )
+    });
+  }
   $(document).pjax('.post .pjax article a[target!=_blank]', '.pjax', {fragment:'.pjax', timeout:8000});
 }
