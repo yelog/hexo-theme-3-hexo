@@ -9,12 +9,6 @@ demo:[叶落阁](http://yelog.com/)
 2. 三段式设计
 3. 通过文章分类、标签或标题关键字检索  
 
-——————————————  
-**todo：**
-
-1. 评论
-2. 多语言
-
 ### 安装
 ```bash
 git clone https://github.com/yelog/3-hexo.git theme/3-hexo
