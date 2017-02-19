@@ -17,8 +17,9 @@ toc:
   max_depth: 3  # 1 - 6 (h1-h6) 目录最大级数
 
 
-preload_comment: true
+preload_comment: false
 ## false: 当点击评论条等区域时再加载评论模块
+## true: 页面加载时加载评论区
 
 disqus:
   on: true
@@ -45,4 +46,5 @@ CDN:
   pjax: //cdnjs.cloudflare.com/ajax/libs/jquery.pjax/1.9.6/jquery.pjax.min.js
   animate: //cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css
   font_awsome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
+  nprogres_js: //cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js
 

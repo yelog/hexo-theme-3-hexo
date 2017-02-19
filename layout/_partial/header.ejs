@@ -18,6 +18,9 @@
   <script>
     hljs.initHighlightingOnLoad();
   </script>
+  <% if (theme.CDN.nprogres_js){%>
+    <script src="<%=theme.CDN.nprogres_js%>"></script>
+  <%}%>
   <% if (theme.disqus.on && !theme.preload_comment) {%>
   <script id="dsq-count-scr" src="//<%= theme.disqus.shortname%>.disqus.com/count.js" async></script>
   <% } %>

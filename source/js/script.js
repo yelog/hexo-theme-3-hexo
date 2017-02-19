@@ -13,11 +13,13 @@ $(document).pjax('.nav-right nav a', '.pjax', {fragment:'.pjax', timeout:8000});
 $(document).on({
   'pjax:click': function() {
     content.removeClass('fadeIns').addClass('fadeOuts');
+    NProgress.start();
   },
   'pjax:start': function() {
     content.css({'opacity':0});
   },
   'pjax:end': function() {
+    NProgress.done();
     container.scrollTop(0);
     afterPjax();
   }
