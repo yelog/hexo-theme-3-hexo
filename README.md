@@ -1,7 +1,7 @@
 hexo-theme-yilia
 ================
 3-hexo 是为[hexo](https://github.com/tommy351/hexo)制作的主题。  
-demo:[叶落阁](http://yelog.com/)  
+demo:[叶落阁](http://yelog.org/)  
 ——————————————  
 **关于主题：**
 
