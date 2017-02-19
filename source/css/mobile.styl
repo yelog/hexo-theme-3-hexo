@@ -1,0 +1,35 @@
+@media screen and (max-width: 768px)
+  .nav
+    left: -100%
+    width: 100%
+    overflow-y: auto
+    overflow-x: hidden
+    -webkit-overflow-scrolling: touch
+    &-left, &-right
+      width: 100%
+      height: auto
+    .avatar
+      margin: 20px auto 15px
+    ul
+      display: none
+    &-right
+      form .search
+
+      nav a .post-title
+        width 65%
+    &-left .icon
+      width 80%
+      font-size 26px
+
+
+@media screen and (max-width: 426px)
+  .nav
+    &-right nav a
+      .post-title
+        width 90%
+      .post-date
+        display none
+@media screen and (max-width: 322px)
+  .nav
+    &-right form .search
+      width 60%
