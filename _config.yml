@@ -28,6 +28,23 @@ disqus:
   # It is unnecessary to enable disqus here if
   # you have set "disqus_shortname" in your site's "_config.yml"
 
+highlight: school-book
+# 代码高亮主题,效果可以查看 https://highlightjs.org/static/demo/
+# 支持主题：
+# sublime : 参考sublime的高亮主题
+# darcula : 参考idea中的darcula的主题
+# atom-dark : 参考Atom的dark主题
+# atom-light : 参考Atom的light主题
+# github : 参考GitHub版的高亮主题
+# brown-paper : 牛皮纸效果
+# gruvbox-light : gruvbox的light主题
+# gruvbox-dark ： gruvbox的dark主题
+# rainbow :
+# railscasts :
+# kimbie-dark :
+# kimbie-light :
+# school-book : 纸张效果
+
 # 暂时还有些问题，建议使用disqus
 duoshuo:
   on: false
