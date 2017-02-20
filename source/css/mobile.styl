@@ -1,34 +1,53 @@
-@media screen and (max-width: 768px)
+@media screen and (max-width: 1333px)
   .nav
-    left: -100%
-    width: 100%
-    overflow-y: auto
-    overflow-x: hidden
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index 10
     -webkit-overflow-scrolling: touch
-    &-left, &-right
+    position absolute
+  .post
+    .pjax,.pjax.fullscreen
+      padding 0 18px
+      max-width 100%
+@media screen and (max-width: 426px)
+  .nav
+    width: 100%
+    overflow: hidden
+    &-left
       width: 100%
       height: auto
+    &-right
+      width: 100%
+      height: 100%
+      overflow-y hidden
     .avatar
       margin: 20px auto 15px
     ul
       display: none
-    &-right
-      form .search
-
-      nav a .post-title
-        width 65%
-    &-left .icon
-      width 80%
-      font-size 26px
-
-
-@media screen and (max-width: 426px)
-  .nav
     &-right nav a
       .post-title
         width 90%
       .post-date
         display none
+  .post
+    font-size 16px
+    .pjax
+      padding 0 18px
+      max-width 100%
+      article
+        padding-top: 1em
+        .article-meta
+          font-size: 0.6em
+        .article-title
+          font-size: 1.2em
+  .full-toc
+    .full
+      top 0px
+      right 0px
+    .post-toc-menu
+      top 43px
+      right 0px
 @media screen and (max-width: 322px)
   .nav
     &-right form .search

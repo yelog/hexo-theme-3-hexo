@@ -22,6 +22,9 @@ $(document).on({
     NProgress.done();
     container.scrollTop(0);
     afterPjax();
+    if($(window).width() <= 1024) {
+      $(".full-toc .full").trigger("click");
+    }
   }
 });
 function afterPjax() {
@@ -101,7 +104,6 @@ $(function () {
   //文章toc的显示点击事件
   $(".full-toc .post-toc-menu").on('click', function() {
       $('.post-toc').toggleClass('open');
-      $(".post .pjax").toggleClass('toc');
   });
 });
 
@@ -110,6 +112,9 @@ function bind() {
   //绑定文章内tag的搜索事件
   $(".post .pjax article .article-meta .tag a").on("click", function (e) {
     $(".nav-right form input").val("#" + $(this).text().trim()).change();
+    if($(window).width() <= 1024) {
+      $(".full-toc .full").trigger("click");
+    }
   });
   //初始化文章toc
   $(".post-toc-content").html($(".post .pjax article .toc-ref .toc").clone());
