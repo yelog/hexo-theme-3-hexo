@@ -8,7 +8,7 @@ demo:[叶落阁](http://yelog.org/)
 1. 极简体验      
 2. 三段式设计
 3. 通过文章分类、标签或标题关键字检索  
-4. 适配pad、手机等移动设备  
+
 ### 安装
 ```bash
 git clone https://github.com/yelog/3-hexo.git theme/3-hexo
