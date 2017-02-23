@@ -4,12 +4,10 @@ favicon: /avatar.jpg
 
 #链接图标，链接为空则不显示
 link:
-  rss: /atom.xml
   github: https://github.com/yelog
   weibo: http://weibo.com/u/2307534817
   twitter:
-  facebook: https://www.facebook.com/faker.tops
-  linkedin: https://www.linkedin.com/in/%E7%8E%89%E6%9D%B0-%E6%9D%A8-13a40a103/
+  linkedin:
   instagram:
   mail: jaytp@qq.com
 
@@ -30,7 +28,7 @@ disqus:
   # It is unnecessary to enable disqus here if
   # you have set "disqus_shortname" in your site's "_config.yml"
 
-highlight: sublime
+highlight: school-book
 # 代码高亮主题,效果可以查看 https://highlightjs.org/static/demo/
 # 支持主题：
 # sublime : 参考sublime的高亮主题
