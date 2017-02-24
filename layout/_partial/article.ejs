@@ -10,6 +10,9 @@
         <% }) %>
       </span>
       <% } %>
+      <% if (post.top){ %>
+      <span class="top">置顶</span>
+      <%}%>
   </div>
     <% if (post.title){ %>
         <h1 class="article-title"><%= post.title %></h1>
