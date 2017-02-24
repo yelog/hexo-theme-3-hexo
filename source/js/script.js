@@ -63,6 +63,7 @@ $(".nav-right form .search").on("change",function (e) {
   inputChange(e);
 });
 function inputChange(e) {
+  $(".nav-right form .cross").css("display",$(e.currentTarget).val()==""?"none":"block");
   var val = $(e.currentTarget).val().trim();
   if(val==""){
     $(".nav-right nav a").css("display","block");
@@ -104,6 +105,9 @@ $(function () {
   //文章toc的显示点击事件
   $(".full-toc .post-toc-menu").on('click', function() {
       $('.post-toc').toggleClass('open');
+  });
+  $(".nav-right form .cross").on("click",function (e) {
+    $(".nav-right form input").val("").change();
   });
 });
 

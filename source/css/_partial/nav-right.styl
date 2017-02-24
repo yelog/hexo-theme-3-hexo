@@ -13,8 +13,17 @@
   form
     height: 65px
     border-bottom: 1px solid #e5e8ec
+    .cross
+      position absolute
+      top 36px
+      right 129px
+      display none
+      &:hover
+        cursor pointer
+      &:before
+        content "\ea0f"
     .search
-      width 65%
+      width 250px
       margin-top: 12px
       padding: 20px 0px 0px 20px
       color: #2eb695
@@ -24,7 +33,9 @@
       border: none
       outline: none
     span
-      width 35%
+      position absolute
+      top 31px
+      right 10px
       input
         width: 40px
         height: 14px

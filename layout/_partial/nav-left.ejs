@@ -3,11 +3,14 @@
     <span><%=config.author%></span>
 </div>
 <div class="icon">
+    <% if(theme.link.rss){%>
+    <a class="rss" title="rss" href="<%= theme.link.rss %>" target="_blank"></a>
+    <%}%>
     <% if(theme.link.github){%>
     <a class="github" title="github" href="<%= theme.link.github %>" target="_blank"></a>
     <%}%>
-    <% if(theme.link.weibo){%>
-    <a class="weibo" title="weibo" href="<%= theme.link.weibo %>" target="_blank"></a>
+    <% if(theme.link.facebook){%>
+    <a class="facebook" title="facebook" href="<%= theme.link.facebook %>" target="_blank"></a>
     <%}%>
     <% if(theme.link.twitter){%>
     <a class="twitter" title="twitter" href="<%= theme.link.twitter %>" target="_blank"></a>
@@ -18,8 +21,14 @@
     <% if(theme.link.instagram){%>
     <a class="instagram" title="instagram" href="<%= theme.link.instagram %>" target="_blank"></a>
     <%}%>
-    <% if(theme.link.mail){%>
-    <a class="mail" title="mail" href="mailto:<%= theme.link.mail %>"></a>
+    <% if(theme.link.reddit){%>
+    <a class="reddit" title="reddit" href="<%= theme.link.reddit %>" target="_blank"></a>
+    <%}%>
+    <% if(theme.link.weibo){%>
+    <a class="weibo" title="weibo" href="<%= theme.link.weibo %>" target="_blank"></a>
+    <%}%>
+    <% if(theme.link.email){%>
+    <a class="email" title="email" href="mailto:<%= theme.link.email %>"></a>
     <%}%>
 </div>
 <ul>

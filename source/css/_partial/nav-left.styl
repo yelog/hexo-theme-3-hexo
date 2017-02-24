@@ -28,7 +28,6 @@
     height 27px
     color white
   .icon
-    width 100px
     text-align center
     margin 0 auto 5px
     a
@@ -36,6 +35,8 @@
       line-height: 19px;
       &:hover
         color #309e85
+      &.rss:before
+        content: "\ea9b";
       &.github:before
         content: "\eab0"
       &.twitter:before
@@ -46,8 +47,12 @@
         content: "\eac9";
       &.instagram:before
         content: "\ea92";
-      &.mail:before
+      &.email:before
         content: "\e945";
+      &.facebook:before
+        content "\ea91"
+      &.reddit:before
+        content "\eac6"
 
   ul
     margin: 0;
