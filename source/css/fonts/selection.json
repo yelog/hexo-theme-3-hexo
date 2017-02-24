@@ -4,6 +4,35 @@
     {
       "icon": {
         "paths": [
+          "M961.714 760.571l-94.857 94.286c-14.286 14.286-37.143 14.286-51.429 0l-303.429-303.429-303.429 303.429c-14.286 14.286-37.143 14.286-51.429 0l-94.857-94.286c-14.286-14.286-14.286-37.714 0-52l424-423.429c14.286-14.286 37.143-14.286 51.429 0l424 423.429c14.286 14.286 14.286 37.714 0 52z"
+        ],
+        "attrs": [
+          {}
+        ],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": [
+          "chevron-up"
+        ],
+        "grid": 14
+      },
+      "attrs": [
+        {}
+      ],
+      "properties": {
+        "order": 1,
+        "id": 1,
+        "prevSize": 28,
+        "code": 59650,
+        "name": "chevron-up"
+      },
+      "setIdx": 0,
+      "setId": 3,
+      "iconIdx": 0
+    },
+    {
+      "icon": {
+        "paths": [
           "M632.571 501.143l-424 424c-14.286 14.286-37.143 14.286-51.429 0l-94.857-94.857c-14.286-14.286-14.286-37.143 0-51.429l303.429-303.429-303.429-303.429c-14.286-14.286-14.286-37.143 0-51.429l94.857-94.857c14.286-14.286 37.143-14.286 51.429 0l424 424c14.286 14.286 14.286 37.143 0 51.429z"
         ],
         "attrs": [
@@ -29,7 +58,7 @@
       },
       "setIdx": 0,
       "setId": 3,
-      "iconIdx": 0
+      "iconIdx": 1
     },
     {
       "icon": {
@@ -78,7 +107,7 @@
       "properties": {
         "ligatures": "envelop, mail",
         "name": "envelop",
-        "order": 18,
+        "order": 19,
         "id": 70,
         "prevSize": 32,
         "code": 59717
@@ -132,7 +161,7 @@
       "attrs": [],
       "properties": {
         "ligatures": "enlarge2, expand2",
-        "name": "enlarge2",
+        "name": "enlarge",
         "order": 3,
         "id": 140,
         "prevSize": 32,
@@ -160,7 +189,7 @@
       "attrs": [],
       "properties": {
         "ligatures": "shrink2, collapse2",
-        "name": "shrink2",
+        "name": "shrink",
         "order": 4,
         "id": 141,
         "prevSize": 32,
@@ -245,7 +274,7 @@
       "attrs": [],
       "properties": {
         "ligatures": "facebook2, brand11",
-        "name": "facebook2",
+        "name": "facebook",
         "order": 9,
         "id": 402,
         "prevSize": 32,
