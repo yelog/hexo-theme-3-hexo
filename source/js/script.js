@@ -109,6 +109,17 @@ $(function () {
   $(".nav-right form .cross").on("click",function (e) {
     $(".nav-right form input").val("").change();
   });
+  $("#rocket").on("click",function (e) {
+    $(this).addClass("launch");
+    container.animate({scrollTop: 0}, 500);
+  })
+  container.scroll(function (e) {
+    if(container.scrollTop()>=200 && $("#rocket").css("display")=="none"){
+      $("#rocket").removeClass("launch").css("display","block").css("opacity","0.5");
+    } else if(container.scrollTop()<200 && $("#rocket").css("display")=="block") {
+      $("#rocket").removeClass("launch").css("opacity","1").css("display","none");
+    }
+  })
 });
 
 

@@ -39,7 +39,7 @@
     position: fixed
     top: 63px
     right: 30px
-    z-index: 30
+    z-index: 20
     width: 42px
     height: 42px
     padding: 0
@@ -71,7 +71,7 @@
     top: 106px;
     bottom: 0;
     right: -200px;
-    z-index: 30;
+    z-index: 20;
     background: rgba(250,250,250,0.9);
     border-top: 1px solid #e5e8ec;
     border-left: 1px solid #e5e8ec;
@@ -105,3 +105,39 @@
           overflow: hidden;
     a:hover
       color: #309e85
+  #rocket
+    position fixed
+    bottom 30px
+    top auto
+    right 20px
+    font-size 40px
+    z-index: 21
+    display none
+    opacity 0
+    transition opacity .8s,bottom .8s
+    &:hover
+      opacity 1
+    &:hover::before
+      color #449fdb
+    &:before
+      content "\e900"
+      position: absolute;
+      bottom: 0px;
+      right: -4px;
+      transition color .5s
+    &.launch
+      bottom 450px;
+      opacity 0
+      &:before
+        content "\e900"
+        position: absolute;
+        bottom: 0px;
+        right: -4px;
+        color #449fdb
+      &:after
+        content "\e9a9"
+        position: absolute;
+        right: 9px;
+        bottom: -16px;
+        font-size: 21px;
+        color red
