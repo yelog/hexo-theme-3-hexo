@@ -13,7 +13,7 @@ demo:[叶落阁](http://yelog.org/)
 
 ### 安装
 ```bash
-git clone https://github.com/yelog/3-hexo.git theme/3-hexo
+git clone git@github.com:yelog/hexo-theme-3-hexo.git theme/3-hexo
 ```
 >将hexo根目录的_config.yml中的修改两处  
 1. **theme** 改为 `3-hexo`   
