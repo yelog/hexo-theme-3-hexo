@@ -112,7 +112,7 @@ $(function () {
   $("#rocket").on("click",function (e) {
     $(this).addClass("launch");
     container.animate({scrollTop: 0}, 500);
-  })
+  });
   container.scroll(function (e) {
     if(container.scrollTop()>=200 && $("#rocket").css("display")=="none"){
       $("#rocket").removeClass("launch").css("display","block").css("opacity","0.5");
@@ -135,8 +135,7 @@ function bind() {
   $(".post-toc-content").html($(".post .pjax article .toc-ref .toc").clone());
   //绑定文章toc的滚动事件
   $(".full-toc .post-toc .post-toc-content .toc-link").click(function () {
-    var target = $(this.hash);
-    $(".post").animate({scrollTop: $(target).offset().top+$(".post").scrollTop()}, 500);
+    container.animate({scrollTop: $($(this).attr("href")).offset().top+container.scrollTop()}, 500);
     return false;
   });
   if($("#comments").hasClass("disqus")){
