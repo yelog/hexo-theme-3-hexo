@@ -6,15 +6,30 @@
     z-index 30
     -webkit-overflow-scrolling: touch
     position absolute
+    margin-left: -585px
+    &.fullscreen
+      margin-left: 0px
+    &.mobile
+      margin-left: 0px
   .post
     .pjax,.pjax.fullscreen
       padding 0 18px
       max-width 100%
-  .full-toc #rocket
-    &:hover::before
-      color #283444
-    &.launch:before
-      color #449fdb
+  .full-toc
+    .full
+      .min:before
+        float: left
+        width: 50%
+        content: "\e98c"
+      .max:before
+        float: left
+        width: 50%
+        content: "\e98b"
+    #rocket
+      &:hover::before
+        color #283444
+      &.launch:before
+        color #449fdb
 @media screen and (max-width: 426px)
   .nav
     width: 100%

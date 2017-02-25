@@ -81,6 +81,7 @@ $(".nav-right form span input[type=checkbox]").on("change",function (e) {
 });
 
 $(".full-toc .full").click(function (e) {
+  $(".nav").removeClass("mobile");
   if ($(this).children().hasClass("min")) {
     $(this).children().removeClass("min").addClass("max");
     $(".nav").addClass("fullscreen");
@@ -120,6 +121,9 @@ $(function () {
       $("#rocket").removeClass("launch").css("opacity","1").css("display","none");
     }
   })
+  if($(window).width() <= 1024 && window.location.pathname=="/") {
+    $(".full-toc .full").trigger("click");
+  }
 });
 
 
