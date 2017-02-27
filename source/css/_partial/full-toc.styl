@@ -1,117 +1,117 @@
 .full-toc
   .full
-    display: block
-    position: fixed
-    top: 20px
-    right: 30px
-    z-index: 30
-    width: 42px
-    height: 42px
-    padding: 0
-    background: transparent
-    border: none
-    border-radius: 2px
-    outline: none
-    overflow: hidden
-    cursor: pointer
+    display block
+    position fixed
+    top 20px
+    right 30px
+    z-index 30
+    width 42px
+    height 42px
+    padding 0
+    background transparent
+    border none
+    border-radius 2px
+    outline none
+    overflow hidden
+    cursor pointer
     .min ,.max
-      transform: translateX(50%)
-      padding-top: 9px
-      display: block
-      width: 200%
-      height: 42px
-      margin-left: -100%
-      font-size: 24px
-      line-height: 42px
-      color: #fff
-      background: #474d57
-      overflow: hidden
+      transform translateX(50%)
+      padding-top 9px
+      display block
+      width 200%
+      height 42px
+      margin-left -100%
+      font-size 24px
+      line-height 42px
+      color #fff
+      background #474d57
+      overflow hidden
     .min:before
-      float: left
-      width: 50%
-      content: "\e98b"
+      float left
+      width 50%
+      content "\e98b"
     .max:before
-      float: left
-      width: 50%
-      content: "\e98c"
+      float left
+      width 50%
+      content "\e98c"
   .post-toc-menu
-    display: block
-    position: fixed
-    top: 63px
-    right: 30px
-    z-index: 20
-    width: 42px
-    height: 42px
-    padding: 0
-    background: transparent
-    border: none
-    border-radius: 2px
-    outline: none
-    overflow: hidden
-    cursor: pointer
+    display block
+    position fixed
+    top 63px
+    right 30px
+    z-index 20
+    width 42px
+    height 42px
+    padding 0
+    background transparent
+    border none
+    border-radius 2px
+    outline none
+    overflow hidden
+    cursor pointer
     &-icons
-      display: block
-      padding-top: 9px
-      width: 200%
-      height: 42px
-      font-size: 24px
-      line-height: 42px
-      color: #fff
-      background: #474d57
-      overflow: hidden
+      display block
+      padding-top 9px
+      width 200%
+      height 42px
+      font-size 24px
+      line-height 42px
+      color #fff
+      background #474d57
+      overflow hidden
       &:before
-        float: left
-        width: 50%
-        content: "\e9ba"
+        float left
+        width 50%
+        content "\e9ba"
   .post-toc
-    width: 200px;
-    height: 100%;
-    padding-top: 10px;
-    position: fixed;
-    top: 106px;
-    bottom: 0;
-    right: -200px;
-    z-index: 20;
-    background: rgba(250,250,250,0.9);
-    border-top: 1px solid #e5e8ec;
-    border-left: 1px solid #e5e8ec;
-    border-radius: 10px 0 0 0;
-    display: block;
-    overflow-y: scroll;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-    transition: transform .35s cubic-bezier(.77, 0, .175, 1);
+    width 200px
+    height 100%
+    padding-top 10px
+    position fixed
+    top 106px
+    bottom 0
+    right -200px
+    z-index 20
+    background rgba(250,250,250,0.9)
+    border-top 1px solid #e5e8ec
+    border-left 1px solid #e5e8ec
+    border-radius 10px 0 0 0
+    display block
+    overflow-y scroll
+    -webkit-user-select none
+    -moz-user-select none
+    -ms-user-select none
+    -o-user-select none
+    user-select none
+    transition transform .35s cubic-bezier(.77, 0, .175, 1)
     &.open
-      transform: translateX(-100%);
+      transform translateX(-100%)
     .post-toc-title
-      padding: 0 0 5px 11px;
-      color: #2C353D;
-      font-size: 1em;
-      display: block;
+      padding 0 0 5px 11px
+      color #2C353D
+      font-size 1em
+      display block
     .post-toc-content
       ol
-        margin: 0;
-        padding: 0 10px 20px 15px;
-        line-height: 1.6;
+        margin 0
+        padding 0 10px 20px 15px
+        line-height 1.6
         li
-          font-size: 1em;
-          color: #7D8B99;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-          display: block;
-          overflow: hidden;
+          font-size 1em
+          color #7D8B99
+          white-space nowrap
+          text-overflow ellipsis
+          display block
+          overflow hidden
     a:hover
-      color: #309e85
+      color #309e85
   #rocket
     position fixed
     bottom 30px
     top auto
     right 20px
     font-size 40px
-    z-index: 21
+    z-index 21
     display none
     opacity 0
     transition opacity .8s,bottom .8s
@@ -121,23 +121,23 @@
       color #449fdb
     &:before
       content "\e900"
-      position: absolute;
-      bottom: 0px;
-      right: -4px;
+      position absolute
+      bottom 0px
+      right -4px
       transition color .5s
     &.launch
-      bottom 450px;
+      bottom 450px
       opacity 0
       &:before
         content "\e900"
-        position: absolute;
-        bottom: 0px;
-        right: -4px;
+        position absolute
+        bottom 0px
+        right -4px
         color #449fdb
       &:after
         content "\e9a9"
-        position: absolute;
-        right: 9px;
-        bottom: -16px;
-        font-size: 21px;
+        position absolute
+        right 9px
+        bottom -16px
+        font-size 21px
         color red
