@@ -14,6 +14,11 @@ link:
   weibo: http://weibo.com/u/2307534817
   email: jaytp@qq.com
 
+author:
+  on: false
+  authors:
+    author1: yelog
+    author2: 小马哥
 
 # Table of contents | 文章目录
 toc:
@@ -64,6 +69,8 @@ youyan:
 
 CDN:
   jquery: //cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js
+  jquery_ui: //cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js
+  jquery_ui_css: //cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css
   highlight: //cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js
   pjax: //cdnjs.cloudflare.com/ajax/libs/jquery.pjax/1.9.6/jquery.pjax.min.js
   animate: //cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css

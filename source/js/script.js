@@ -2,9 +2,13 @@ jQuery.expr[':'].contains = function(a, i, m){
   return jQuery(a).text().toUpperCase()
           .indexOf(m[3].toUpperCase()) >= 0;
 };
-jQuery.expr[':'].Contains = function(a, i, m){
+jQuery.expr[':'].contains_tag = function(a, i, m){
   var tags =  jQuery(a).data("tag").split(",");
   return $.inArray(m[3],tags)!=-1;
+};
+jQuery.expr[':'].contains_author = function(a, i, m){
+    var tags =  jQuery(a).data("author").split(",");
+    return $.inArray(m[3],tags)!=-1;
 };
 
 var content = $(".pjax");
@@ -68,9 +72,17 @@ function inputChange(e) {
   if(val==""){
     $(".nav-right nav a").css("display","block");
   }else if(val.substr(0,1)=="#"){
+      $("div.ac > ul").attr("class","tag");
+      $("div.acParent").css("display","block");
     $(".nav-right nav a").css("display","none");
-    $(".nav-right nav").find("a:Contains('"+val.substr(1)+"')").css("display","block");
+    $(".nav-right nav").find("a:contains_tag('"+val.substr(1)+"')").css("display","block");
+  }else if (val.substr(0,1)=="@") {
+      $("div.ac > ul").attr("class","author");
+      $("div.acParent").css("display","block");
+      $(".nav-right nav a").css("display","none");
+      $(".nav-right nav").find("a:contains_author('"+val.substr(1)+"')").css("display","block");
   }else{
+      $("div.acParent").css("display","none");
     $(".nav-right nav a").css("display","none");
     $(".nav-right nav").find("a:contains('"+val+"')").css("display","block");
   }
@@ -135,6 +147,12 @@ function bind() {
       $(".full-toc .full").trigger("click");
     }
   });
+    $(".post .pjax article .article-meta .author").on("click", function (e) {
+        $(".nav-right form input").val("@" + $(this).text().trim()).change();
+        if($(window).width() <= 1024) {
+            $(".full-toc .full").trigger("click");
+        }
+    });
   //初始化文章toc
   $(".post-toc-content").html($(".post .pjax article .toc-ref .toc").clone());
   //绑定文章toc的滚动事件

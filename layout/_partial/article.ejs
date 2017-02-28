@@ -10,6 +10,9 @@
         <% }) %>
       </span>
       <% } %>
+      <% if (theme.author.on==true && post.author) {%>
+      <span class="author"><%=post.author %></span>
+      <%}%>
       <% if (post.top){ %>
       <span class="top">置顶</span>
       <%}%>

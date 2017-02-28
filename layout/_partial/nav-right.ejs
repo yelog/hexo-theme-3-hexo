@@ -9,7 +9,10 @@
 <%- partial('_partial/tag') %>
 <nav>
     <% site.posts.forEach(function(post, i){  %>
-    <a <% if(post.top){%>id="top"<%}%> class="<% post.categories.forEach(function(category, i){ %><%=category.name%> <% }) %>" href="<%- url_for(post.path) %>" data-tag="<% post.tags.forEach(function(tag, i){ %><%=tag.name%><% if (i+1<post.tags.length){%>,<%}})%>">
+    <a <% if(post.top){%>id="top"<%}%> class="<% post.categories.forEach(function(category, i){ %><%=category.name%> <% }) %>"
+       href="<%- url_for(post.path) %>"
+       data-tag="<% post.tags.forEach(function(tag, i){ %><%=tag.name%><% if (i+1<post.tags.length){%>,<%}})%>"
+       data-author="<%=post.author %>">
         <span class="post-title" title="<%=post.title %>"><%=post.title %></span>
         <span class="post-date" title="<%= date(post.date, 'YYYY-MM-DD HH:mm:ss')%>"><%= date(post.date, 'YYYY/MM/DD') %></span>
     </a>
