@@ -10,7 +10,7 @@ demo:[叶落阁](http://yelog.org/)
 3. 通过文章分类、标签或标题关键字检索
 4. 移动端适配
 5. 评论
-6. [多作者模式](http://yelog.org/2017/02/28/3-hexo%E5%A4%9A%E4%BD%9C%E8%80%85%E6%A8%A1%E5%BC%8F/)
+6. <a href="http://yelog.org/2017/02/28/3-hexo%E5%A4%9A%E4%BD%9C%E8%80%85%E6%A8%A1%E5%BC%8F/" target="_blank" >多作者模式</a>
 
 ### 安装
 ```bash
