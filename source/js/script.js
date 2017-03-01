@@ -26,7 +26,7 @@ $(document).on({
     NProgress.done();
     container.scrollTop(0);
     afterPjax();
-    if($(window).width() <= 1024) {
+    if($(window).width() <= 1025) {
       $(".full-toc .full").trigger("click");
     }
   }
@@ -133,9 +133,6 @@ $(function () {
       $("#rocket").removeClass("launch").css("opacity","1").css("display","none");
     }
   })
-  if($(window).width() <= 1024 && window.location.pathname=="/") {
-    $(".full-toc .full").trigger("click");
-  }
 });
 
 
