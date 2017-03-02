@@ -171,4 +171,25 @@ function bind() {
     });
   }
   $(document).pjax('.post .pjax article a[target!=_blank]', '.pjax', {fragment:'.pjax', timeout:8000});
+
+  $(".pjax").find('img').each(function(){
+    var alt = this.alt;
+    if (alt){
+      $(this).after('<div class="img_alt"><span>' + alt + '</span></div>');
+    }
+    $(this).on("click",function (e) {
+      var img_size = "";
+      if((this.width/this.height)>(document.body.clientWidth/document.body.clientHeight)){
+        img_size = "width:100%;"
+      }else{
+        img_size = "height:100%;"
+      }
+      $("body").append('<div class="img_max" style="position: fixed; left: 0px; right: 0px; top: 0px; bottom: 0px; height: 100%; width: 100%; z-index: 39; background: rgb(255, 255, 255); opacity: 0.8;"></div>');
+      $("body").append('<img class="img_max" src="'+this.src+'" style="cursor:zoom-out;position:fixed; z-index: 40; left:50%;top:50%;transform: translate(-50%, -50%);'+img_size+'">');
+      $(".img_max").on("click", function (e) {
+        $(".img_max").remove();
+      })
+    })
+  });
+
 }
