@@ -90,6 +90,7 @@ function inputChange(e) {
 
 $(".nav-right form span input[type=checkbox]").on("change",function (e) {
   $(".nav-right .tags-list").css("display",$(this).prop("checked")?"block":"none");
+  $(".nav-right nav").css("top",$(this).prop("checked")?$(".nav-right form").height()+$(".nav-right .tags-list").height()+51:$(".nav-right form").height()+1+"px");
 });
 
 $(".full-toc .full").click(function (e) {
