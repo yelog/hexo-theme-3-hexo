@@ -26,7 +26,7 @@ $(document).on({
     NProgress.done();
     container.scrollTop(0);
     afterPjax();
-    if($(window).width() <= 1025) {
+    if($(window).width() <= 1024) {
       $(".full-toc .full").trigger("click");
     }
   }
@@ -93,7 +93,11 @@ $(".nav-right form span input[type=checkbox]").on("change",function (e) {
 });
 
 $(".full-toc .full").click(function (e) {
-  $(".nav").removeClass("mobile");
+  if($(window).width() <= 1024 && $(".nav").hasClass("mobile")){
+    $(".nav").removeClass("mobile");
+    $(this).children().removeClass("mobile");
+    return;
+  }
   if ($(this).children().hasClass("min")) {
     $(this).children().removeClass("min").addClass("max");
     $(".nav").addClass("fullscreen");
