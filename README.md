@@ -1,7 +1,7 @@
 hexo-theme-yilia
 ================
 3-hexo 是为[hexo](https://github.com/tommy351/hexo)制作的主题。  
-demo:[叶落阁](http://yelog.org/)  
+demo:[yelog.org](http://yelog.org/)  
 ——————————————  
 **关于主题：**
 
@@ -18,7 +18,7 @@ git clone git@github.com:yelog/hexo-theme-3-hexo.git theme/3-hexo
 ```
 >将hexo根目录的_config.yml中的修改两处  
 1. **theme** 改为 `3-hexo`   
-2. **highlight enable** 改为 `false`
+2. **highlight enable** 改为 `false`  
 3. 在hexo 根目录source下添加avatar.jpg文件，作为头像
 
 ### 更新
