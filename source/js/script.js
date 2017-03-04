@@ -43,7 +43,7 @@ function afterPjax() {
 }
 
 $(".nav-left ul li").on("click",function (e) {
-  $(".nav-right form .search").val("");
+  $(".nav-right form .search").val("").change();
   $(this).siblings(".active").removeClass("active");
   $(this).addClass("active");
   var $handle = $(".nav-right nav a");
