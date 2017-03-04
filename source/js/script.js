@@ -72,15 +72,19 @@ function inputChange(e) {
   if(val==""){
     $(".nav-right nav a").css("display","block");
   }else if(val.substr(0,1)=="#"){
+    if(val.substr(1).length != 0){
       $("div.ac > ul").attr("class","tag");
       $("div.acParent").css("display","block");
-    $(".nav-right nav a").css("display","none");
-    $(".nav-right nav").find("a:contains_tag('"+val.substr(1)+"')").css("display","block");
+      $(".nav-right nav a").css("display","none");
+      $(".nav-right nav").find("a:contains_tag('"+val.substr(1)+"')").css("display","block");
+    }
   }else if (val.substr(0,1)=="@") {
+    if(val.substr(1).length != 0){
       $("div.ac > ul").attr("class","author");
       $("div.acParent").css("display","block");
       $(".nav-right nav a").css("display","none");
       $(".nav-right nav").find("a:contains_author('"+val.substr(1)+"')").css("display","block");
+    }
   }else{
       $("div.acParent").css("display","none");
     $(".nav-right nav a").css("display","none");
