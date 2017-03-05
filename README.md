@@ -1,4 +1,4 @@
-hexo-theme-yilia
+hexo-theme-3-hexo
 ================
 3-hexo 是为[hexo](https://github.com/tommy351/hexo)制作的主题。  
 demo:[yelog.org](http://yelog.org/)  
