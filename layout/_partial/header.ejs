@@ -10,7 +10,9 @@
     <link rel="icon" href="<%- theme.favicon %>">
   <% } %>
   <%- css('css/style') %>
-  <%- css('css/hl_theme/'+theme.highlight) %>
+  <% if(theme.highlight && theme.highlight.on && theme.highlight.theme){ %>
+  <%- css('css/hl_theme/'+theme.highlight.theme) %>
+  <%}%>
   <link href="<%=theme.CDN.animate %>" rel="stylesheet">
   <link href="<%=theme.CDN.font_awsome %>" rel="stylesheet">
   <script src="<%=theme.CDN.jquery%>"></script>

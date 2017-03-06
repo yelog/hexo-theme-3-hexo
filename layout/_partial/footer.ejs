@@ -17,6 +17,18 @@
             $(".shang_payimg img").attr("src","/img/"+$("input[name=pay]:checked").val()+".jpg");
         })
         <%}%>
+        <%if(theme.highlight && theme.highlight.on&& theme.highlight.lineNum){%>
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1;
+            var $numbering = $('<ul/>').addClass('pre-numbering').attr("unselectable","on");
+            $(this).addClass('has-numbering')
+                    .parent()
+                    .append($numbering);
+            for(i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        <%}%>
     }
     <% if(theme.reward){%>
     function dashangToggle() {
@@ -25,3 +37,28 @@
     }
     <%}%>
 </script>
+<%if(theme.highlight && theme.highlight.on && theme.highlight.lineNum){%>
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 3px;
+        border: 1px solid #C3CCD0;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        padding-left: 40px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 9px 2px 12px 5px;
+        text-align: right;
+        color: <% if(theme.highlight.theme=="brown-paper"){ %>#616161<%}else{%>#AAA<%}%>;
+    }
+</style>
+<%}%>
