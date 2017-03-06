@@ -192,8 +192,8 @@ function bind() {
         }else{
           img_size = "height:100%;"
         }
-        $("body").append('<div class="img_max" style="position: fixed; left: 0px; right: 0px; top: 0px; bottom: 0px; height: 100%; width: 100%; z-index: 39; background: rgb(255, 255, 255); opacity: 0.8;"></div>');
-        $("body").append('<img class="img_max" src="'+this.src+'" style="cursor:zoom-out;position:fixed; z-index: 40; left:50%;top:50%;transform: translate(-50%, -50%);'+img_size+'">');
+        $("body").append('<div class="img_max" style="position: fixed; left: 0px; right: 0px; top: 0px; bottom: 0px; height: 100%; width: 100%; z-index: 50; background: rgb(255, 255, 255); opacity: 0.8;"></div>');
+        $("body").append('<img class="img_max" src="'+this.src+'" style="cursor:zoom-out;position:fixed; z-index: 51; left:50%;top:50%;transform: translate(-50%, -50%);'+img_size+'">');
         $(".img_max").on("click", function (e) {
           $(".img_max").remove();
         })

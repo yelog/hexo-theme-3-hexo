@@ -13,4 +13,14 @@
             $(".post .pjax table").addClass("green");
         <% } %>
     }
+    
+    function dashangToggle() {
+        $(".post .pjax .shang_box").fadeToggle();
+        $(".post .pjax .hide_box").fadeToggle();
+    }
+    $(function () {
+        $("input[name=pay]").on("click", function () {
+            $(".shang_payimg img").attr("src","/img/"+$("input[name=pay]:checked").val()+".jpg");
+        })
+    })
 </script>
