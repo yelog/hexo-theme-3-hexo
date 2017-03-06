@@ -36,12 +36,12 @@
       <% } %>
     </div>
 </article>
+<% if(theme.reward){%>
 <p>
     <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
 </p>
-<div class="hide_box"></div>
+<div class="hide_box" onclick="dashangToggle()"></div>
 <div class="shang_box">
-    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
     <div class="shang_tit">
         <p>喜欢就点赞,疼爱就打赏</p>
     </div>
@@ -52,6 +52,7 @@
         <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
     </div>
 </div>
+<%}%>
 <% if (!index && post.comments){ %>
     <% if (theme.duoshuo.on) { %>
         <%- partial('comments/duoshuo', {

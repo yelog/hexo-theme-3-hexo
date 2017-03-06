@@ -36,6 +36,10 @@ disqus:
   # It is unnecessary to enable disqus here if
   # you have set "disqus_shortname" in your site's "_config.yml"
 
+reward: true
+# true 开启打赏功能
+
+
 table: green
 # table 的样式
 # 为空时类似github的table样式

@@ -8,19 +8,20 @@
             'width': 418
         }).AutoComplete('show');
     })
-    function initTable() {
+    function initArticle() {
         <% if(theme.table && theme.table=='green'){ %>
             $(".post .pjax table").addClass("green");
         <% } %>
+        <% if(theme.reward){%>
+        $("input[name=pay]").on("click", function () {
+            $(".shang_payimg img").attr("src","/img/"+$("input[name=pay]:checked").val()+".jpg");
+        })
+        <%}%>
     }
-    
+    <% if(theme.reward){%>
     function dashangToggle() {
         $(".post .pjax .shang_box").fadeToggle();
         $(".post .pjax .hide_box").fadeToggle();
     }
-    $(function () {
-        $("input[name=pay]").on("click", function () {
-            $(".shang_payimg img").attr("src","/img/"+$("input[name=pay]:checked").val()+".jpg");
-        })
-    })
+    <%}%>
 </script>
