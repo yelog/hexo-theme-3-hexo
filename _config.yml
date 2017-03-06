@@ -36,6 +36,11 @@ disqus:
   # It is unnecessary to enable disqus here if
   # you have set "disqus_shortname" in your site's "_config.yml"
 
+table: green
+# table 的样式
+# 为空时类似github的table样式
+# green 绿色样式
+
 highlight: sublime
 # 代码高亮主题,效果可以查看 https://highlightjs.org/static/demo/
 # 支持主题：

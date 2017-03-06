@@ -8,4 +8,9 @@
             'width': 418
         }).AutoComplete('show');
     })
+    function initTable() {
+        <% if(theme.table && theme.table=='green'){ %>
+            $(".post .pjax table").addClass("green");
+        <% } %>
+    }
 </script>

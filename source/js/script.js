@@ -146,6 +146,7 @@ $(function () {
 
 
 function bind() {
+  initTable();
   //绑定文章内tag的搜索事件
   $(".post .pjax article .article-meta .tag a").on("click", function (e) {
     $(".nav-right form input").val("#" + $(this).text().trim()).change();
