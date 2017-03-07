@@ -41,22 +41,4 @@
     <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
 </p>
 <%}%>
-<% if (!index && post.comments){ %>
-    <% if (theme.duoshuo.on) { %>
-        <%- partial('comments/duoshuo', {
-            key: post.path,
-            title: post.title,
-            url: config.url+url_for(post.path),
-        }) %>
-    <% } else if (theme.youyan.on) { %>
-        <%- partial('comments/youyan') %>
-    <% } else if (theme.disqus.on) { %>
-        <%- partial('comments/disqus', {
-            shortname: theme.disqus.shortname
-        }) %>
-    <% } else if (config.disqus_shortname) { %>
-        <%- partial('comments/disqus', {
-            shortname: config.disqus_shortname
-        }) %>
-    <% } %>
-<% } %>
+<%- partial('_partial/comment', {post: post, index: index})%>
