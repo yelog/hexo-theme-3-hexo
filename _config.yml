@@ -1,6 +1,6 @@
 # 你的头像url
-avatar: /avatar.jpg
-favicon: /avatar.jpg
+avatar: /img/avatar.jpg
+favicon: /img/avatar.jpg
 
 #链接图标，链接为空则不显示
 link:
@@ -17,7 +17,7 @@ link:
 author:
   on: false
   authors:
-    author1: yelog
+    author1: 阿杰
     author2: 小马哥
 
 # Table of contents | 文章目录
