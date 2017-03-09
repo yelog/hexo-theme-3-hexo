@@ -70,7 +70,6 @@ disqus:
   # It is unnecessary to enable disqus here if
   # you have set "disqus_shortname" in your site's "_config.yml"
 
-# 暂时还有些问题，建议使用disqus
 duoshuo:
   on: true
   domain: jaytp
