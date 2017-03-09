@@ -43,7 +43,7 @@
 
     <h2 id="关于叶落阁">关于叶落阁</h2>
     <p><strong>叶落阁</strong>是阿杰（杨玉杰）的个人站。</p>
-    <p>到目前为止已经写了<code><%=site.posts.length%></code>篇文章， 共<code><%=totalcount(site)%></code>字</p>
+    <p>到目前为止已经写了<code><%=site.posts.length%></code>篇文章<%if(theme.word_count){%>， 共<code><%=totalcount(site)%></code>字</p><%}%>
     <h2 id="博客平台">博客平台</h2>
 
     <p>这个博客通过 <a href="https://hexo.io/" target="_blank">Hexo</a> 生成，部署在 <a href="https://pages.github.com/"
