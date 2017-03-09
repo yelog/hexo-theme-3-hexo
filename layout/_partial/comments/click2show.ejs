@@ -10,13 +10,17 @@
         var $commentBar = $("#comments aside.comment-bar");
         var load$hide = function(){
             $commentBar.find("a > i").toggle();
+            <% if (theme.duoshuo.on) {%>
+            pajx_loadDuodsuo();
+            <%} else {%>
             loadComment();
+            <%}%>
             $commentBar.fadeOut(800);
         }
         $commentBar.click(function(){
             load$hide();
         })
-        $commentBar.children("a").hover(function(){
+        $commentBar.children("a").mouseenter(function(){
             load$hide();
         })
         if (window.location.hash === "#comments") {

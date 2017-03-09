@@ -2,14 +2,14 @@
     <div id="comment-box" ></div>
     <div class="ds-thread" id="ds-thread" data-thread-key="<%=key%>" data-title="<%=title%>" data-url="<%=url%>"></div>
     <script>
-        var duoshuoQuery = {short_name:"<%=theme.duoshuo.domain%>"};
-        var loadComment = function(){
+        var duoshuoQuery;
+        function loadComment() {
+            duoshuoQuery = {short_name: $(".theme_duoshuo_domain").val()};
             var d = document, s = d.createElement('script');
-            s.src = 'https://static.duoshuo.com/embed.js';
+            s.src = 'https://static.duoshuo.com/embed.js?t='+new Date().getTime();
             s.async = true; s.charset = 'UTF-8';
             (d.head || d.body).appendChild(s);
         }
-
         <% if (!theme.preload_comment) { %>
         // Add comment count
         $(function(){

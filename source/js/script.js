@@ -40,6 +40,9 @@ function afterPjax() {
   if($(".theme_disqus_on").val()=="true" && $(".theme_preload_comment").val()=="false"){
     DISQUSWIDGETS.getCount({reset: true});
   }
+  if($(".theme_duoshuo_on").val()=="true" && $(".theme_preload_comment").val()!="false"){
+    pajx_loadDuodsuo();
+  }
 }
 
 $(".nav-left ul li").on("click",function (e) {
@@ -144,6 +147,23 @@ $(function () {
   })
 });
 
+/**
+ * pjax后需要回调函数.加载多说
+ */
+function pajx_loadDuodsuo(){
+  if(typeof duoshuoQuery =="undefined"){
+    loadComment();
+  } else {
+    var dus=$(".ds-thread");
+    if($(dus).length==1){
+      var el = document.createElement('div');
+      el.setAttribute('data-thread-key',$(dus).attr("data-thread-key"));//必选参数
+      el.setAttribute('data-url',$(dus).attr("data-url"));
+      DUOSHUO.EmbedThread(el);
+      $(dus).html(el);
+    }
+  }
+}
 
 function bind() {
   initArticle();

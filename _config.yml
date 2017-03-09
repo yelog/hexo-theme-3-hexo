@@ -14,31 +14,21 @@ link:
   weibo: http://weibo.com/u/2307534817
   email: jaytp@qq.com
 
+##########多作者模式############
 author:
   on: false
   authors:
     author1: 阿杰
     author2: 小马哥
-
-# Table of contents | 文章目录
-toc:
-  max_depth: 3  # 1 - 6 (h1-h6) 目录最大级数
-
-
-preload_comment: false
-## false: 当点击评论条等区域时再加载评论模块
-## true: 页面加载时加载评论区
-
-disqus:
-  on: true
-  shortname: yelog
-  # https://help.disqus.com/customer/en/portal/articles/466208-what-s-a-shortname-
-  # It is unnecessary to enable disqus here if
-  # you have set "disqus_shortname" in your site's "_config.yml"
+##############################
 
 reward: true
 # true 开启打赏功能
 
+##########样式设置##############
+# Table of contents | 文章目录
+toc:
+  max_depth: 3  # 1 - 6 (h1-h6) 目录最大级数
 
 table: green
 # table 的样式
@@ -66,10 +56,23 @@ highlight:
 # kimbie-dark :
 # kimbie-light :
 # school-book : 纸张效果
+##############################
+
+##########评论设置#############
+preload_comment: true
+## false: 当点击评论条等区域时再加载评论模块
+## true: 页面加载时加载评论区
+
+disqus:
+  on: false
+  shortname: yelog
+  # https://help.disqus.com/customer/en/portal/articles/466208-what-s-a-shortname-
+  # It is unnecessary to enable disqus here if
+  # you have set "disqus_shortname" in your site's "_config.yml"
 
 # 暂时还有些问题，建议使用disqus
 duoshuo:
-  on: false
+  on: true
   domain: jaytp
   # 是否开启多说评论，http://duoshuo.com/create-site/
   # 使用上面网址登陆你的多说，然后创建站点，在 domain 中填入你设定的域名前半部分
@@ -77,8 +80,9 @@ duoshuo:
 
 youyan:
   on: false
+##############################
 
-
+##########CND设置#############
 CDN:
   jquery: //cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js
   jquery_ui: //cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js
@@ -88,4 +92,4 @@ CDN:
   animate: //cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css
   font_awsome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
   nprogres_js: //cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js
-
+##############################
