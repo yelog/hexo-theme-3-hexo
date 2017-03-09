@@ -29,6 +29,9 @@
             }
         });
         <%}%>
+        <%if(theme.visit_counter && theme.visit_counter.on) {%>
+        $.getScript("//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js");
+        <%}%>
     }
     <% if(theme.reward){%>
     function dashangToggle() {
