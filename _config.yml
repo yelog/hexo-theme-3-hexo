@@ -59,7 +59,7 @@ highlight:
 ##############################
 
 ##########评论设置#############
-preload_comment: true
+preload_comment: false
 ## false: 当点击评论条等区域时再加载评论模块
 ## true: 页面加载时加载评论区
 
