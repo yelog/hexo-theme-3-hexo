@@ -30,10 +30,11 @@ reward: true
 toc:
   max_depth: 3  # 1 - 6 (h1-h6) 目录最大级数
 
-table: green
+table: green_title
 # table 的样式
 # 为空时类似github的table样式
 # green 绿色样式
+# green_title 头部为青色的table样式
 
 highlight:
   on: true # true开启代码高亮

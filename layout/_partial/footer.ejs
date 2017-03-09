@@ -9,8 +9,8 @@
         }).AutoComplete('show');
     })
     function initArticle() {
-        <% if(theme.table && theme.table=='green'){ %>
-            $(".post .pjax table").addClass("green");
+        <% if(theme.table){ %>
+            $(".post .pjax table").addClass("<%=theme.table%>");
         <% } %>
         <% if(theme.reward){%>
         $("input[name=pay]").on("click", function () {
