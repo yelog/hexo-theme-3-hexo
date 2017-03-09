@@ -44,7 +44,7 @@
     <h2 id="关于叶落阁">关于叶落阁</h2>
     <p><strong>叶落阁</strong>是阿杰（杨玉杰）的个人站。</p>
     <p>到目前为止已经写了<code><%=site.posts.length%></code>篇文章<%if(theme.word_count){%>， 共<code><%=totalcount(site)%></code>字</p><%}%>
-    <%if(theme.visit_counter && theme.visit_counter.on && theme.visit_counter.page_visit) {%>
+    <%if(theme.visit_counter && theme.visit_counter.on && theme.visit_counter.site_visit) {%>
     <span id="busuanzi_container_site_uv">本站访问人数：<code><span id="busuanzi_value_site_uv"></span></code>人次</span>
     <span id="busuanzi_container_site_pv">， 访问量：<code><span id="busuanzi_value_site_pv"></span></code>次</span>
     <%}%>
