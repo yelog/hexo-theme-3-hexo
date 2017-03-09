@@ -3,6 +3,7 @@
       <% if (post.date){ %>
       <time class="date" title="<%= date(post.date, 'YYYY-MM-DD HH:mm:ss')%>"><%= date(post.date, 'YYYY MMMM DD') %></time>
       <% } %>
+      <span>字数:<%=wordcount(post.content) %></span>
       <% if (post.tags && post.tags.length){ %>
       <span class="tag">
         <% post.tags.forEach(function(tag, i){ %>
@@ -41,4 +42,5 @@
     <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
 </p>
 <%}%>
+<%- partial('_partial/article_copyright')%>
 <%- partial('_partial/comment', {post: post, index: index})%>

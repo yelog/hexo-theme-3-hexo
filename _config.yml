@@ -25,6 +25,9 @@ author:
 reward: true
 # true 开启打赏功能
 
+copyright: true
+# Copyright info. of post | 文末版权信息
+
 ##########样式设置##############
 # Table of contents | 文章目录
 toc:
