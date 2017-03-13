@@ -1,4 +1,9 @@
-<%- toc(post.content, {list_number: false}) %>
+<div class="toc-ref">
+    <% if(index){ %>
+        <%- toc(partial('index.md'), {list_number: false}) %>
+    <%} else {%>
+        <%- toc(post.content, {list_number: false}) %>
+    <% } %>
 <style>
     .left-col .switch-btn,
     .left-col .switch-area {
@@ -9,3 +14,4 @@
         display: none !important;
     }
 </style>
+</div>

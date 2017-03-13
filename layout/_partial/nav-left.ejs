@@ -37,3 +37,5 @@
     <li data-rel="<%=category.name%>"> <%=category.name%> </li>
     <% }) %>
 </ul>
+<input type="hidden" id="yelog_site_posts_number" value="<%=site.posts.length%>">
+<input type="hidden" id="yelog_site_word_count" value="<%=totalcount(site)%>">

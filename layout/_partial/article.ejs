@@ -28,9 +28,7 @@
     <% if (post.title){ %>
         <h1 class="article-title"><%= post.title %></h1>
     <% } %>
-    <div class="toc-ref">
-        <%- partial('_partial/toc-ref') %>
-    </div>
+    <%- partial('_partial/toc-ref', {index: false}) %>
     <div class="article-entry" itemprop="articleBody">
       <% if (post.excerpt && index){ %>
         <%- post.excerpt %>

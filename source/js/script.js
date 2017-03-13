@@ -167,6 +167,10 @@ function pajx_loadDuodsuo(){
 
 function bind() {
   initArticle();
+  $(".article_number").text($("#yelog_site_posts_number").val());
+  $(".site_word_count").text($("#yelog_site_word_count").val());
+  $(".post .pjax .index").find("br").remove();
+  $(".post .pjax .index h1:eq(0)").addClass("article-title");
   //绑定文章内tag的搜索事件
   $(".post .pjax article .article-meta .tag a").on("click", function (e) {
     $(".nav-right form input").val("#" + $(this).text().trim()).change();

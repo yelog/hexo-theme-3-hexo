@@ -12,7 +12,15 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <%- partial('_partial/index') %>
+        <article class="index">
+            <%- partial('_partial/toc-ref', {index: true}) %>
+            <%-markdown(partial('index.md')) %>
+        </article>
+        <% if(theme.reward){%>
+        <p>
+            <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+        </p>
+        <%}%>
     </div>
     <div class="copyright">
         <%- partial('_partial/copyright')%>
