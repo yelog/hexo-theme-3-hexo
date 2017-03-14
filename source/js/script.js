@@ -202,7 +202,7 @@ function bind() {
   }
   $(document).pjax('.post .pjax article a[target!=_blank]', '.pjax', {fragment:'.pjax', timeout:8000});
 
-  $(".pjax,.shang_payimg").find('img').each(function(){
+  $(".pjax").find('img').each(function(){
     $(this).wrap("<div class='div_img'></div>");
     var alt = this.alt;
     if (alt){

@@ -14,7 +14,11 @@
         <% } %>
         <% if(theme.reward){%>
         $("input[name=pay]").on("click", function () {
-            $(".shang_payimg img").attr("src","/img/"+$("input[name=pay]:checked").val()+".jpg");
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
         })
         <%}%>
         <%if(theme.highlight && theme.highlight.on&& theme.highlight.lineNum){%>
