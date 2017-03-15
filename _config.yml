@@ -47,7 +47,7 @@ toc:
 #文章列表 鼠标移上去的样式
 article_list:
   hover:
-    background: '#fbf4a8'  # 背景色:提供几种：'#c1bfc1'  '#fbf4a8'
+    background: '#e2e0e0'  # 背景色:提供几种：'#c1bfc1'  '#fbf4a8'
     color:     # 文字颜色 提供几种：'#ffffff'
 # 注意：由于颜色如果包含#，使用单引号 ' 引起来
 
