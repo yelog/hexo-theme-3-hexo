@@ -69,3 +69,17 @@
     }
 </style>
 <%}%>
+<!--自定义样式设置-->
+<style>
+    <%if(theme.article_list.hover.background){%>
+    .nav-right nav a:hover{
+        background-color: <%=theme.article_list.hover.background %>;
+    }
+    <%}%>
+    <%if(theme.article_list.hover.color){%>
+    .nav-right nav a:hover > span{
+        color: <%=theme.article_list.hover.color %>;
+    }
+    <%}%>
+
+</style>

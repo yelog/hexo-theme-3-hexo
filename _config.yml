@@ -39,10 +39,17 @@ visit_counter:
   site_visit: true
   page_visit: true
 
-##########样式设置##############
+##########自定义样式设置##############
 # Table of contents | 文章目录
 toc:
   max_depth: 3  # 1 - 6 (h1-h6) 目录最大级数
+
+#文章列表 鼠标移上去的样式
+article_list:
+  hover:
+    background: '#fbf4a8'  # 背景色:提供几种：'#c1bfc1'  '#fbf4a8'
+    color:     # 文字颜色 提供几种：'#ffffff'
+# 注意：由于颜色如果包含#，使用单引号 ' 引起来
 
 table: green_title
 # table 的样式
