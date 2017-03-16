@@ -48,7 +48,7 @@ visit_counter:
 toc:
   max_depth: 3  # 1 - 6 (h1-h6) 目录最大级数
 
-#文章列表 鼠标移上去的样式
+#文章列表 鼠标移上去的样式, 为空时使用默认效果
 article_list:
   hover:
     background: '#e2e0e0'  # 背景色:提供几种：'#c1bfc1'  '#fbf4a8'
