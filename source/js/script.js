@@ -180,7 +180,7 @@ function bind() {
   });
   //绑定文章内分类的点击事件
   $(".post .pjax article .article-meta .book a").on("click", function (e) {
-    $(".nav-left ul li[data-rel='"+$(this).data("rel")+"']").click();
+    $(".nav-left ul li[data-rel='"+$(this).data("rel")+"']").trigger("click");
     if($(window).width() <= 1024) {
       $(".full-toc .full").trigger("click");
     }
