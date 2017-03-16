@@ -178,12 +178,19 @@ function bind() {
       $(".full-toc .full").trigger("click");
     }
   });
-    $(".post .pjax article .article-meta .author").on("click", function (e) {
-        $(".nav-right form input").val("@" + $(this).text().trim()).change();
-        if($(window).width() <= 1024) {
-            $(".full-toc .full").trigger("click");
-        }
-    });
+  //绑定文章内分类的点击事件
+  $(".post .pjax article .article-meta .book a").on("click", function (e) {
+    $(".nav-left ul li[data-rel='"+$(this).data("rel")+"']").click();
+    if($(window).width() <= 1024) {
+      $(".full-toc .full").trigger("click");
+    }
+  });
+  $(".post .pjax article .article-meta .author").on("click", function (e) {
+      $(".nav-right form input").val("@" + $(this).text().trim()).change();
+      if($(window).width() <= 1024) {
+          $(".full-toc .full").trigger("click");
+      }
+  });
   //初始化文章toc
   $(".post-toc-content").html($(".post .pjax article .toc-ref .toc").clone());
   //绑定文章toc的滚动事件

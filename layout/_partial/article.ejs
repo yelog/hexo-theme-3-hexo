@@ -1,33 +1,42 @@
 <article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
-  <div class="article-meta">
-      <% if (post.date){ %>
-      <time class="date" title="<%= date(post.date, 'YYYY-MM-DD HH:mm:ss')%>"><%= date(post.date, 'YYYY-MMM-DD') %></time>
-      <% } %>
-      <%if(theme.word_count){%>
-      <span>字数:<%=wordcount(post.content) %></span>
-      <%}%>
-      <%if(theme.visit_counter && theme.visit_counter.on && theme.visit_counter.page_visit) {%>
-        <span id="busuanzi_container_page_pv">
-            阅读量:<span id="busuanzi_value_page_pv"></span>
-        </span>
-      <%}%>
-      <% if (post.tags && post.tags.length){ %>
-      <span class="tag">
-        <% post.tags.forEach(function(tag, i){ %>
-      <a href="javascript:" class="color<%= tag.name.length % 5 + 1 %>"><%=tag.name%></a>
-        <% }) %>
-      </span>
-      <% } %>
-      <% if (theme.author.on==true && post.author) {%>
-      <span class="author"><%=post.author %></span>
-      <%}%>
-      <% if (post.top){ %>
-      <span class="top">置顶</span>
-      <%}%>
-  </div>
     <% if (post.title){ %>
         <h1 class="article-title"><%= post.title %></h1>
     <% } %>
+    <div class="article-meta">
+        <% if (post.top){ %>
+        <span class="top"><a href="javascript:">置顶</a></span>
+        <%}%>
+        <% if (theme.author.on==true && post.author) {%>
+        <span class="author"><a href="javascript:"><%=post.author %></a></span>
+        <%}%>
+        <% if (post.categories && post.categories.length){ %>
+        <span class="book">
+            <% post.categories.forEach(function(category, i){ %>
+            <a href="javascript:" data-rel="<%=category.name%>"><%=category.name%></a>
+            <% }) %>
+        </span>
+        <% } %>
+        <% if (post.tags && post.tags.length){ %>
+        <span class="tag">
+            <% post.tags.forEach(function(tag, i){ %>
+            <a href="javascript:" class="color<%= tag.name.length % 5 + 1 %>"><%=tag.name%></a>
+            <% }) %>
+        </span>
+        <% } %>
+    </div>
+    <div class="article-meta">
+        <% if (post.date){ %>
+        <time class="date" title="<%= date(post.date, 'YYYY-MM-DD HH:mm:ss')%>"><%= date(post.date, 'YYYY-MM-DD HH:mm') %></time>
+        <% } %>
+        <%if(theme.word_count){%>
+        <span>字数:<%=wordcount(post.content) %></span>
+        <%}%>
+        <%if(theme.visit_counter && theme.visit_counter.on && theme.visit_counter.page_visit) {%>
+        <span id="busuanzi_container_page_pv">
+            阅读量:<span id="busuanzi_value_page_pv"></span>
+        </span>
+        <%}%>
+    </div>
     <%- partial('_partial/toc-ref', {index: false}) %>
     <div class="article-entry" itemprop="articleBody">
       <% if (post.excerpt && index){ %>

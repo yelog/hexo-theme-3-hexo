@@ -36,11 +36,39 @@
       .article-meta
         font-size .9em
         color #BCC1C4
+        border-left: 3px solid #b4b4b4;
+        padding-left: 10px;
         .date
           &:before
             content "\e94e"
+        .top
+          &:before
+            content "\f08d"
+          a
+            color inherit
+            margin-left 5px
+            &:hover
+              text-decoration none
+              cursor text
+        .author
+          &:before
+            content "\f007"
+          &:hover
+            cursor pointer
+          a
+            margin-left 5px
+            color inherit
+            &:hover
+              text-decoration none
+        .book
+          &:before
+            content "\f02d"
+          a
+            margin-left -6px
+            color inherit
+            &:hover
+              text-decoration none
         .tag
-          margin-left 1em
           &:before
             content "\e936"
           a
@@ -51,7 +79,7 @@
             color #fff
             position relative
             border-radius 0 5px 5px 0
-            margin 5px 9px 5px 8px
+            margin 5px 4px 5px 8px
             &:hover
               text-decoration none
             &:before
@@ -93,18 +121,12 @@
               background #7B5D5F
               &:before
                 border-right-color#7B5D5F
-        .top:before
-          content "\f08d"
-        .author
-          &:before
-            content "\f007"
-            margin-right 4px
-          &:hover
-            cursor pointer
       .article-title
         margin 0
         font-size 1.8em
         border-bottom 0px
+        line-height: 31px;
+        margin-bottom: 10px;
       .toc-ref
         display none
       a
