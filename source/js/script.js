@@ -40,6 +40,13 @@ function afterPjax() {
   if($(".theme_disqus_on").val()=="true" && $(".theme_preload_comment").val()=="false"){
     DISQUSWIDGETS.getCount({reset: true});
   }
+  if($("#comments").hasClass("disqus")){
+    setTimeout(function () {
+      if($(".count-comment").text().trim()==""){
+        $(".count-comment").text(0);
+      }
+    },300);
+  }
   if($(".theme_duoshuo_on").val()=="true" && $(".theme_preload_comment").val()!="false"){
     pajx_loadDuodsuo();
   }
@@ -144,7 +151,14 @@ $(function () {
     } else if(container.scrollTop()<200 && $("#rocket").css("display")=="block") {
       $("#rocket").removeClass("launch").css("opacity","1").css("display","none");
     }
-  })
+  });
+  if($("#comments").hasClass("disqus")){
+    setTimeout(function () {
+      if($(".count-comment").text().trim()==""){
+        $(".count-comment").text(0);
+      }
+    },1500);
+  }
 });
 
 /**

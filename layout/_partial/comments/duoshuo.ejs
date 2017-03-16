@@ -20,6 +20,9 @@
                     if (value > 0) {
                         $(".count-comment").text(value);
                         return;
+                    } else {
+                        $(".count-comment").text(0);
+                        return;
                     }
                 })
             })

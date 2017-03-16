@@ -22,9 +22,9 @@ author:
     author2: 小马哥
 ##############################
 
+bottom_text: ©2017 Yelog
 # 自定义页面最下方的站点版权信息
 # 如果不填，则自定义为 ©2017 author (这个author为hexo根目录_config.yml中配置的)
-bottom_text: ©2017 Yelog
 
 reward: true
 # true 开启打赏功能
