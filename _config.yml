@@ -32,9 +32,9 @@ reward: true
 copyright: true
 # Copyright info. of post | 文末版权信息
 
-word_count: true
+word_count: false
 # true 开启字数统计
-# 开启此功能需要安装插件 ：在 hexo根目录 执行npm i --save hexo-wordcount
+# 开启此功能需要安装插件 ：在 hexo根目录 执行npm i hexo-wordcount --save
 
 
 # 不蒜子网站计数设置
