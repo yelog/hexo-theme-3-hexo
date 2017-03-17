@@ -37,7 +37,7 @@ function afterPjax() {
   });
   content.css({'opacity':1}).removeClass('fadeOuts').addClass('fadeIns');
   bind();
-  if($(".theme_disqus_on").val()=="true" && $(".theme_preload_comment").val()=="false"){
+  if($(".theme_disqus_on").val()=="true"){
     DISQUSWIDGETS.getCount({reset: true});
   }
   if($("#comments").hasClass("disqus")){
@@ -213,7 +213,6 @@ function bind() {
     return false;
   });
   if($("#comments").hasClass("disqus")){
-    $(".disqus-comment-count").hide();
     var $disqusCount = $(".disqus-comment-count");
     $disqusCount.bind("DOMNodeInserted", function(e) {
       $(".count-comment").text(

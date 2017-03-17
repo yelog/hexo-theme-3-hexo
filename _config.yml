@@ -36,6 +36,9 @@ word_count: true
 # true 开启字数统计
 # 开启此功能需要安装插件 ：在 hexo根目录 执行npm i --save hexo-wordcount
 
+comment_count: true
+# 文章标题下方显示评论数
+
 # 不蒜子网站计数设置
 # http://ibruce.info/2015/04/04/busuanzi/
 visit_counter:
@@ -90,14 +93,14 @@ preload_comment: false
 ## true: 页面加载时加载评论区
 
 disqus:
-  on: false
+  on: true
   shortname: yelog
   # https://help.disqus.com/customer/en/portal/articles/466208-what-s-a-shortname-
   # It is unnecessary to enable disqus here if
   # you have set "disqus_shortname" in your site's "_config.yml"
 
 duoshuo:
-  on: true
+  on: false
   domain: jaytp
   # 是否开启多说评论，http://duoshuo.com/create-site/
   # 使用上面网址登陆你的多说，然后创建站点，在 domain 中填入你设定的域名前半部分

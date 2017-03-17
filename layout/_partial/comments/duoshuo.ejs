@@ -10,7 +10,6 @@
             s.async = true; s.charset = 'UTF-8';
             (d.head || d.body).appendChild(s);
         }
-        <% if (!theme.preload_comment) { %>
         // Add comment count
         $(function(){
             var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=<%=theme.duoshuo.domain%>&threads=<%=key%>&callback=?";
@@ -27,7 +26,6 @@
                 })
             })
         })
-        <% } %>
     </script>
     <%- partial('click2show') %>
 </div>

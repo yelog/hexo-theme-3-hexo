@@ -16,8 +16,6 @@
     <%- partial('click2show') %>
 </section>
 
-<% if (!theme.preload_comment) { %>
 <!-- Add comment count-->
-<span class="disqus-comment-count" data-disqus-identifier="<%= page.path %>"></span>
-<span class="disqus-comment-count" data-disqus-url="<%= page.permalink %>"></span>
-<% } %>
+<span class="disqus-comment-count" style="display: none" data-disqus-identifier="<%= page.path %>"></span>
+<span class="disqus-comment-count" style="display: none" data-disqus-url="<%= page.permalink %>"></span>

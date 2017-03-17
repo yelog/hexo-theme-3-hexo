@@ -36,7 +36,9 @@
             阅读量:<span id="busuanzi_value_page_pv"></span>
         </span>
         <%}%>
+        <%if(theme.comment_count){%>
         <span>评论数:<span class="count-comment"></span></span>
+        <%}%>
     </div>
     <%- partial('_partial/toc-ref', {index: false}) %>
     <div class="article-entry" itemprop="articleBody">

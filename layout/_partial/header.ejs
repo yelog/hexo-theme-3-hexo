@@ -24,7 +24,7 @@
   <% if (theme.CDN.nprogres_js){%>
     <script src="<%=theme.CDN.nprogres_js%>"></script>
   <%}%>
-  <% if (theme.disqus.on && !theme.preload_comment) {%>
+  <% if (theme.disqus.on) {%>
   <script id="dsq-count-scr" src="//<%= theme.disqus.shortname%>.disqus.com/count.js" async></script>
   <% } %>
 </head>
