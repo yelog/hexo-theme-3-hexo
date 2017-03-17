@@ -5,8 +5,6 @@
             title: post.title,
             url: config.url+url_for(post.path),
         }) %>
-    <% } else if (theme.youyan.on) { %>
-        <%- partial('comments/youyan') %>
     <% } else if (theme.disqus.on) { %>
         <%- partial('comments/disqus', {
             shortname: theme.disqus.shortname
