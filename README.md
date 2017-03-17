@@ -16,16 +16,11 @@ demo:[yelog.org](http://yelog.org/)
 ```bash
 git clone https://github.com/yelog/hexo-theme-3-hexo.git themes/3-hexo
 ```
-1） 修改hexo根目录的`_config.yml`的两处，如下
+修改hexo根目录的`_config.yml`的两处，如下
 ```xml
 theme: 3-hexo
 highlight:
   enable: false #关闭hexo渲染高亮，使用主题代码块高亮
-```
-
-2） 安装字数统计(由于主题使用这个插件，必须安装，否则会报错)
-```bash
-$ npm install hexo-wordcount --save
 ```
 
 ## 更新
