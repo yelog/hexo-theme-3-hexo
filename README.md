@@ -25,7 +25,7 @@ highlight:
 
 2） 安装字数统计(由于主题使用这个插件，必须安装，否则会报错)
 ```bash
-$ $ npm i --save hexo-wordcount
+$ npm install hexo-wordcount --save
 ```
 
 ## 更新
