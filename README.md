@@ -17,9 +17,17 @@ demo:[yelog.org](http://yelog.org/)
 git clone git@github.com:yelog/hexo-theme-3-hexo.git theme/3-hexo
 ```
 >将hexo根目录的_config.yml中的修改两处  
-1. **theme** 改为 `3-hexo`   
-2. **highlight enable** 改为 `false`  
-3. 主题目录source/img下修改avatar.jpg文件，作为头像
+1） 修改hexo根目录的`_config.yml`的两处，如下
+```xml
+theme: 3-hexo
+highlight:
+  enable: false #关闭hexo渲染高亮，使用主题代码块高亮
+```
+
+2） 安装字数统计(由于主题使用这个插件，必须安装，否则会报错)
+```bash
+$ $ npm i --save hexo-wordcount
+```
 
 ## 更新
 ```bash
