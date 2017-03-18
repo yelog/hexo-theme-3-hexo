@@ -208,7 +208,7 @@ function bind() {
   //初始化文章toc
   $(".post-toc-content").html($(".post .pjax article .toc-ref .toc").clone());
   //绑定文章toc的滚动事件
-  $(".full-toc .post-toc .post-toc-content .toc-link").click(function () {
+  $("a[href^='#']").click(function () {
     container.animate({scrollTop: $($(this).attr("href")).offset().top+container.scrollTop()}, 500);
     return false;
   });
