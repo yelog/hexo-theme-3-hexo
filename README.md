@@ -16,11 +16,9 @@ demo:[yelog.org](http://yelog.org/)
 ```bash
 git clone https://github.com/yelog/hexo-theme-3-hexo.git themes/3-hexo
 ```
-修改hexo根目录的`_config.yml`的两处，如下
+修改hexo根目录的`_config.yml`，如下
 ```xml
 theme: 3-hexo
-highlight:
-  enable: false #关闭hexo渲染高亮，使用主题代码块高亮
 ```
 
 ## 更新
