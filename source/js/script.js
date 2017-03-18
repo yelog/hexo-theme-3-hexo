@@ -183,6 +183,12 @@ function bind() {
   initArticle();
   $(".article_number").text($("#yelog_site_posts_number").val());
   $(".site_word_count").text($("#yelog_site_word_count").val());
+  $("#busuanzi_value_site_uv").bind("DOMNodeInserted", function(e) {
+    $(".site_uv").text($(this).text())
+  });
+  $("#busuanzi_value_site_pv").bind("DOMNodeInserted", function(e) {
+    $(".site_pv").text($(this).text())
+  });
   $(".post .pjax .index").find("br").remove();
   $(".post .pjax .index h1:eq(0)").addClass("article-title");
   //绑定文章内tag的搜索事件
