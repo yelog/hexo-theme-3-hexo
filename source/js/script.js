@@ -134,7 +134,7 @@ $(function () {
   $(".nav-right .tags-list li a").on("click",function (e) {
     $(".nav-right form input").val("#"+$(this).text().trim()).change();
   });
-  //文章toc的显示点击事件
+  //文章toc的显示隐藏事件
   $(".full-toc .post-toc-menu").on('click', function() {
       $('.post-toc').toggleClass('open');
   });
@@ -196,6 +196,8 @@ function bind() {
     $(".nav-right form input").val("#" + $(this).text().trim()).change();
     if($(window).width() <= 1024) {
       $(".full-toc .full").trigger("click");
+    } else if($(".full-toc .full span").hasClass("max")){
+      $(".full-toc .full").trigger("click");
     }
   });
   //绑定文章内分类的点击事件
@@ -203,12 +205,17 @@ function bind() {
     $(".nav-left ul li[data-rel='"+$(this).data("rel")+"']").trigger("click");
     if($(window).width() <= 1024) {
       $(".full-toc .full").trigger("click");
+    } else if($(".full-toc .full span").hasClass("max")){
+      $(".full-toc .full").trigger("click");
     }
   });
+  //绑定文章内作者的点击事件
   $(".post .pjax article .article-meta .author").on("click", function (e) {
       $(".nav-right form input").val("@" + $(this).text().trim()).change();
       if($(window).width() <= 1024) {
           $(".full-toc .full").trigger("click");
+      } else if($(".full-toc .full span").hasClass("max")){
+        $(".full-toc .full").trigger("click");
       }
   });
   //初始化文章toc
