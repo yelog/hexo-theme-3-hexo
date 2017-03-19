@@ -16,7 +16,7 @@ link:
 
 ##########多作者模式############
 author:
-  on: true
+  on: false
   authors:
     author1: 阿杰
     author2: 小马哥
