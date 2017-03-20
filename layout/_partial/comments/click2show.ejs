@@ -7,8 +7,14 @@
         </a>
     </aside>
     <script>
+        var isLoadComments = false;
         var $commentBar = $("#comments aside.comment-bar");
         var load$hide = function(){
+            if(isLoadComments){
+                return;
+            }
+            isLoadComments = true;
+            if(isLoadComments )
             $commentBar.find("a > i").toggle();
             <% if (theme.duoshuo.on) {%>
             pajx_loadDuodsuo();
@@ -23,9 +29,6 @@
         $commentBar.children("a").mouseenter(function(){
             load$hide();
         })
-        if (window.location.hash === "#comments") {
-            load$hide();
-        }
     </script>
 <% } else { %>
     <script> loadComment(); </script>

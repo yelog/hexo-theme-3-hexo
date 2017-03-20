@@ -223,6 +223,9 @@ function bind() {
   //绑定文章toc的滚动事件
   $("a[href^='#']").click(function () {
     container.animate({scrollTop: $($(this).attr("href")).offset().top+container.scrollTop()}, 500);
+    if ($(this).attr("href") === "#comments") {
+      load$hide();
+    }
     return false;
   });
   if($("#comments").hasClass("disqus")){
