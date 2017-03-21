@@ -250,25 +250,33 @@ function bind() {
         $("body").append('<img class="img_hidden" style="display:none" src="'+this.src+'" />');
         var img_width = "";
         var img_height = "";
+        var img_top = "";
+        var img_left = "";
         if ((this.width/this.height)>(document.body.clientWidth/document.body.clientHeight) && $(".img_hidden").width() > document.body.clientWidth){
           img_width = document.body.clientWidth+"px";
           img_height = this.height*document.body.clientWidth/this.width+"px";
+          img_top = (document.body.clientHeight - $(".img_hidden").height())/2+"px";
+          img_left = "0px";
         } else if (((this.width/this.height)<(document.body.clientWidth/document.body.clientHeight) && $(".img_hidden").height() > document.body.clientHeight)){
           img_width = this.width*document.body.clientHeight/this.height+"px";
           img_height = document.body.clientHeight+"px";
+          img_top = "0px";
+          img_left = (document.body.clientWidth - $(".img_hidden").width())/2+"px";
         } else {
           img_height = $(".img_hidden").height()+"px";
           img_width = $(".img_hidden").width()+"px";
+          img_top = (document.body.clientHeight - $(".img_hidden").height())/2+"px";
+          img_left = (document.body.clientWidth - $(".img_hidden").width())/2+"px";
         }
         $("body").append('<div class="img_max" style="opacity: 0"></div>');
         $("body").append('<img class="img_max" src="'+this.src+'" style="top:'+$(this).offset().top+'px;left:'+$(this).offset().left+'px; width:'+$(this).width()+'px;height: '+this.height+'px;">');
         $(this).css("visibility","hidden");
         setTimeout(function () {
-          $("img.img_max").attr("style","").css({"transform":"translate(-50%, -50%)","width":img_width,"height":img_height});
+          $("img.img_max").attr("style","").css({"top":img_top,"left":img_left,"width":img_width,"height":img_height});
           $("div.img_max").css("opacity","1");
         },10);
         $(".img_max").on("click", function (e) {
-          $("img.img_max").css({"width":_that.width()+"px","height":_that.height()+"px","top":_that.offset().top+"px","left":_that.offset().left+"px","transform":""})
+          $("img.img_max").css({"width":_that.width()+"px","height":_that.height()+"px","top":_that.offset().top+"px","left":_that.offset().left+"px"})
           $("div.img_max").css("opacity","0");
           setTimeout(function () {
             _that.css("visibility","visible");
