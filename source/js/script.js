@@ -255,13 +255,13 @@ function bind() {
         if ((this.width/this.height)>(document.body.clientWidth/document.body.clientHeight) && $(".img_hidden").width() > document.body.clientWidth){
           img_width = document.body.clientWidth+"px";
           img_height = this.height*document.body.clientWidth/this.width+"px";
-          img_top = (document.body.clientHeight - $(".img_hidden").height())/2+"px";
+          img_top = (document.body.clientHeight - this.height*document.body.clientWidth/this.width)/2+"px";
           img_left = "0px";
         } else if (((this.width/this.height)<(document.body.clientWidth/document.body.clientHeight) && $(".img_hidden").height() > document.body.clientHeight)){
           img_width = this.width*document.body.clientHeight/this.height+"px";
           img_height = document.body.clientHeight+"px";
           img_top = "0px";
-          img_left = (document.body.clientWidth - $(".img_hidden").width())/2+"px";
+          img_left = (document.body.clientWidth - this.width*document.body.clientHeight/this.height)/2+"px";
         } else {
           img_height = $(".img_hidden").height()+"px";
           img_width = $(".img_hidden").width()+"px";
