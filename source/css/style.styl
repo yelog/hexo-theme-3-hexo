@@ -35,4 +35,23 @@ h1, h2, h3, h4, h5, h6
   &.fullscreen
     margin-left -585px
 
+div.img_max
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  height: 100%;
+  width: 100%;
+  z-index: 50;
+  background: rgb(255, 255, 255);
+  transition opacity .5s
+img.img_max
+  cursor:zoom-out;
+  position:fixed;
+  z-index: 51;
+  left:50%;
+  top:50%;
+  transition: top .5s,left .5s, transform .5s,width .5s,height .5s;
+
 @import "mobile.styl"

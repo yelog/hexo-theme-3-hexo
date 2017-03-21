@@ -246,16 +246,35 @@ function bind() {
     }
     if($(window).width() > 426) {
       $(this).on("click",function (e) {
-        var img_size = "";
-        if((this.width/this.height)>(document.body.clientWidth/document.body.clientHeight)){
-          img_size = "width:100%;"
-        }else{
-          img_size = "height:100%;"
+        var _that = $(this);
+        $("body").append('<img class="img_hidden" style="display:none" src="'+this.src+'" />');
+        var img_width = "";
+        var img_height = "";
+        if ((this.width/this.height)>(document.body.clientWidth/document.body.clientHeight) && $(".img_hidden").width() > document.body.clientWidth){
+          img_width = document.body.clientWidth+"px";
+          img_height = this.height*document.body.clientWidth/this.width+"px";
+        } else if (((this.width/this.height)<(document.body.clientWidth/document.body.clientHeight) && $(".img_hidden").height() > document.body.clientHeight)){
+          img_width = this.width*document.body.clientHeight/this.height+"px";
+          img_height = document.body.clientHeight+"px";
+        } else {
+          img_height = $(".img_hidden").height()+"px";
+          img_width = $(".img_hidden").width()+"px";
         }
-        $("body").append('<div class="img_max" style="position: fixed; left: 0px; right: 0px; top: 0px; bottom: 0px; height: 100%; width: 100%; z-index: 50; background: rgb(255, 255, 255); opacity: 0.8;"></div>');
-        $("body").append('<img class="img_max" src="'+this.src+'" style="cursor:zoom-out;position:fixed; z-index: 51; left:50%;top:50%;transform: translate(-50%, -50%);'+img_size+'">');
+        $("body").append('<div class="img_max" style="opacity: 0"></div>');
+        $("body").append('<img class="img_max" src="'+this.src+'" style="top:'+$(this).offset().top+'px;left:'+$(this).offset().left+'px; width:'+$(this).width()+'px;height: '+this.height+'px;">');
+        $(this).css("visibility","hidden");
+        setTimeout(function () {
+          $("img.img_max").attr("style","").css({"transform":"translate(-50%, -50%)","width":img_width,"height":img_height});
+          $("div.img_max").css("opacity","1");
+        },10);
         $(".img_max").on("click", function (e) {
-          $(".img_max").remove();
+          $("img.img_max").css({"width":_that.width()+"px","height":_that.height()+"px","top":_that.offset().top+"px","left":_that.offset().left+"px","transform":""})
+          $("div.img_max").css("opacity","0");
+          setTimeout(function () {
+            _that.css("visibility","visible");
+            $(".img_max").remove();
+            $(".img_hidden").remove();
+          },500);
         })
       })
     }
