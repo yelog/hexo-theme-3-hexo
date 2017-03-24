@@ -78,14 +78,14 @@ $(document).keydown(function (e) {
   var totop = container.scrollTop();
   if(!$(".nav-right form .search").is(":focus")){
     if (e.keyCode == 74 && !$(".nav-right form .search").is(":focus")){
-      container.animate({scrollTop: container.prop("scrollHeight")-container.height()}, tobottom/2,"linear");
+      container.animate({scrollTop: container.prop("scrollHeight")-container.height()}, tobottom,"linear");
     } else if (e.keyCode == 75){
-      container.animate({scrollTop: 0}, totop/2,"linear");
+      container.animate({scrollTop: 0}, totop,"linear");
     } else if (e.keyCode == 71){
       if(publickey.shift){
-        container.animate({scrollTop: container.prop("scrollHeight")}, 200);
+        container.animate({scrollTop: container.prop("scrollHeight")}, 800);
       } else if (publickey.last == 71) {
-        container.animate({scrollTop: 0}, 200);
+        container.animate({scrollTop: 0}, 800);
       }
     } else if (e.keyCode == 16 ){
       publickey.shift = true;
