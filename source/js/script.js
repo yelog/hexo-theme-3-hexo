@@ -241,10 +241,12 @@ function bind() {
   $(document).pjax('.post .pjax article a[target!=_blank]', '.pjax', {fragment:'.pjax', timeout:8000});
 
   $(".pjax").find('img').each(function(){
-    $(this).wrap("<div class='div_img'></div>");
-    var alt = this.alt;
-    if (alt){
-      $(this).after('<div class="img_alt"><span>' + alt + '</span></div>');
+    if(!$(this).parent().hasClass('div_img')){
+      $(this).wrap("<div class='div_img'></div>");
+      var alt = this.alt;
+      if (alt){
+        $(this).after('<div class="img_alt"><span>' + alt + '</span></div>');
+      }
     }
     if($(window).width() > 426) {
       $(this).on("click",function (e) {
