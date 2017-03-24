@@ -7,7 +7,8 @@
         }) %>
     <% } else if (theme.disqus.on) { %>
     <%- partial('comments/disqus', {
-        shortname: theme.disqus.shortname
+        shortname: theme.disqus.shortname,
+        url: config.url+url_for(post.path)
     }) %>
     <% } else if (theme.gentie.on) { %>
         <%- partial('comments/gentie', {
