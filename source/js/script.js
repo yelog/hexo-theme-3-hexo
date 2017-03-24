@@ -67,7 +67,9 @@ $(".nav-left ul li").on("click",function (e) {
 
 $(".nav-right form .search").keydown(function (e) {
   if (e.which == 13 && $(".nav-right nav a:not(:hidden)").length>0) {
+    if(!$(".ac").is(":visible")){
       $(".nav-right nav a:not(:hidden):first").trigger("click");
+    }
   }
 });
 $(".nav-right form .search").on("input",function (e) {
