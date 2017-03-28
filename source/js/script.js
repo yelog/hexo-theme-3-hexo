@@ -94,7 +94,6 @@ $(document).keydown(function (e) {
 })
 
 $(document).keyup(function (e) {
-  console.log(e.keyCode)
   if(!$(".nav-right form .search").is(":focus")){
     if (e.keyCode == 83){
       $(".full-toc .full").trigger("click");
