@@ -23,7 +23,7 @@ theme: 3-hexo
 
 ## 更新
 ```bash
-cd theme/3-hexo
+cd themes/3-hexo
 git pull
 ```
 ## 外观
