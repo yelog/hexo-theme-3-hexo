@@ -29,25 +29,25 @@ git pull
 ## 外观
 ### 整体设计
 **三段式设计:**
-![三段式设计](http://yelog.org/file2017/03/blog-outline.png)
+![三段式设计](http://oncj6b2vl.bkt.clouddn.com/Fl2tl1Is5zx-D0DAt03bg0WkWXhO.png)
 ### 通过分类过滤
-![分类过滤文章](http://yelog.org/file2017/03/blog-categories.gif)
+![分类过滤文章](http://oncj6b2vl.bkt.clouddn.com/FmooXnOPeRPGBts5V5W7CV0AHuIo.gif)
 ### 通过标题关键字搜索
-![文章标题关键字搜索](http://yelog.org/file2017/03/blog-search-title.gif)
+![文章标题关键字搜索](http://oncj6b2vl.bkt.clouddn.com/FkF9lgTJoLdmNlYbTVokSNB3zdS4.gif)
 ### 通过作者搜索
 **若开启了多作者模式，则可以通过输入@，进行作者搜索，如下所示**
-![通过作者搜索](http://yelog.org/file2017/03/blog-search-author.gif)
+![通过作者搜索](http://oncj6b2vl.bkt.clouddn.com/FhbFRRPIDuz1pEKH-dr-RWDHVvXn.gif)
 ### 通过标签搜索
 **输入#，就会出现标签提示**
-![通过标签搜索](http://yelog.org/file2017/03/blog-search-tag.gif)
+![通过标签搜索](http://oncj6b2vl.bkt.clouddn.com/FoJsDnsoLWKo7ECSzcLmzUX_uWgw.gif)
 ### 评论功能
-![测试一下评论](http://yelog.org/file2017/03/blog-comments.gif)
+![测试一下评论](http://oncj6b2vl.bkt.clouddn.com/FtDD77YX_xenS-AZQW56qrwrQc4D.gif)
 ### 打赏功能
-![打赏功能](http://yelog.org/file2017/03/blog-dashang.gif)
+![打赏功能](http://oncj6b2vl.bkt.clouddn.com/FhlNgOF7ipEIVrrztFdRam3WRikw.gif)
 ### 文章置顶
-![文章置顶](http://yelog.org/file2017/03/blog-top.png)
+![文章置顶](http://oncj6b2vl.bkt.clouddn.com/FhQLLqrRCr4yFGl9nDb_9oc4yME-.png)
 ### 返回头部
-![返回头部](http://yelog.org/file2017/03/blog-top.gif)
+![返回头部](http://oncj6b2vl.bkt.clouddn.com/FjpVByJViwYEWHHMTeayiQ-FD_qG.gif)
 
 ## 致谢
  作者Peiwen Lu的jekyll主题：[3-jekyll](https://github.com/P233/3-Jekyll)主题  
