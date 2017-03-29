@@ -113,10 +113,11 @@ $(document).keyup(function (e) {
 $(".nav-right form .search").blur(function (e) {
   $(".nav-right nav a.hover").removeClass("hover");
 })
-
+/*输入框焦点时的快捷键捕获*/
 $(".nav-right form .search").keydown(function (e) {
   if($(".nav-right nav a:not(:hidden)").length>0 && !$(".ac").is(":visible")){
     if (e.which == 13) {
+      /*回车*/
       var $handle =  $(".nav-right nav a.hover:not(:hidden)");
       if($handle.length == 0){
         $(".nav-right nav a:not(:hidden):first").trigger("click");
@@ -124,21 +125,37 @@ $(".nav-right form .search").keydown(function (e) {
         $handle.trigger("click");
       }
     } else if (e.which == 38){
-      $("nav a.hover").prevAll().each(function () {
-        if($(this).is(":visible")){
-          $(".nav-right nav a.hover").removeClass("hover");
-          $(this).addClass("hover");
-          return false;
-        }
-      })
+      /*上*/
+      if($("nav a:visible.hover").length==0 || $("nav a:visible.hover").prevAll().length == 0){
+        $("nav").scrollTop($("nav").prop("scrollHeight"));
+        $(".nav-right nav a.hover").removeClass("hover");
+        $(".nav-right nav a:visible:last").addClass("hover");
+      } else {
+        $("nav a.hover").prevAll().each(function () {
+          if($(this).is(":visible")){
+            $(".nav-right nav a.hover").removeClass("hover");
+            $(this).addClass("hover");
+            if(($(this).offset().top) - $(".nav-right form").height() < 0){
+              $("nav").scrollTop($("nav").scrollTop() - $(this).height());
+            }
+            return false;
+          }
+        })
+      }
     } else if (e.which == 40){
-      if($("nav a:visible.hover").length==0){
+      /*下*/
+      if($("nav a:visible.hover").length==0 || $("nav a:visible.hover").nextAll().length == 0){
+        $("nav").scrollTop(0);
+        $(".nav-right nav a.hover").removeClass("hover");
         $(".nav-right nav a:visible:first").addClass("hover");
       }else{
         $("nav a.hover").nextAll().each(function () {
           if($(this).is(":visible")){
             $(".nav-right nav a.hover").removeClass("hover");
             $(this).addClass("hover");
+            if(($("nav").height() + $(".nav-right form").height() - $(this).offset().top) < 0){
+              $("nav").scrollTop($("nav").scrollTop() + $(this).height());
+            }
             return false;
           }
         })
