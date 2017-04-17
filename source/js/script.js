@@ -126,7 +126,7 @@ $(".nav-right form .search").keydown(function (e) {
       }
     } else if (e.which == 38){
       /*上*/
-      if($("nav a:visible.hover").length==0 || $("nav a:visible.hover").prevAll().length == 0){
+      if($("nav a:visible.hover").length==0 || $("nav a:visible.hover").prevAll(":visible").length == 0){
         $("nav").scrollTop($("nav").prop("scrollHeight"));
         $(".nav-right nav a.hover").removeClass("hover");
         $(".nav-right nav a:visible:last").addClass("hover");
@@ -144,7 +144,7 @@ $(".nav-right form .search").keydown(function (e) {
       }
     } else if (e.which == 40){
       /*下*/
-      if($("nav a:visible.hover").length==0 || $("nav a:visible.hover").nextAll().length == 0){
+      if($("nav a:visible.hover").length==0 || $("nav a:visible.hover").nextAll(":visible").length == 0){
         $("nav").scrollTop(0);
         $(".nav-right nav a.hover").removeClass("hover");
         $(".nav-right nav a:visible:first").addClass("hover");
