@@ -286,9 +286,11 @@ function bind() {
   initArticle();
   $(".article_number").text($("#yelog_site_posts_number").val());
   $(".site_word_count").text($("#yelog_site_word_count").val());
+  $(".site_uv").text($("#busuanzi_value_site_uv").text());
   $("#busuanzi_value_site_uv").bind("DOMNodeInserted", function(e) {
     $(".site_uv").text($(this).text())
   });
+  $(".site_pv").text($("#busuanzi_value_site_pv").text())
   $("#busuanzi_value_site_pv").bind("DOMNodeInserted", function(e) {
     $(".site_pv").text($(this).text())
   });
