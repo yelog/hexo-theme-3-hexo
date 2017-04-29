@@ -26,20 +26,27 @@
     </div>
     <div class="article-meta">
         <% if (post.date){ %>
-        <time class="date" title="<%= date(post.date, 'YYYY-MM-DD HH:mm:ss')%>"><%= date(post.date, 'YYYY-MM-DD HH:mm') %></time>
+        创建时间:<time class="date" title='更新时间: <%= date(post.updated, 'YYYY-MM-DD HH:mm:ss')%>'><%= date(post.date, 'YYYY-MM-DD HH:mm') %></time>
         <% } %>
+    </div>
+    <div class="article-meta">
         <%if(theme.word_count){%>
         <span>字数:<%=wordcount(post.content) %></span>
         <%}%>
         <%if(theme.visit_counter && theme.visit_counter.on && theme.visit_counter.page_visit) {%>
         <span id="busuanzi_container_page_pv">
-            阅读量:<span id="busuanzi_value_page_pv"></span>
+            阅读:<span id="busuanzi_value_page_pv"></span>
         </span>
         <%}%>
         <%if(theme.comment_count){%>
-        <span class="top-comment"><a href="#comments">评论数:<span class="count-comment"></span></a></span>
+        <span class="top-comment" title="跳转至评论区"><a href="#comments">评论:<span class="count-comment"></span></a></span>
         <%}%>
     </div>
+    <%if(post.origin){%>
+    <div class="article-meta">
+        <span class="origin">原文: <a href="<%=post.origin%>" target="_blank"><%=post.origin%></a></span>
+    </div>
+    <%}%>
     <%- partial('_partial/toc-ref', {index: false}) %>
     <div class="article-entry" itemprop="articleBody">
       <% if (post.excerpt && index){ %>

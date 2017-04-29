@@ -38,15 +38,17 @@
         color #BCC1C4
         border-left: 3px solid #b4b4b4;
         padding-left: 10px;
-        .top-comment
+        .origin
           a
             color inherit
             &:hover
-              text-decoration none
-              cursor pointer
-        .date
-          &:before
-            content "\e94e"
+              color: #4078c0
+        .top-comment
+          a
+            cursor pointer
+            color inherit
+            &:hover
+              color: #4078c0
         .top
           &:before
             content "\f08d"
@@ -70,10 +72,11 @@
           &:before
             content "\f02d"
           a
+            cursor pointer
             margin-left -6px
             color inherit
             &:hover
-              text-decoration none
+              color: #4078c0
         .tag
           &:before
             content "\e936"
