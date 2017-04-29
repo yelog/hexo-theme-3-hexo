@@ -44,7 +44,15 @@
     </div>
     <%if(post.origin){%>
     <div class="article-meta">
-        <span class="origin">原文: <a href="<%=post.origin%>" target="_blank"><%=post.origin%></a></span>
+        <span class="origin">原文:
+            <a href="<%=post.origin%>" target="_blank">
+                <%if(post.originView){%>
+                <%= post.originView%>
+                <%} else {%>
+                <%=post.origin%>
+                <%}%>
+            </a>
+        </span>
     </div>
     <%}%>
     <%- partial('_partial/toc-ref', {index: false}) %>
