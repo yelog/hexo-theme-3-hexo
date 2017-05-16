@@ -64,7 +64,7 @@ table: green_title
 
 highlight:
   on: true # true开启代码高亮
-  lineNum: true # true显示行号
+  lineNum: false # true显示行号
   theme: darcula
 # 代码高亮主题,效果可以查看 https://highlightjs.org/static/demo/
 # 支持主题：
@@ -83,6 +83,7 @@ highlight:
 # kimbie-dark :
 # kimbie-light :
 # school-book : 纸张效果
+# zenbum : oschina 也选择此高亮主题
 ##############################
 
 ##########评论设置#############
@@ -95,13 +96,13 @@ preload_comment: false
 ## true: 页面加载时加载评论区
 
 disqus:
-  on: false
+  on: true
   shortname: yelog
   # disqus评论系统， 2016年9月被GFW认证，大陆不能使用。
   # https://help.disqus.com/customer/en/portal/articles/466208-what-s-a-shortname-
 
 duoshuo:
-  on: true
+  on: false
   domain: jaytp
   # 2017年6月1日正式关停服务，届时将移除此功能，所以不建议使用
   # 多说评论系统，http://duoshuo.com/create-site/
