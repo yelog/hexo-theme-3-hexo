@@ -1,8 +1,10 @@
 hexo-theme-3-hexo
 ================
 3-hexo 是为[hexo](https://github.com/tommy351/hexo)制作的主题。  
-demo:[yelog.org](http://yelog.org/)  
-——————————————  
+demo:[yelog.org](http://yelog.org/)    
+配置及说明： [3-hexo使用说明](http://yelog.org/2017/03/23/3-hexo-instruction/)  
+功能更新日志：[3-hexo开发日志-持续更新](http://yelog.org/2017/03/13/3-hexo-logs/)  
+——————————————  
 **关于主题：**
 
 1. 极简体验
@@ -10,7 +12,7 @@ demo:[yelog.org](http://yelog.org/)
 3. 通过文章分类、标签或标题关键字检索
 4. 移动端适配
 5. 评论
-6. [多作者模式](http://yelog.org/2017/02/28/tools/3-hexo%E5%A4%9A%E4%BD%9C%E8%80%85%E6%A8%A1%E5%BC%8F/)
+6. 多作者模式
 
 ## 安装
 ```bash
