@@ -10,6 +10,11 @@
         shortname: theme.disqus.shortname,
         url: config.url+url_for(post.path)
     }) %>
+    <% } else if (theme.gitment.on) { %>
+    <%- partial('comments/gitment', {
+        shortname: theme.disqus.shortname,
+        url: config.url+url_for(post.path)
+    }) %>
     <% } else if (theme.gentie.on) { %>
         <%- partial('comments/gentie', {
             shortname: theme.disqus.shortname
