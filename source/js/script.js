@@ -76,32 +76,32 @@ var publickey = {"shift":false,"ctrl":false,"alt":false,"last": 0};
 $(document).keydown(function (e) {
   var tobottom = container.prop("scrollHeight")-container.scrollTop()-container.height();
   var totop = container.scrollTop();
-  if(!$(".nav-right form .search").is(":focus")){
-    if (e.keyCode == 74 && !$(".nav-right form .search").is(":focus")){
+  if(!$(".nav-right form .search").is(":focus") && !$('#comments textarea').is(':focus')){
+    if (e.keyCode == 74){ /* J */
       container.animate({scrollTop: container.prop("scrollHeight")-container.height()}, tobottom,"linear");
-    } else if (e.keyCode == 75){
+    } else if (e.keyCode == 75){ /* K */
       container.animate({scrollTop: 0}, totop,"linear");
-    } else if (e.keyCode == 71){
+    } else if (e.keyCode == 71){ /* G */
       if(publickey.shift){
         container.animate({scrollTop: container.prop("scrollHeight")}, 800);
-      } else if (publickey.last == 71) {
+      } else if (publickey.last == 71) { /* G */
         container.animate({scrollTop: 0}, 800);
       }
-    } else if (e.keyCode == 16 ){
+    } else if (e.keyCode == 16 ){ /* shift */
       publickey.shift = true;
     }
   }
 })
 
 $(document).keyup(function (e) {
-  if(!$(".nav-right form .search").is(":focus")){
-    if (e.keyCode == 83){
+  if(!$(".nav-right form .search").is(":focus") && !$('#comments textarea').is(':focus')){
+    if (e.keyCode == 83){ /* S */
       $(".full-toc .full").trigger("click");
-    } else if (e.keyCode == 73 && !$(".nav").hasClass("fullscreen")){
+    } else if (e.keyCode == 73 && !$(".nav").hasClass("fullscreen")){ /* I */
       $(".nav-right form .search").focus();
-    } else if (e.keyCode == 87){
+    } else if (e.keyCode == 87){ /* W */
       $(".full-toc .post-toc-menu").trigger("click");
-    } else if (e.keyCode == 74 || e.keyCode == 75){
+    } else if (e.keyCode == 74 || e.keyCode == 75){ /* J K */
       container.stop(true);
     } else if (e.keyCode == 16){
       publickey.shift = false;
@@ -116,16 +116,14 @@ $(".nav-right form .search").blur(function (e) {
 /*输入框焦点时的快捷键捕获*/
 $(".nav-right form .search").keydown(function (e) {
   if($(".nav-right nav a:not(:hidden)").length>0 && !$(".ac").is(":visible")){
-    if (e.which == 13) {
-      /*回车*/
+    if (e.which == 13) { /* 回车 */
       var $handle =  $(".nav-right nav a.hover:not(:hidden)");
       if($handle.length == 0){
         $(".nav-right nav a:not(:hidden):first").trigger("click");
       } else {
         $handle.trigger("click");
       }
-    } else if (e.which == 38){
-      /*上*/
+    } else if (e.which == 38){ /* 上 */
       if($("nav a:visible.hover").length==0 || $("nav a:visible.hover").prevAll(":visible").length == 0){
         $("nav").scrollTop($("nav").prop("scrollHeight"));
         $(".nav-right nav a.hover").removeClass("hover");
@@ -142,8 +140,7 @@ $(".nav-right form .search").keydown(function (e) {
           }
         })
       }
-    } else if (e.which == 40){
-      /*下*/
+    } else if (e.which == 40){ /* 下 */
       if($("nav a:visible.hover").length==0 || $("nav a:visible.hover").nextAll(":visible").length == 0){
         $("nav").scrollTop(0);
         $(".nav-right nav a.hover").removeClass("hover");
@@ -163,7 +160,7 @@ $(".nav-right form .search").keydown(function (e) {
     }
   }
 
-  if (e.which == 27){
+  if (e.which == 27){ /* esc */
     var $handle = $(".nav-right form .cross");
     if($handle.is(":visible")){
       $(".nav-right form .cross").trigger("click");
