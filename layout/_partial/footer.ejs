@@ -1,6 +1,7 @@
 <script src="<%=theme.CDN.pjax%>"></script>
 <%- js('js/script') %>
 <script>
+    /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
             'data': [<% if (theme.author && theme.author.on==true && theme.author.authors.length !=0){ %><% for (var i in theme.author.authors){ %>'@<%=theme.author.authors[i] %>',<%}%><%}%><% site.tags.forEach(function(tag, i){ %>'#<%=tag.name%>',<%})%>],
@@ -9,9 +10,12 @@
         }).AutoComplete('show');
     })
     function initArticle() {
+        /*渲染对应的表格样式*/
         <% if(theme.table){ %>
             $(".post .pjax table").addClass("<%=theme.table%>");
         <% } %>
+
+        /*渲染打赏样式*/
         <% if(theme.reward){%>
         $("input[name=pay]").on("click", function () {
             if($("input[name=pay]:checked").val()=="weixin"){
@@ -21,6 +25,8 @@
             }
         })
         <%}%>
+
+        /*高亮代码块行号*/
         <%if(theme.highlight && theme.highlight.on&& theme.highlight.lineNum){%>
         $('pre code').each(function(){
             var lines = $(this).text().split('\n').length - 1;
@@ -33,10 +39,14 @@
             }
         });
         <%}%>
+
+        /*访问数量*/
         <%if(theme.visit_counter && theme.visit_counter.on) {%>
         $.getScript("//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js");
         <%}%>
     }
+
+    /*打赏页面隐藏与展示*/
     <% if(theme.reward){%>
     function dashangToggle() {
         $(".shang_box").fadeToggle();
@@ -44,6 +54,8 @@
     }
     <%}%>
 </script>
+
+<!--加入行号的高亮代码块样式-->
 <%if(theme.highlight && theme.highlight.on && theme.highlight.lineNum){%>
 <style>
     pre{
