@@ -76,3 +76,11 @@
 <%}%>
 <%- partial('_partial/article_copyright')%>
 <%- partial('_partial/comment', {post: post, index: index})%>
+
+<% if (theme.mathjax.on){ %>
+    <% if (theme.mathjax.per_page){ %>
+        <%- partial('mathjax') %>
+    <% } else if(page.mathjax){ %>
+        <%- partial('mathjax') %>
+    <% }%>
+<% } %>

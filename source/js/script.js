@@ -46,6 +46,11 @@ $(document).on({
     }
 });
 function afterPjax() {
+    /*渲染MathJax数学公式*/
+    if($("script[type='text/x-mathjax-config']").length>0){
+        MathJax.Hub.Typeset();
+    }
+
     /*渲染高亮代码块结构与样式*/
     $('pre code').each(function (i, block) {
         hljs.highlightBlock(block);

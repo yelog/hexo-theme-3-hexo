@@ -84,6 +84,12 @@ highlight:
 # kimbie-light :
 # school-book : 纸张效果
 # zenbum : oschina 也选择此高亮主题
+
+# MathJax 数学公式支持
+mathjax:
+  on: true #是否启用
+  per_page: false # 若只渲染单个页面，此选项设为false，页面内加入 mathjax: true
+
 ##############################
 
 ##########评论设置#############
@@ -96,7 +102,7 @@ preload_comment: false
 ## true: 页面加载时加载评论区
 
 disqus:
-  on: false
+  on: true
   shortname: yelog
   # disqus评论系统， 2016年9月被GFW认证，大陆不能使用。
   # https://help.disqus.com/customer/en/portal/articles/466208-what-s-a-shortname-
@@ -117,7 +123,7 @@ gentie:
   # 网易云跟帖暂时不支持查询评论数，所以启用时，把评论数关掉，上方comment_count: false。
 
 gitment:
-  on: true
+  on: false
   owner: yelog
   repo: yelog.github.io
   client_id: d64ceca0d8a4e8a1f5c9
@@ -141,4 +147,5 @@ CDN:
   animate: //cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css
   font_awsome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
   nprogres_js: //cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js
+  mathjax: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML
 ##############################
