@@ -49,7 +49,10 @@ function afterPjax() {
     /*渲染MathJax数学公式*/
     if($("script[type='text/x-mathjax-config']").length>0){
         $.getScript($("#MathJax-js").val(),function () {
-            MathJax.Hub.Typeset();
+            MathJax.Hub.Queue(
+                ["resetEquationNumbers",MathJax.InputJax.TeX],
+                ["Typeset",MathJax.Hub]
+            );
         });
     }
 
