@@ -1,32 +1,9 @@
 <head>
   <meta charset="utf-8">
   <title><% if (page.title){ %><%= page.title %> | <% } %><%= config.title %></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
-  <% if (theme.rss){ %>
-    <link rel="alternate" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
-  <% } %>
-  <% if (theme.favicon){ %>
-    <link rel="icon" href="<%- theme.favicon %>">
-  <% } %>
-  <%- css('css/style') %>
-  <% if(theme.highlight && theme.highlight.on && theme.highlight.theme){ %>
-  <%- css('css/hl_theme/'+theme.highlight.theme) %>
-  <%}%>
-  <link href="<%=theme.CDN.animate %>" rel="stylesheet">
-  <link href="<%=theme.CDN.font_awsome %>" rel="stylesheet">
-  <script src="<%=theme.CDN.jquery%>"></script>
-  <%- js('js/jquery.autocomplete.min') %>
-  <script src="<%=theme.CDN.highlight %>"></script>
-  <script>
-    hljs.initHighlightingOnLoad();
-  </script>
-  <% if (theme.CDN.nprogres_js){%>
-    <script src="<%=theme.CDN.nprogres_js%>"></script>
-  <%}%>
-  <% if (theme.disqus.on) {%>
-  <script id="dsq-count-scr" src="//<%= theme.disqus.shortname%>.disqus.com/count.js" async></script>
-  <% } %>
+    <%- fragment_cache('meta', function(){
+      return partial('_partial/meta');
+    }) %>
 </head>
 <div style="display: none">
   <input class="theme_disqus_on" value="<%=theme.disqus.on%>">
