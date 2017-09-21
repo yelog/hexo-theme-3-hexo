@@ -34,5 +34,7 @@
     return partial('_partial/dashang');
 }) %>
 </body>
-<%- partial('_partial/footer') %>
+<%- fragment_cache('footer', function(){
+    return partial('_partial/footer');
+}) %>
 </html>
