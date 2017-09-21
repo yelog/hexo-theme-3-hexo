@@ -18,6 +18,7 @@ jQuery.expr[':'].contains_author = function (a, i, m) {
 /*使用pjax加载页面，速度更快，交互更友好*/
 var content = $(".pjax");
 var container = $(".post");
+$(document).pjax('.nav-left .avatar', '.pjax', {fragment: '.pjax', timeout: 8000});
 $(document).pjax('.nav-right nav a', '.pjax', {fragment: '.pjax', timeout: 8000});
 $(document).on({
     /*点击链接后触发的事件*/
