@@ -1,6 +1,8 @@
 <head>
   <meta charset="utf-8">
   <title><% if (page.title){ %><%= page.title %> | <% } %><%= config.title %></title>
+  <meta name="keywords" content="<% if (page.tags && page.tags.length){ page.tags.forEach(function(tag, i){%> <%=tag.name%> <% if (i+1<page.tags.length){%>,<%} })}%>">
+  <meta name="description" content="<% if (page.title){ %><%= page.title %> | <% } %><%= config.title %>">
     <%- fragment_cache('meta', function(){
       return partial('_partial/meta');
     }) %>
