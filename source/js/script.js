@@ -297,6 +297,7 @@ $(function () {
             }
         }, 1500);
     }
+    $('.nav-right>nav>a>.post-title').css('width',$('.nav-right>nav').width() - $('.nav-right>nav>a>.post-date:first').width() - 42)
 });
 
 /**
