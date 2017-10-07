@@ -9,6 +9,9 @@
         }) %>
     </div>
     <div class="nav-right">
+        <%- fragment_cache('friends', function(){
+            return partial('_partial/friends');
+        }) %>
         <%- fragment_cache('right', function(){
             return partial('_partial/nav-right');
         }) %>

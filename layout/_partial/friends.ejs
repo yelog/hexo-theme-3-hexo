@@ -1,0 +1,13 @@
+<div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            <% for (var friend in theme.friends){ %>
+            <li><a target="_blank" href="<%- url_for(theme.friends[friend]) %>"><%=friend %></a></li>
+            <% } %>
+        </ul>
+    </div>
+</div>

@@ -1,20 +1,22 @@
-<form onkeydown="if(event.keyCode==13){return false;}">
-    <input class="search" type="text" placeholder="Search..." autocomplete="off">
-    <i class="cross"></i>
-    <span>
+<div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="Search..." autocomplete="off">
+        <i class="cross"></i>
+        <span>
         <label for="tagswitch">Tags:</label>
         <input id="tagswitch" type="checkbox">
     </span>
-</form>
-<%- partial('_partial/tag') %>
-<nav>
-    <% site.posts.forEach(function(post, i){  %>
-    <a <% if(post.top){%>id="top"<%}%> class="<% post.categories.forEach(function(category, i){ %><%=category.name%> <% }) %>"
-       href="<%- url_for(post.path) %>"
-       data-tag="<% post.tags.forEach(function(tag, i){ %><%=tag.name%><% if (i+1<post.tags.length){%>,<%}})%>"
-       data-author="<% if(theme.author && theme.author.on==true && post.author) {%><%=post.author %><%}%>" >
-        <span class="post-title" title="<%=post.title %>"><%=post.title %></span>
-        <span class="post-date" title="<%= date(post.date, 'YYYY-MM-DD HH:mm:ss')%>"><%= date(post.date, 'YYYY/MM/DD') %></span>
-    </a>
-    <% }) %>
-</nav>
+    </form>
+    <%- partial('_partial/tag') %>
+    <nav>
+        <% site.posts.forEach(function(post, i){  %>
+        <a <% if(post.top){%>id="top"<%}%> class="<% post.categories.forEach(function(category, i){ %><%=category.name%> <% }) %>"
+           href="<%- url_for(post.path) %>"
+           data-tag="<% post.tags.forEach(function(tag, i){ %><%=tag.name%><% if (i+1<post.tags.length){%>,<%}})%>"
+           data-author="<% if(theme.author && theme.author.on==true && post.author) {%><%=post.author %><%}%>" >
+            <span class="post-title" title="<%=post.title %>"><%=post.title %></span>
+            <span class="post-date" title="<%= date(post.date, 'YYYY-MM-DD HH:mm:ss')%>"><%= date(post.date, 'YYYY/MM/DD') %></span>
+        </a>
+        <% }) %>
+    </nav>
+</div>
