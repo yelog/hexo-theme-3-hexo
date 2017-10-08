@@ -236,9 +236,16 @@ function inputChange(e) {
 }
 
 /*是否展示标签列表*/
-$(".nav-right form span input[type=checkbox]").on("change", function (e) {
+$("#tagswitch").on("change", function (e) {
     $(".nav-right .tags-list").css("display", $(this).prop("checked") ? "block" : "none");
-    $(".nav-right nav").css("top", $(this).prop("checked") ? $(".nav-right form").height() + $(".nav-right .tags-list").height() + 51 : $(".nav-right form").height() + 1 + "px");
+    // 51 为 .tags-list 的 margin-top + margin-bottom + form 的 border-bottom  || 1 为 form 的 border-bottom
+    var top = $(this).prop("checked") ? $(".nav-right form").height() + $(".nav-right .tags-list").height() + 51 : $(".nav-right form").height() + 1;
+    if ($(window).width() > 426) {
+        var height = $(document).height() - top - 11;// 11 为nav的border-top + padding-bottom
+    }  else {
+        height = $(document).height() - top - $('.nav-left').height() - 11;// 11 为nav的border-top + padding-bottom
+    }
+    $(".nav-right nav").css({"top": top, "height": height});
 });
 
 /*隐藏/显示 文章列表*/

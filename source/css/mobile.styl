@@ -84,9 +84,14 @@
           top 24px
         span
           top 21px
-      nav
-        top 52px
-        bottom 160px
+      .title-list
+        nav
+          top 64px
+          bottom 160px
+          height calc(100vh - 235px)
+          a
+            .post-title
+              width calc(100vw - 32px)
       .friends-content ul
         margin-left 30px
     &-right nav a
@@ -147,12 +152,13 @@
           width 200px
 @media screen and (max-width 322px)
   .nav
-    &-right form
-      .search
-        width 165px
-        font-size
-      .cross
-        right 115px
+    &-right
+      form
+        .search
+          width 165px
+          font-size
+        .cross
+          right 115px
   .post .pjax .article_copyright
     font-size 6px
   .shang_box
