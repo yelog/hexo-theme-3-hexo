@@ -308,6 +308,8 @@ $(function () {
         /*设置文章列表title宽度*/
         $('.nav-right>nav>a>.post-title').css('width',$('.nav-right>nav>a').width() - $('.nav-right>nav>a>.post-date:first').width() - 40)
     }
+    // 初始化tag列表宽度
+    $('.tags-list').css('width', $('.nav-right').width() - 40)
 
     /*友情链接*/
     $('.friends').on('click',function () {
