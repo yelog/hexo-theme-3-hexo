@@ -94,4 +94,24 @@
     }
     <%}%>
 
+    /*列表样式*/
+    <%if(theme.list.theme=="thread"){%>
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul{
+        border: #e2dede solid 2px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    <%}%>
 </style>

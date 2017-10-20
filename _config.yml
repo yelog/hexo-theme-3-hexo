@@ -59,6 +59,12 @@ article_list:
     color:     # 文字颜色 提供几种：'#ffffff'
 # 注意：由于颜色如果包含#，使用单引号 ' 引起来
 
+# 列表样式
+list:
+  theme: thread
+# normal : 普通样式
+# thread : 列表外圈有一个线框
+
 table: green_title
 # table 的样式
 # 为空时类似github的table样式
@@ -68,7 +74,7 @@ table: green_title
 highlight:
   on: true # true开启代码高亮
   lineNum: false # true显示行号
-  theme: darcula
+  theme: sublime
 # 代码高亮主题,效果可以查看 https://highlightjs.org/static/demo/
 # 支持主题：
 # sublime : 参考sublime的高亮主题
