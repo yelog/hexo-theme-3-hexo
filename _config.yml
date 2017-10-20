@@ -75,6 +75,11 @@ table: green_title
 # green 绿色样式
 # green_title 头部为青色的table样式
 
+# 文章列表背景图
+article_bg_img:
+  on: true
+  src: http://oncj6b2vl.bkt.clouddn.com/FlSExUGfRSaqxkK5v42CpuI-tXAL.jpg
+
 highlight:
   on: true # true开启代码高亮
   lineNum: false # true显示行号

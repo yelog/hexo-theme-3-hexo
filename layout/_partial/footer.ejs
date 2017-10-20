@@ -126,4 +126,26 @@
         border-radius: 10px;
     }
     <%}%>
+
+    /*文章列表背景图*/
+    <%if(theme.article_bg_img.on){%>
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background: url("<%=theme.article_bg_img.src%>");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    <%}%>
 </style>
