@@ -95,7 +95,7 @@
     <%}%>
 
     /*列表样式*/
-    <%if(theme.list.theme=="thread"){%>
+    <%if(theme.list=="thread"){%>
     .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul{
         border: #e2dede solid 2px;
         border-radius: 10px;
@@ -112,6 +112,18 @@
     .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li{
         margin-bottom: auto;
         margin-left: auto;
+    }
+    <%}%>
+
+    /*引用块样式*/
+    <%if(theme.blockquote=="bracket"){%>
+    .post .pjax article blockquote {
+        padding: 10px 20px;
+        background-color: white;
+        border: none;
+        border-left: 4px solid #42b983;
+        border-right: 4px solid #42b983;
+        border-radius: 10px;
     }
     <%}%>
 </style>

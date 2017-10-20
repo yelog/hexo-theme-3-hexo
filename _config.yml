@@ -60,13 +60,17 @@ article_list:
 # 注意：由于颜色如果包含#，使用单引号 ' 引起来
 
 # 列表样式
-list:
-  theme: thread
+list: thread
 # normal : 普通样式
 # thread : 列表外圈有一个线框
 
-table: green_title
+# 引用块样式
+blockquote: bracket
+# github : 类似于github的引用快
+# bracket : 类似于左右两个大括号的样式
+
 # table 的样式
+table: green_title
 # 为空时类似github的table样式
 # green 绿色样式
 # green_title 头部为青色的table样式
