@@ -44,6 +44,9 @@
         <%if(theme.visit_counter && theme.visit_counter.on) {%>
         $.getScript("//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js");
         <%}%>
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
     }
 
     /*打赏页面隐藏与展示*/
@@ -61,8 +64,8 @@
     pre{
         position: relative;
         margin-bottom: 24px;
-        border-radius: 3px;
-        border: 1px solid #C3CCD0;
+        border-radius: 10px;
+        border: 2px solid #e2dede;
         background: #FFF;
         overflow: hidden;
     }
@@ -75,9 +78,11 @@
         top: 0;
         left: 0;
         width: 20px;
-        padding: 9px 2px 12px 5px;
+        padding: 0.5em 3px 0.5em 5px;
+        border-right: 1px solid #C3CCD0;
         text-align: right;
         color: <% if(theme.highlight.theme=="brown-paper"){ %>#616161<%}else{%>#AAA<%}%>;
+        background-color: <% if(theme.highlight.theme=="atom-light"){ %>#fafafa<%}%>;
     }
 </style>
 <%}%>
