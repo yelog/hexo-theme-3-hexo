@@ -16,11 +16,7 @@
             isLoadComments = true;
             if(isLoadComments )
             $commentBar.find("a > i").toggle();
-            <% if (theme.duoshuo.on) {%>
-            pajx_loadDuodsuo();
-            <%} else {%>
             loadComment();
-            <%}%>
             $commentBar.fadeOut(800);
         }
         $commentBar.click(function(){

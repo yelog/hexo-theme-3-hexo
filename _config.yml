@@ -124,18 +124,10 @@ preload_comment: false
 ## true: 页面加载时加载评论区
 
 disqus:
-  on: true
+  on: false
   shortname: yelog
   # disqus评论系统， 2016年9月被GFW认证，大陆不能使用。
   # https://help.disqus.com/customer/en/portal/articles/466208-what-s-a-shortname-
-
-duoshuo:
-  on: false
-  domain: jaytp
-  # 2017年6月1日正式关停服务，届时将移除此功能，所以不建议使用
-  # 多说评论系统，http://duoshuo.com/create-site/
-  # 使用上面网址登陆你的多说，然后创建站点，在 domain 中填入你设定的域名前半部分
-  # http://<要填的部分>.duoshuo.com (domain只填上<>里的内容，不要填整个网址)
 
 gentie:
   on: false
@@ -143,6 +135,24 @@ gentie:
   # 网易云跟帖评论系统，https://gentie.163.com/
   # 注册后，进入后台管理，获取代码：复制其中的productKey到product_key中。
   # 网易云跟帖暂时不支持查询评论数，所以启用时，把评论数关掉，上方comment_count: false。
+
+gitalk:
+  on: true
+  githubID: yelog
+  repo: yelog.github.io
+  ClientID: dc7f8ca729fea878e59c
+  ClientSecret: 67417ddbb12eeebb0de47187099e92ace7bdf90e
+  adminUser: yelog
+  distractionFreeMode: true
+# gitalk：利用github issue制作的第三方聊天插件
+# https://github.com/gitalk/gitalk
+# 参数介绍：
+# githubID: github用户名
+# repo: 使用哪个仓库的issue
+# ClientID 和 ClientSecret 创建 OAuth application 就会生成：https://github.com/settings/applications/new
+# adminUser: 必须为上面仓库的合作者（有写入权限），使用自己的 github 用户名即可
+# distractionFreeMode: 全屏遮罩效果
+
 
 gitment:
   on: false

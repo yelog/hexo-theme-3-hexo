@@ -1,8 +1,6 @@
 <% if (!index && post.comments){ %>
-    <% if (theme.duoshuo.on) { %>
-        <%- partial('comments/duoshuo', {
-            key: post.path,
-            title: post.title,
+    <% if (theme.gitalk.on) { %>
+        <%- partial('comments/gitalk', {
             url: config.url+url_for(post.path),
         }) %>
     <% } else if (theme.disqus.on) { %>
@@ -12,7 +10,6 @@
     }) %>
     <% } else if (theme.gitment.on) { %>
     <%- partial('comments/gitment', {
-        shortname: theme.disqus.shortname,
         url: config.url+url_for(post.path)
     }) %>
     <% } else if (theme.gentie.on) { %>
