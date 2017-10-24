@@ -23,7 +23,7 @@ author:
 ##############################
 
 # 文末声明
-article_txt: 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论（可能需要在能访问 disqus 服务的网络），也可以邮件至 jaytp@qq.com
+article_txt: 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com
 
 bottom_text: ©2017 Yelog
 # 自定义页面最下方的站点版权信息
@@ -144,6 +144,8 @@ gitalk:
   ClientSecret: 67417ddbb12eeebb0de47187099e92ace7bdf90e
   adminUser: yelog
   distractionFreeMode: true
+  language: zh-CN
+  perPage: 10
 # gitalk：利用github issue制作的第三方聊天插件
 # https://github.com/gitalk/gitalk
 # 参数介绍：
@@ -152,6 +154,8 @@ gitalk:
 # ClientID 和 ClientSecret 创建 OAuth application 就会生成：https://github.com/settings/applications/new
 # adminUser: 必须为上面仓库的合作者（有写入权限），使用自己的 github 用户名即可
 # distractionFreeMode: 全屏遮罩效果
+# language: 语言：支持：en / zh-CN / zh-TW 三种
+# perPage: 每次加载的数据大小，默认10，最大100
 
 
 gitment:

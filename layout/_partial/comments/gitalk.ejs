@@ -10,7 +10,9 @@
         owner: '<%=theme.gitalk.githubID %>',
         admin: ['<%=theme.gitalk.adminUser %>'],
         id: location.pathname,
-        distractionFreeMode: '<%=theme.gitalk.distractionFreeMode %>'
+        distractionFreeMode: '<%=theme.gitalk.distractionFreeMode %>',
+        language: '<%=theme.gitalk.language %>',
+        perPage: '<%=theme.gitalk.perPage %>'
     })
 gitalk.render('comments')
 </script>
