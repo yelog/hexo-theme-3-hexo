@@ -12,7 +12,7 @@
         id: location.pathname,
         distractionFreeMode: '<%=theme.gitalk.distractionFreeMode %>',
         language: '<%=theme.gitalk.language %>',
-        perPage: '<%=theme.gitalk.perPage %>'
+        perPage: parseInt('<%=theme.gitalk.perPage %>',10)
     })
 gitalk.render('comments')
 </script>
