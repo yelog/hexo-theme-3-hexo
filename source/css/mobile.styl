@@ -2,6 +2,9 @@
   html, body
     font 400 15px/1 "Open Sans", "Hiragino Sans GB", sans-serif
   .nav
+    width 492px
+    &.fullscreen
+      margin-left -492px
     &-left
       width 100px
       .avatar
@@ -16,6 +19,10 @@
           font-size 15px
         .post-date
           font-size 14px
+    .hide-list
+      left 492px
+      &.fullscreen
+        left 0
   .post
     font-size 17px
     .pjax
@@ -29,11 +36,18 @@
     z-index 30
     -webkit-overflow-scrolling touch
     position absolute
-    margin-left -585px
+    margin-left -492px
     &.fullscreen
       margin-left 0px
     &.mobile
       margin-left 0px
+    .hide-list
+      .brackets.first
+        display none
+      &.fullscreen
+        left 492px
+        .brackets.first
+          display block
   .post
     .pjax,.pjax.fullscreen
       padding 0 18px
@@ -117,6 +131,8 @@
         width 90%
       .post-date
         display none
+    .hide-list
+      display none
   .post
     font-size 16px
     .pjax

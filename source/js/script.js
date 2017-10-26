@@ -245,26 +245,32 @@ $("#tagswitch").on("change", function (e) {
 });
 
 /*隐藏/显示 文章列表*/
-$(".full-toc .full").click(function (e) {
+$(".full-toc .full,.semicircle").click(function (e) {
     if ($(window).width() <= 1024 && $(".nav").hasClass("mobile")) {
         $(".nav").removeClass("mobile");
-        $(this).children().removeClass("mobile");
+        $(".full-toc .full").children().removeClass("mobile");
         return;
     }
-    if ($(this).children().hasClass("min")) {
-        $(this).children().removeClass("min").addClass("max");
-        $(".nav").addClass("fullscreen");
+    if ($(".full-toc .full").children().hasClass("min")) {
+        $(".full-toc .full").children().removeClass("min").addClass("max");
+        $(".nav, .hide-list").addClass("fullscreen");
         content.delay(200).queue(function () {
-            $(this).addClass('fullscreen').dequeue();
+            $(".full-toc .full").addClass('fullscreen').dequeue();
         });
     } else {
-        $(this).children().removeClass("max").addClass("min");
-        $(".nav").removeClass("fullscreen");
+        $(".full-toc .full").children().removeClass("max").addClass("min");
+        $(".nav, .hide-list").removeClass("fullscreen");
         content.delay(300).queue(function () {
-            $(this).removeClass('fullscreen').dequeue();
+            $(".full-toc .full").removeClass('fullscreen').dequeue();
         });
     }
 });
+
+$(".post").hover(function () {
+    $(".semicircle").css("margin-left", "-43px");
+},function () {
+    $(".semicircle").css("margin-left", "0");
+})
 
 $(function () {
     bind();
