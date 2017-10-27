@@ -41,11 +41,11 @@
             return partial('_partial/copyright');
         }) %>
     </div>
-</div>
-<div class="full-toc">
-    <%- fragment_cache('toc', function(){
-        return partial('_partial/full-toc');
-    }) %>
+    <div class="full-toc">
+        <%- fragment_cache('toc', function(){
+            return partial('_partial/full-toc');
+        }) %>
+    </div>
 </div>
 <div class="acParent"></div>
 <%- fragment_cache('dashang', function(){
