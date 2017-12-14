@@ -162,8 +162,8 @@ gitment:
   on: false
   owner: yelog
   repo: yelog.github.io
-  client_id: d64ceca0d8a4e8a1f5c9
-  client_secret: fb17d5f0aba31372f61a03df707b320a39a73a06
+  client_id: ****************
+  client_secret: ****************
   # gitment : 通过github issue实现的评论系统
   # 开源地址 : https://github.com/imsun/gitment
   # 使用说明 :
