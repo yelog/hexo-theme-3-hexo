@@ -171,7 +171,7 @@
             &:before
               border-right-color#7B5D5F
 
-    nav
+    nav, #local-search-result
       clear both
       border-top 1px solid #e5e8ec
       width 100%
@@ -188,6 +188,14 @@
         width 3px
       &::-webkit-scrollbar-thumb
         background #309E85
+      .search-result-list
+        padding-left 0
+        .search-result
+          padding 0 16px 0 32px
+          margin 0
+          color gray
+          .search-keyword
+            color red
       a
         display block
         height 32px

@@ -1,6 +1,6 @@
 <div class="title-list">
     <form onkeydown="if(event.keyCode==13){return false;}">
-        <input class="search" type="text" placeholder="Search..." autocomplete="off">
+        <input class="search" type="text" placeholder="<% if (theme.searchAll){%>以 in: 开头进行全文搜索<%} else {%>Search...<%}%>" autocomplete="off"id="local-search-input" >
         <i class="cross"></i>
         <span>
         <label for="tagswitch">Tags:</label>
@@ -8,7 +8,12 @@
     </span>
     </form>
     <%- partial('_partial/tag') %>
-    <nav>
+    <% if (theme.searchAll) { %>
+    <div id="local-search-result">
+
+    </div>
+    <% } %>
+    <nav id="title-list-nav">
         <% site.posts.forEach(function(post, i){  %>
         <a <% if(post.top){%>id="top"<%}%> class="<% post.categories.forEach(function(category, i){ %><%=category.name%> <% }) %>"
            href="<%- url_for(post.path) %>"

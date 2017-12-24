@@ -208,6 +208,17 @@ $(".nav-right form .search").on("change", function (e) {
 function inputChange(e) {
     $(".nav-right form .cross").css("display", $(e.currentTarget).val() == "" ? "none" : "block");
     var val = $(e.currentTarget).val().trim();
+    if ($('#local-search-result').length>0) {
+        if (val.length>3 && (val.substr(0,3).toLowerCase() == 'in:' || val.substr(0,3).toLowerCase()=='in:')) {
+            $('#title-list-nav').hide();
+            $('#local-search-result').show();
+            searchAll(val.substr(3))
+        } else {
+            $('#title-list-nav').show();
+            $('#local-search-result').hide();
+        }
+    }
+
     if (val == "") {
         $(".nav-right nav a").css("display", "block");
     } else if (val.substr(0, 1) == "#") {
@@ -241,7 +252,7 @@ $("#tagswitch").on("change", function (e) {
     }  else {
         height = $(document).height() - top - $('.nav-left').height() - 11;// 11 为nav的border-top + padding-bottom
     }
-    $(".nav-right nav").css({"top": top, "height": height});
+    $(".nav-right nav, #local-search-result").css({"top": top, "height": height});
 });
 
 /*隐藏/显示 文章列表*/
@@ -274,6 +285,10 @@ $(".post").hover(function () {
 
 $(function () {
     bind();
+    if ($('#local-search-result').length>0) {
+        // 全文搜索
+        searchFunc("/search.xml", 'local-search-input', 'local-search-result');
+    }
     //搜索框下的tag搜索事件
     $(".nav-right .tags-list li a").on("click", function (e) {
         $(".nav-right form input").val("#" + $(this).text().trim()).change();

@@ -32,6 +32,16 @@ bottom_text: ©2017 Yelog
 reward: true
 # true 开启打赏功能
 
+searchAll: false
+# true 启用全文搜索
+# 开启此功能需要下面操作：
+# 1. 在 hexo 根目录 执行 npm install hexo-generator-search --save 安装插件
+# 2. 在 hexo 根目录的 _config.xml 中添加下面内容
+# search:
+#   path: search.xml
+#   field: post
+
+
 copyright: true
 # Copyright info. of post | 文末版权信息
 
