@@ -287,7 +287,9 @@ $(function () {
     bind();
     if ($('#local-search-result').length>0) {
         // 全文搜索
-        searchFunc("/search.xml", 'local-search-input', 'local-search-result');
+        $.getScript('/js/search.js', function () {
+            searchFunc("/search.xml", 'local-search-input', 'local-search-result');
+        })
     }
     //搜索框下的tag搜索事件
     $(".nav-right .tags-list li a").on("click", function (e) {
