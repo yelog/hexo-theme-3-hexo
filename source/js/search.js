@@ -118,6 +118,8 @@ var searchFunc = function (path, search_id, content_id) {
           return $resultContent.innerHTML = "<ul><span class='local-search-empty'>没有找到内容，更换下搜索词试试吧~<span></ul>";
         }
         $resultContent.innerHTML = str;
+
+          $(document).pjax('#local-search-result a', '.pjax', {fragment: '.pjax', timeout: 8000});
       }
     },
       error: function (XMLHttpRequest, textStatus, errorThrown) {

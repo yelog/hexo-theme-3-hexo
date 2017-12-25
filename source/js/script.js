@@ -209,7 +209,7 @@ function inputChange(e) {
     $(".nav-right form .cross").css("display", $(e.currentTarget).val() == "" ? "none" : "block");
     var val = $(e.currentTarget).val().trim();
     if ($('#local-search-result').length>0) {
-        if (val.length>3 && (val.substr(0,3).toLowerCase() == 'in:' || val.substr(0,3).toLowerCase()=='in:')) {
+        if (val.length>3 && (val.substr(0,3).toLowerCase() == 'in:' || val.substr(0,3).toLowerCase()=='in：')) {
             $('#title-list-nav').hide();
             $('#local-search-result').show();
             searchAll(val.substr(3))
