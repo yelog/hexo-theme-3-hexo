@@ -147,7 +147,7 @@ gentie:
   # 网易云跟帖暂时不支持查询评论数，所以启用时，把评论数关掉，上方comment_count: false。
 
 gitalk:
-  on: true
+  on: false
   githubID: yelog
   repo: yelog.github.io
   ClientID: ****************
