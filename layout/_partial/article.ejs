@@ -45,7 +45,7 @@
             </span>
         </span>
         <%}%>
-        <%if(theme.comment_count){%>
+        <%if(theme.comment.on && theme.comment.type && theme.comment.comment_count){%>
         <span class="top-comment" title="跳转至评论区">
             <a href="#comments">
                 评论:<span class="count-comment">

@@ -8,6 +8,6 @@
     }) %>
 </head>
 <div style="display: none">
-  <input class="theme_disqus_on" value="<%=theme.disqus.on%>">
-  <input class="theme_preload_comment" value="<%=theme.preload_comment%>">
+  <input class="theme_disqus_on" value="<%=(theme.comment.type=='disqus')%>">
+  <input class="theme_preload_comment" value="<%=theme.comment.preload_comment%>">
 </div>

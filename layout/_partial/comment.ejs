@@ -1,24 +1,6 @@
-<% if (!index && post.comments){ %>
-    <% if (theme.gitalk.on) { %>
-        <%- partial('comments/gitalk', {
-            url: config.url+url_for(post.path),
-        }) %>
-    <% } else if (theme.disqus.on) { %>
-    <%- partial('comments/disqus', {
+<% if (!index && post.comments && theme.comment.on && theme.comment.type){ %>
+    <%- partial('comments/'+theme.comment.type, {
         shortname: theme.disqus.shortname,
         url: config.url+url_for(post.path)
     }) %>
-    <% } else if (theme.gitment.on) { %>
-    <%- partial('comments/gitment', {
-        url: config.url+url_for(post.path)
-    }) %>
-    <% } else if (theme.gentie.on) { %>
-        <%- partial('comments/gentie', {
-            shortname: theme.disqus.shortname
-        }) %>
-    <% } else if (config.disqus_shortname) { %>
-        <%- partial('comments/disqus', {
-            shortname: config.disqus_shortname
-        }) %>
-    <% } %>
 <% } %>
