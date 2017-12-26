@@ -141,7 +141,7 @@ disqus:
 
 gentie:
   on: false
-  product_key: ****************
+  product_key: 
   # 网易云跟帖评论系统，https://gentie.163.com/
   # 注册后，进入后台管理，获取代码：复制其中的productKey到product_key中。
   # 网易云跟帖暂时不支持查询评论数，所以启用时，把评论数关掉，上方comment_count: false。
@@ -150,8 +150,8 @@ gitalk:
   on: false
   githubID: yelog
   repo: yelog.github.io
-  ClientID: ****************
-  ClientSecret: ****************
+  ClientID: 
+  ClientSecret: 
   adminUser: yelog
   distractionFreeMode: true
   language: zh-CN
@@ -172,8 +172,8 @@ gitment:
   on: false
   owner: yelog
   repo: yelog.github.io
-  client_id: ****************
-  client_secret: ****************
+  client_id: 
+  client_secret: 
   # gitment : 通过github issue实现的评论系统
   # 开源地址 : https://github.com/imsun/gitment
   # 使用说明 :
