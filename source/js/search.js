@@ -120,6 +120,14 @@ var searchFunc = function (path, search_id, content_id) {
         $resultContent.innerHTML = str;
 
           $(document).pjax('#local-search-result a', '.pjax', {fragment: '.pjax', timeout: 8000});
+          /*鼠标移出文章列表后，去掉文章标题hover样式*/
+          $("#local-search-result a").mouseenter(function (e) {
+              $("#local-search-result a.hover").removeClass("hover");
+              $(this).addClass("hover");
+          });
+          $("#local-search-result a").mouseleave(function (e) {
+              $(this).removeClass("hover");
+          });
       }
     },
       error: function (XMLHttpRequest, textStatus, errorThrown) {
