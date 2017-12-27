@@ -329,6 +329,7 @@ $(".post").hover(function () {
 
 $(function () {
     bind();
+    $('.nav-left ul').css('height', 'calc(100vh - '+($('.avatar_target img').outerHeight(true) + $('.author').outerHeight(true)+$('.nav-left .icon').outerHeight(true)+$('.left-bottom').outerHeight(true))+'px)');
     if ($('#local-search-result').length>0) {
         // 全文搜索
         $.getScript('/js/search.js', function () {
