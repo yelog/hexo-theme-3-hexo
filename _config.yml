@@ -90,6 +90,12 @@ article_bg_img:
   on: true
   src: http://oncj6b2vl.bkt.clouddn.com/FlSExUGfRSaqxkK5v42CpuI-tXAL.jpg
 
+# 点击图片放大样式
+img_resize: default
+# 可选值：
+# default: 默认
+# photoSwipe: 使用photoSwipe插件
+
 highlight:
   on: true # true开启代码高亮
   lineNum: true # true显示行号
