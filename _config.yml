@@ -32,7 +32,7 @@ bottom_text: ©2017 Yelog
 reward: true
 # true 开启打赏功能
 
-searchAll: true
+searchAll: false
 # true 启用全文搜索
 # 开启此功能需要下面操作：
 # 1. 在 hexo 根目录 执行 npm install hexo-generator-search --save 安装插件
@@ -45,7 +45,7 @@ searchAll: true
 copyright: true
 # Copyright info. of post | 文末版权信息
 
-word_count: true
+word_count: false
 # true 开启字数统计
 # 开启此功能需要安装插件 ：在 hexo根目录 执行npm i hexo-wordcount --save
 
@@ -122,13 +122,11 @@ mathjax:
 
 # 友情链接
 friends:
-  QQ爹博客: https://qqdie.com
-  兰陵の记事簿: https://blog.thkira.com/
-  ISLAND: http://youngxhui.github.io/
+  叶落阁: http://yelog.org/
 
 ##########评论设置#############
 comment:
-  on: true
+  on: false
   type: gitalk  # 评论系统：gitalk、disqus、gentie、gitment,注意：使用时，在下方对应位置进行配置
   comment_count: true  # 文章标题下方显示评论数
   preload_comment: false  # 预加载评论区
@@ -137,12 +135,12 @@ comment:
 # 各评论系统配置 ↓↓
 
 disqus:
-  shortname: yelog
+  shortname:
   # disqus评论系统， 2016年9月被GFW认证，大陆不能使用。
   # 获取shortname：https://help.disqus.com/customer/en/portal/articles/466208-what-s-a-shortname-
 
 gentie:
-  product_key: ceb0c7f9689041dea4dd9b3a021f457c
+  product_key:
   # 网易云跟帖评论系统，https://gentie.163.com/
   # 注册后，进入后台管理，获取代码：复制其中的productKey到product_key中。
   # 网易云跟帖暂时不支持查询评论数，所以启用时，把评论数关掉，上方comment_count: false。
@@ -150,8 +148,8 @@ gentie:
 gitalk:
   githubID: yelog
   repo: yelog.github.io
-  ClientID: dc7f8ca729fea878e59c
-  ClientSecret: 67417ddbb12eeebb0de47187099e92ace7bdf90e
+  ClientID:
+  ClientSecret:
   adminUser: yelog
   distractionFreeMode: true
   language: zh-CN
@@ -171,8 +169,8 @@ gitalk:
 gitment:
   owner: yelog
   repo: yelog.github.io
-  client_id: d64ceca0d8a4e8a1f5c9
-  client_secret: fb17d5f0aba31372f61a03df707b320a39a73a06
+  client_id:
+  client_secret:
   # gitment : 通过github issue实现的评论系统
   # 开源地址 : https://github.com/imsun/gitment
   # 使用说明 :
@@ -192,4 +190,3 @@ CDN:
   nprogres_js: //cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js
   mathjax: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML
 ##############################
-
