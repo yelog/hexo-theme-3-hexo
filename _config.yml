@@ -22,6 +22,28 @@ author:
     author2: 小马哥
 ##############################
 
+# 左下角自定义菜单
+menu:
+  about:  # '关于' 按钮
+    on: true # 是否显示
+    url: /about  # 跳转链接
+    type: 1 # 跳转类型 1：站内异步跳转 2：当前页面跳转 3：打开新的tab页
+  friend: # '友链' 按钮
+    on: true # 是否展示
+  menus: # 添加的其他菜单写在 menus 下，如下三个菜单：动态菜单1、动态菜单2、动态菜单3
+    相册:
+      on: false
+      url: /photo
+      type: 1  # 跳转类型 1：站内异步跳转
+    叶落阁:
+      on: false
+      url: http://yelog.org/
+      type: 2  # 跳转类型 2：当前页面跳转
+    github:
+      on: false
+      url: https://github.com/yelog
+      type: 3  # 跳转类型 3：打开新的tab页
+
 # 文末声明
 article_txt: 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com
 
