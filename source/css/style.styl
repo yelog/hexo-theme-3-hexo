@@ -84,4 +84,45 @@ img.img_max
   z-index: 51;
   transition: top .5s,left .5s, transform .5s,width .5s,height .5s;
 
+.mobile-menus-out
+  display none
+  opacity 0
+  transition opacity .4s
+  background: gray;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  top 0
+  &.show
+    display: block;
+    opacity: 0.3;
+.mobile-menus
+  display: block;
+  position: absolute;
+  background: white;
+  height: auto;
+  width: 0;
+  font-size: 1px
+  padding 0
+  z-index: 200;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align center
+  -webkit-border-radius: 30px
+  -moz-border-radius: 30px
+  border-radius: 30px
+  transition width .4s, font-size .4s, padding .4s
+  &.show
+    width: 100px;
+    font-size: 16px
+    padding 20px
+  .dynamic-menu
+    display: block
+    margin-top 20px
+    &:nth-child(1)
+      margin-top 0
+
+
 @import "mobile.styl"

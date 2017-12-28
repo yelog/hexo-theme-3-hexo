@@ -539,3 +539,17 @@
 
 </div>
 <% } %>
+
+<% var menus = 0%>
+<% for (var menu in theme.menu.menus) {  if (theme.menu.menus[menu].on) {menus++}}%>
+<% if (menus>0){%>
+<div class="mobile-menus-out" >
+
+</div>
+<div class="mobile-menus">
+    <% for (var menu in theme.menu.menus) {%>
+    <% if (theme.menu.menus[menu].on) {%>
+    <a class="dynamic-menu <%=(theme.menu.menus[menu].type==1 ?'site_url':'')%>" <%if(theme.menu.menus[menu].type==2){%>target="_self" <%}else if(theme.menu.menus[menu].type==3){%>target="_blank"<%}%>  href="<%=theme.menu.menus[menu].url%>"><%=menu %></a>
+    <%}}%>
+</div>
+<%}%>

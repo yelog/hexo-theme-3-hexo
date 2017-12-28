@@ -329,6 +329,16 @@ $(".post").hover(function () {
 
 $(function () {
     bind();
+
+    $('.more-menus').on('click', function () {
+        $('.mobile-menus-out').addClass('show');
+        $('.mobile-menus').addClass('show');
+    })
+    $('.mobile-menus-out').on('click', function () {
+        $('.mobile-menus-out').removeClass('show');
+        $('.mobile-menus').removeClass('show');
+    })
+
     $('.nav-left ul').css('height', 'calc(100vh - '+($('.avatar_target img').outerHeight(true) + $('.author').outerHeight(true)+$('.nav-left .icon').outerHeight(true)+$('.left-bottom').outerHeight(true))+'px)');
     if ($('#local-search-result').length>0) {
         // 全文搜索

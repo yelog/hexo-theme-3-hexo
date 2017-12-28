@@ -4,13 +4,7 @@
 <div class="author">
     <span><%=config.author%></span>
 </div>
-<% var menus = 0%>
-<% for (var menu in theme.menu.menus) {  if (theme.menu.menus[menu].on) {menus++}}%>
-<% if (menus>0){%>
-<div class="mobile-menus" >
 
-</div>
-<%}%>
 <div class="icon">
     <% if(theme.link.rss){%>
     <a class="rss" title="rss" href="<%= theme.link.rss %>" target="_blank"></a>
@@ -40,6 +34,11 @@
     <a class="email" title="email" href="mailto:<%= theme.link.email %>"></a>
     <%}%>
 </div>
+<% var menus = 0%>
+<% for (var menu in theme.menu.menus) {  if (theme.menu.menus[menu].on) {menus++}}%>
+<% if (menus>0){%>
+<a class="more-menus">更多菜单</a>
+<%}%>
 <ul>
     <li class="all active">全部文章</li>
     <% site.categories.forEach(function(category, i){ %>

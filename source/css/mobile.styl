@@ -81,20 +81,18 @@
         .avatar
           height 80px
           width 80px
+      .more-menus
+        position: absolute;
+        color: white;
+        display: block;
+        z-index: 100;
+        bottom: 5px;
+        right: 30px;
       .left-bottom
         top 108px
         text-align center
         .menus
-          position absolute
-          width 100%
-          top 30px
-          .dynamic-menu
-            display inline-block
-            width auto
-            border-top 0
-            &:not(:nth-last-child(1)):after
-              content '·'
-              margin-left: 7px;
+          display none
         a.about
           border-top none
           border-right none!important
