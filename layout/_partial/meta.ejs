@@ -13,8 +13,8 @@
 <link href="<%=theme.CDN.animate %>" rel="stylesheet">
 <link href="<%=theme.CDN.font_awsome %>" rel="stylesheet">
 <% if (theme.img_resize == 'photoSwipe') {%>
-<link href="//cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.css" rel="stylesheet">
-<link href="//cdn.bootcss.com/photoswipe/4.1.2/default-skin/default-skin.min.css" rel="stylesheet">
+<link href="<%=theme.CDN.photoswipe_css%>" rel="stylesheet">
+<link href="<%=theme.CDN.photoswipe_skin_css%>" rel="stylesheet">
 <% } %>
 <script src="<%=theme.CDN.jquery%>"></script>
 <%- js('js/jquery.autocomplete.min') %>

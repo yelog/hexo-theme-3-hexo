@@ -91,7 +91,7 @@ article_bg_img:
   src: http://oncj6b2vl.bkt.clouddn.com/FlSExUGfRSaqxkK5v42CpuI-tXAL.jpg
 
 # 点击图片放大样式
-img_resize: default
+img_resize: photoSwipe
 # 可选值：
 # default: 默认
 # photoSwipe: 使用photoSwipe插件
@@ -195,5 +195,9 @@ CDN:
   font_awsome: //cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css
   nprogres_js: //cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js
   mathjax: //cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML
+  photoswipe_js: //cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.js
+  photoswipe_ui_js: //cdn.bootcss.com/photoswipe/4.1.2/photoswipe-ui-default.min.js
+  photoswipe_css: //cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.css
+  photoswipe_skin_css: //cdn.bootcss.com/photoswipe/4.1.2/default-skin/default-skin.min.css
 ##############################
 
