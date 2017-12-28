@@ -55,7 +55,8 @@
 
         <% if (theme.img_resize == 'photoSwipe') {%>
 
-        $('.article-entry').each(function(i){
+        // PhotoSwipe
+        $('article').each(function(i){
             $(this).find('img').each(function(){
                 if ($(this).closest('figure').hasClass('article-gallery-img')) {
                     return;
@@ -67,8 +68,6 @@
                 $(this).after('<div class="img_alt"><span>' + (alt || '') + '</span></div>');
             });
         });
-
-        // PhotoSwipe
 
         var pswpElement = document.querySelectorAll('.pswp')[0];
         if (pswpElement) {
