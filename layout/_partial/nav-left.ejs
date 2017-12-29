@@ -46,7 +46,7 @@
     <% }) %>
 </ul>
 <div class="left-bottom">
-    <div class="menus" <% if(menus>1){ %>style="padding-left: 10px;" <%}%>>
+    <div class="menus">
     <% for (var menu in theme.menu.menus) {%>
     <% if (theme.menu.menus[menu].on) {%>
     <a class="dynamic-menu <%=(theme.menu.menus[menu].type==1 ?'site_url':'')%>" <%if(theme.menu.menus[menu].type==2){%>target="_self" <%}else if(theme.menu.menus[menu].type==3){%>target="_blank"<%}%>  href="<%=theme.menu.menus[menu].url%>"><%=menu %></a>
