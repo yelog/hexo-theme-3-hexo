@@ -39,9 +39,11 @@
     </div>
 </div>
 <div class="acParent"></div>
+<% if (theme.reward) {%>
 <%- fragment_cache('dashang', function(){
     return partial('_partial/dashang');
 }) %>
+<% } %>
 </body>
 <%- fragment_cache('footer', function(){
     return partial('_partial/footer');
