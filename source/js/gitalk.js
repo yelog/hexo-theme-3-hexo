@@ -5013,7 +5013,7 @@
                                 if (!createIssueManually && user && ~admin.indexOf(user.login)) {
                                     if (typeof $.cookie(_this4.options.id) == 'undefined') { //如果第一次发起创建请求
                                         var date = new Date();
-                                        date.setTime(date.getTime()+10*60*1000);//过期时间60s
+                                        date.setTime(date.getTime()+30*1000);//过期时间60s
                                         $.cookie(_this4.options.id,'1',  { expires: date, path: '/' }); //保存一天记录
                                         return _this4.createIssue();
                                     } else {
@@ -5047,6 +5047,7 @@
                         return _util.axiosGithub.post('/repos/' + owner + '/' + repo + '/issues', {
                             title: title,
                             labels: labels.concat(id),
+                            t: Date.now(),
                             body: body || url + ' \n\n ' + (title || (0, _util.getMetaContent)('description') || (0, _util.getMetaContent)('description', 'og:description') || '')
                         }, {
                             headers: {
