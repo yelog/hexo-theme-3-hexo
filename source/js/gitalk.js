@@ -4988,7 +4988,8 @@
                             params: {
                                 client_id: clientID,
                                 client_secret: clientSecret,
-                                labels: labels.concat(id).join(',')
+                                labels: labels.concat(id).join(','),
+                                t: Date.now()
                             }
                         }).then(function (res) {
 
@@ -5047,7 +5048,6 @@
                         return _util.axiosGithub.post('/repos/' + owner + '/' + repo + '/issues', {
                             title: title,
                             labels: labels.concat(id),
-                            t: Date.now(),
                             body: body || url + ' \n\n ' + (title || (0, _util.getMetaContent)('description') || (0, _util.getMetaContent)('description', 'og:description') || '')
                         }, {
                             headers: {
