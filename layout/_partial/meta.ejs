@@ -28,3 +28,6 @@
 <% if (theme.comment.type == 'disqus') {%>
 <script id="dsq-count-scr" src="//<%= theme.disqus.shortname%>.disqus.com/count.js" async></script>
 <% } %>
+<% if (theme.comment.type == 'gitalk') {%>
+<script src="<%= theme.CDN.jquery_cookie %>" ></script>
+<%}%>

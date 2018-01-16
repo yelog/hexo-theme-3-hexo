@@ -4991,6 +4991,17 @@
                                 labels: labels.concat(id).join(',')
                             }
                         }).then(function (res) {
+
+                            function sleep(numberMillis) {
+                                var now = new Date();
+                                var exitTime = now.getTime() + numberMillis;
+                                while (true) {
+                                    now = new Date();
+                                    if (now.getTime() > exitTime)
+                                        return;
+                                }
+                            }
+
                             var _options2 = _this4.options,
                                 admin = _options2.admin,
                                 createIssueManually = _options2.createIssueManually;
@@ -5000,7 +5011,15 @@
                             var issue = null;
                             if (!(res && res.data && res.data.length)) {
                                 if (!createIssueManually && user && ~admin.indexOf(user.login)) {
-                                    return _this4.createIssue();
+                                    if (typeof $.cookie(_this4.options.id) == 'undefined') { //如果第一次发起创建请求
+                                        var date = new Date();
+                                        date.setTime(date.getTime()+90*1000);//过期时间60s
+                                        $.cookie(_this4.options.id,'1',  { expires: date, path: '/' }); //保存一天记录
+                                        return _this4.createIssue();
+                                    } else {
+                                        sleep(3000);
+                                        return _this4.getIssue();
+                                    }
                                 }
 
                                 isNoInit = true;
@@ -5028,7 +5047,7 @@
                         return _util.axiosGithub.post('/repos/' + owner + '/' + repo + '/issues', {
                             title: title,
                             labels: labels.concat(id),
-                            body: body || url + ' \n\n ' + ((0, _util.getMetaContent)('description') || (0, _util.getMetaContent)('description', 'og:description') || '')
+                            body: body || url + ' \n\n ' + (title || (0, _util.getMetaContent)('description') || (0, _util.getMetaContent)('description', 'og:description') || '')
                         }, {
                             headers: {
                                 Authorization: 'token ' + this.accessToken
