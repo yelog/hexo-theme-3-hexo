@@ -209,6 +209,7 @@ gitment:
 ##########CND设置#############
 CDN:
   jquery: //cdn.bootcss.com/jquery/2.2.4/jquery.min.js
+  jquery_cookie: //cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js
   jquery_ui: //cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js
   jquery_ui_css: //cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.css
   highlight: //cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js
