@@ -58,14 +58,14 @@
         </span>
         <%}%>
     </div>
-    <%if(post.origin){%>
+    <%if(post.originUrl){%>
     <div class="article-meta">
         <span class="origin">原文:
-            <a href="<%=post.origin%>" target="_blank">
+            <a href="<%=post.originUrl%>" target="_blank">
                 <%if(post.originView){%>
                 <%= post.originView%>
                 <%} else {%>
-                <%=post.origin%>
+                <%=post.originUrl%>
                 <%}%>
             </a>
         </span>
