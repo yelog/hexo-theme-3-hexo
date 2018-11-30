@@ -110,12 +110,12 @@ table: green_title
 # 文章列表背景图
 article_bg_img:
   on: true
-  src: http://oncj6b2vl.bkt.clouddn.com/FlSExUGfRSaqxkK5v42CpuI-tXAL.jpg
+  src: http://img.xiangzhangshugongyi.com/FlSExUGfRSaqxkK5v42CpuI-tXAL.jpg
 
 # 点击图片放大样式
 img_resize: photoSwipe
 # 可选值：
-# default: 默认
+# default: 默认(自己写的简单的放大)
 # photoSwipe: 使用photoSwipe插件
 
 highlight:
@@ -223,4 +223,5 @@ CDN:
   photoswipe_css: //cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.css
   photoswipe_skin_css: //cdn.bootcss.com/photoswipe/4.1.2/default-skin/default-skin.min.css
 ##############################
+
 
