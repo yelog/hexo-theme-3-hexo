@@ -8,7 +8,7 @@
 <div class="icon">
     <% for (var key in theme.link.items){ %>
         <% if(theme.link.items[key]){%>
-        <a title="<%= key %>" href="<%= theme.link.items[key] %>" target="_blank">
+        <a title="<%= key %>" href="<%if(key=='email') {%>mailto:<%}%><%= theme.link.items[key] %>" target="_blank">
             <% if(theme.link.theme=='white'){%>
                 <i class="iconfont icon-<%= key %>"></i>
             <%} else {%>
