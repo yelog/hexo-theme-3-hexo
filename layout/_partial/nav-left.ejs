@@ -6,33 +6,19 @@
 </div>
 
 <div class="icon">
-    <% if(theme.link.rss){%>
-    <a class="rss" title="rss" href="<%= theme.link.rss %>" target="_blank"></a>
-    <%}%>
-    <% if(theme.link.github){%>
-    <a class="github" title="github" href="<%= theme.link.github %>" target="_blank"></a>
-    <%}%>
-    <% if(theme.link.facebook){%>
-    <a class="facebook" title="facebook" href="<%= theme.link.facebook %>" target="_blank"></a>
-    <%}%>
-    <% if(theme.link.twitter){%>
-    <a class="twitter" title="twitter" href="<%= theme.link.twitter %>" target="_blank"></a>
-    <%}%>
-    <% if(theme.link.linkedin){%>
-    <a class="linkedin" title="linkedin" href="<%= theme.link.linkedin %>" target="_blank"></a>
-    <%}%>
-    <% if(theme.link.instagram){%>
-    <a class="instagram" title="instagram" href="<%= theme.link.instagram %>" target="_blank"></a>
-    <%}%>
-    <% if(theme.link.reddit){%>
-    <a class="reddit" title="reddit" href="<%= theme.link.reddit %>" target="_blank"></a>
-    <%}%>
-    <% if(theme.link.weibo){%>
-    <a class="weibo" title="weibo" href="<%= theme.link.weibo %>" target="_blank"></a>
-    <%}%>
-    <% if(theme.link.email){%>
-    <a class="email" title="email" href="mailto:<%= theme.link.email %>"></a>
-    <%}%>
+    <% for (var key in theme.link.items){ %>
+        <% if(theme.link.items[key]){%>
+        <a title="<%= key %>" href="<%= theme.link.items[key] %>" target="_blank">
+            <% if(theme.link.theme=='white'){%>
+                <i class="iconfont icon-<%= key %>"></i>
+            <%} else {%>
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-<%= key %>"></use>
+                </svg>
+            <%}%>
+        </a>
+        <%}%>
+    <% } %>
 </div>
 <% var menus = 0%>
 <% for (var menu in theme.menu.menus) {  if (theme.menu.menus[menu].on) {menus++}}%>
