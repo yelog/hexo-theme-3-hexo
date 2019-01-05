@@ -47,7 +47,28 @@
         position absolute
         top 31px
         right 10px
-        input
+        #tagswitch
+          &:checked +#tagsWitchIcon:before
+            border-color #64bd63
+            box-shadow inset 0 0 0 0.16rem #64bd63
+            background-color #64bd63
+            -webkit-transition border .4s,box-shadow .4s,background-color 1.2s
+            transition border .4s,box-shadow .4s,background-color 1.2s
+          &:checked +#tagsWitchIcon:after
+            left 27px
+            content ''
+            width 14px
+            height 14px
+            position absolute
+            top 8px
+            -webkit-transform translateY(-50%)
+            border-radius 100%
+            background-color #91c0f1
+            box-shadow 0 1px 1px rgba(0,0,0,.4)
+            -webkit-transition left .2s
+            transition left .2s
+            cursor pointer
+        #tagsWitchIcon
           width 40px
           height 14px
           position relative
@@ -56,58 +77,46 @@
           background 0 0
           -webkit-appearance none
           outline 0
-          &:after
-            left0px
-            background #fff
-            content ''
-            width 14px
-            height 14px
-            position absolute
-            top 8px
-            -webkit-transform translateY(-50%)
-            border-radius 100%
-            background-color #91c0f1
-            box-shadow 0 1px 1px rgba(0,0,0,.4)
-            -webkit-transition left .2s
-            transition left .2s
-            cursor pointer
-          &:before
-            content ''
-            width 40px
-            height 14px
-            border 1px solid #bdcabc
-            background-color #fdfdfd
-            border-radius 20px
-            cursor pointer
-            display inline-block
-            position relative
-            vertical-align middle
-            box-sizing content-box
-            box-shadow inset 0 0 0 0 #dfdfdf
-            -webkit-transition border .4s,box-shadow .4s
-            transition border .4s,box-shadow .4s
-            background-clip content-box
-          &:checked:before
-            border-color #64bd63
-            box-shadow inset 0 0 0 0.16rem #64bd63
-            background-color #64bd63
-            -webkit-transition border .4s,box-shadow .4s,background-color 1.2s
-            transition border .4s,box-shadow .4s,background-color 1.2s
-          &:checked:after
-            left 27px
-            background #fff
-            content ''
-            width 14px
-            height 14px
-            position absolute
-            top 8px
-            -webkit-transform translateY(-50%)
-            border-radius 100%
-            background-color #91c0f1
-            box-shadow 0 1px 1px rgba(0,0,0,.4)
-            -webkit-transition left .2s
-            transition left .2s
-            cursor pointer
+          &:after{
+            left: 0px;
+            content: '';
+            width: 14px;
+            height: 14px;
+            position: absolute;
+            top: 8px;
+            -webkit-transform: translateY(-50%);
+            border-radius: 100%;
+            background-color: #91c0f1;
+            -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.4);
+            box-shadow: 0 1px 1px rgba(0,0,0,0.4);
+            -webkit-transition: left 0.2s;
+            -o-transition: left 0.2s;
+            transition: left 0.2s;
+            cursor: pointer;
+          }
+          &:before {
+            content: '';
+            width: 40px;
+            height: 14px;
+            border: 1px solid #bdcabc;
+            background-color: #fdfdfd;
+            border-radius: 20px;
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            vertical-align: middle;
+            -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+            -webkit-box-shadow: inset 0 0 0 0 #dfdfdf;
+            box-shadow: inset 0 0 0 0 #dfdfdf;
+            -webkit-transition: border 0.4s, box-shadow 0.4s;
+            -webkit-transition: border 0.4s, -webkit-box-shadow 0.4s;
+            transition: border 0.4s, -webkit-box-shadow 0.4s;
+            -o-transition: border 0.4s, box-shadow 0.4s;
+            transition: border 0.4s, box-shadow 0.4s;
+            transition: border 0.4s, box-shadow 0.4s, -webkit-box-shadow 0.4s;
+            background-clip: content-box;
+          }
     .tags-list
       display none
       margin 15px 10px 15px

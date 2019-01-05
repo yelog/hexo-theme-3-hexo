@@ -288,7 +288,9 @@ function inputChange(e) {
         $(".nav-right nav").find("a:contains('" + val + "')").css("display", "block");
     }
 }
-
+$('#tagsWitchIcon').on('click', function () {
+    $("#tagswitch").trigger('click');
+})
 /*是否展示标签列表*/
 $("#tagswitch").on("change", function (e) {
     $(".nav-right .tags-list").css("display", $(this).prop("checked") ? "block" : "none");

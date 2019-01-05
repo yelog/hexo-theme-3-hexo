@@ -3,9 +3,10 @@
         <input class="search" type="text" placeholder="<% if (theme.searchAll){%>以 in: 开头进行全文搜索<%} else {%>Search...<%}%>" autocomplete="off"id="local-search-input" >
         <i class="cross"></i>
         <span>
-        <label for="tagswitch">Tags:</label>
-        <input id="tagswitch" type="checkbox">
-    </span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
     </form>
     <%- partial('_partial/tag') %>
     <% if (theme.searchAll) { %>
