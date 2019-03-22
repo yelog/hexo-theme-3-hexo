@@ -61,7 +61,7 @@ bottom_text: ©2017 Yelog
 reward: true
 # true 开启打赏功能
 
-searchAll: false
+searchAll: true
 # true 启用全文搜索
 # 开启此功能需要下面操作：
 # 1. 在 hexo 根目录 执行 npm install hexo-generator-search --save 安装插件
@@ -74,7 +74,7 @@ searchAll: false
 copyright: true
 # Copyright info. of post | 文末版权信息
 
-word_count: false
+word_count: true
 # true 开启字数统计
 # 开启此功能需要安装插件 ：在 hexo根目录 执行npm i hexo-wordcount --save
 
@@ -157,25 +157,29 @@ mathjax:
 
 # 友情链接
 friends:
-  叶落阁: http://yelog.org/
+  QQ爹博客: https://qqdie.com
+  兰陵の记事簿: https://blog.thkira.com
+  ISLAND: http://youngxhui.github.io
+  系统伐木累: http://www.xtfml.com
+  Leesin's Blog: http://mmmmmm.me
 
 ##########评论设置#############
 comment:
-  on: false
+  on: true
   type: gitalk  # 评论系统：gitalk、disqus、gentie、gitment,注意：使用时，在下方对应位置进行配置
   comment_count: true  # 文章标题下方显示评论数
   preload_comment: false  # 预加载评论区
-    ## false: 当点击评论条等区域时再加载评论模块
+  ## false: 当点击评论条等区域时再加载评论模块
   ## true: 页面加载时加载评论区
 # 各评论系统配置 ↓↓
 
 disqus:
-  shortname:
+  shortname: yelog
   # disqus评论系统， 2016年9月被GFW认证，大陆不能使用。
   # 获取shortname：https://help.disqus.com/customer/en/portal/articles/466208-what-s-a-shortname-
 
 gentie:
-  product_key:
+  product_key: ceb0c7f9689041dea4dd9b3a021f457c
   # 网易云跟帖评论系统，https://gentie.163.com/
   # 注册后，进入后台管理，获取代码：复制其中的productKey到product_key中。
   # 网易云跟帖暂时不支持查询评论数，所以启用时，把评论数关掉，上方comment_count: false。
@@ -183,8 +187,8 @@ gentie:
 gitalk:
   githubID: yelog
   repo: yelog.github.io
-  ClientID:
-  ClientSecret:
+  ClientID: dc7f8ca729fea878e59c
+  ClientSecret: 67417ddbb12eeebb0de47187099e92ace7bdf90e
   adminUser: yelog
   distractionFreeMode: true
   language: zh-CN
@@ -204,8 +208,8 @@ gitalk:
 gitment:
   owner: yelog
   repo: yelog.github.io
-  client_id:
-  client_secret:
+  client_id: dee4daad4118a6255c94
+  client_secret: eb9197a869ac5eb0b2e74422e480fb30f6072a71
   # gitment : 通过github issue实现的评论系统
   # 开源地址 : https://github.com/imsun/gitment
   # 使用说明 :
@@ -215,7 +219,7 @@ gitment:
 
 ##########CND设置#############
 CDN:
-  jquery: //cdn.bootcss.com/jquery/2.2.4/jquery.min.js
+  jquery: //code.jquery.com/jquery-3.3.1.min.js
   jquery_cookie: //cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js
   jquery_ui: //cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js
   jquery_ui_css: //cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.css
@@ -230,6 +234,3 @@ CDN:
   photoswipe_css: //cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.css
   photoswipe_skin_css: //cdn.bootcss.com/photoswipe/4.1.2/default-skin/default-skin.min.css
 ##############################
-
-
-
