@@ -3,7 +3,7 @@
 <script src="<%=theme.CDN.photoswipe_js%>"></script>
 <script src="<%=theme.CDN.photoswipe_ui_js%>"></script>
 <% } %>
-<script src="<%=theme.blog_path.lastIndexOf("/") === theme.blog_path.length-1?theme.blog_path.slice(0, theme.blog_path.length-1):theme.blog_path %>/js/script.js" ></script>
+<script src="<%=theme.blog_path?theme.blog_path.lastIndexOf("/") === theme.blog_path.length-1?theme.blog_path.slice(0, theme.blog_path.length-1):theme.blog_path:'' %>/js/script.js" ></script>
 <script>
     var img_resize = '<%=theme.img_resize %>';
     /*作者、标签的自动补全*/

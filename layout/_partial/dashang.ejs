@@ -6,8 +6,8 @@
     </div>
     <div class="shang_payimg">
         <div class="pay_img">
-            <img src="<%=theme.blog_path.lastIndexOf("/") === theme.blog_path.length-1?theme.blog_path.slice(0, theme.blog_path.length-1):theme.blog_path %>/img/alipay.jpg" class="alipay" title="扫码支持">
-            <img src="<%=theme.blog_path.lastIndexOf("/") === theme.blog_path.length-1?theme.blog_path.slice(0, theme.blog_path.length-1):theme.blog_path %>/img/weixin.jpg" class="weixin" title="扫码支持">
+            <img src="<%=theme.blog_path?theme.blog_path.lastIndexOf("/") === theme.blog_path.length-1?theme.blog_path.slice(0, theme.blog_path.length-1):theme.blog_path:'' %>/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="<%=theme.blog_path?theme.blog_path.lastIndexOf("/") === theme.blog_path.length-1?theme.blog_path.slice(0, theme.blog_path.length-1):theme.blog_path:'' %>/img/weixin.jpg" class="weixin" title="扫码支持">
         </div>
     </div>
     <div class="shang_payselect">
