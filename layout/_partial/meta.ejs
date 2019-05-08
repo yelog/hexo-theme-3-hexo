@@ -6,9 +6,9 @@
 <% if (theme.favicon){ %>
 <link rel="icon" href="<%- theme.favicon %>">
 <% } %>
-<%- css('css/style') %>
+<link href="<%=theme.blog_path.lastIndexOf("/") === theme.blog_path.length-1?theme.blog_path.slice(0, theme.blog_path.length-1):theme.blog_path %>/css/style.css" rel="stylesheet">
 <% if(theme.highlight && theme.highlight.on && theme.highlight.theme){ %>
-<%- css('css/hl_theme/'+theme.highlight.theme) %>
+<link href="<%=theme.blog_path.lastIndexOf("/") === theme.blog_path.length-1?theme.blog_path.slice(0, theme.blog_path.length-1):theme.blog_path %>/css/hl_theme/<%=theme.highlight.theme %>.css" rel="stylesheet">
 <%}%>
 <link href="<%=theme.CDN.animate %>" rel="stylesheet">
 <link href="<%=theme.CDN.font_awsome %>" rel="stylesheet">
@@ -17,7 +17,8 @@
 <link href="<%=theme.CDN.photoswipe_skin_css%>" rel="stylesheet">
 <% } %>
 <script src="<%=theme.CDN.jquery%>"></script>
-<%- js('js/jquery.autocomplete.min') %>
+<script src="<%=theme.blog_path.lastIndexOf("/") === theme.blog_path.length-1?theme.blog_path.slice(0, theme.blog_path.length-1):theme.blog_path %>/js/jquery.autocomplete.min.js" ></script>
+
 <script src="<%=theme.CDN.highlight %>"></script>
 <script>
     hljs.initHighlightingOnLoad();
@@ -31,4 +32,4 @@
 <% if (theme.comment.type == 'gitalk') {%>
 <script src="<%= theme.CDN.jquery_cookie %>" ></script>
 <%}%>
-<script src="/js/iconfont.js" ></script>
+<script src="<%=theme.blog_path.lastIndexOf("/") === theme.blog_path.length-1?theme.blog_path.slice(0, theme.blog_path.length-1):theme.blog_path %>/js/iconfont.js" ></script>

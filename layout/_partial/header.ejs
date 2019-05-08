@@ -10,4 +10,5 @@
 <div style="display: none">
   <input class="theme_disqus_on" value="<%=(theme.comment.type=='disqus')%>">
   <input class="theme_preload_comment" value="<%=theme.comment.preload_comment%>">
+  <input class="theme_blog_path" value="<%=theme.blog_path.lastIndexOf("/") === theme.blog_path.length-1?theme.blog_path.slice(0, theme.blog_path.length-1):theme.blog_path %>">
 </div>

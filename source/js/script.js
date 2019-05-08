@@ -14,6 +14,8 @@ jQuery.expr[':'].contains_author = function (a, i, m) {
     var tags = jQuery(a).data("author").split(",");
     return $.inArray(m[3], tags) != -1;
 };
+var blog_path = $('.theme_blog_path').val();
+blog_path= blog_path.lastIndexOf("/") === blog_path.length-1?blog_path.slice(0, blog_path.length-1):blog_path;
 
 /*使用pjax加载页面，速度更快，交互更友好*/
 var content = $(".pjax");
@@ -347,8 +349,8 @@ $(function () {
     $('.nav-left ul').css('height', 'calc(100vh - '+($('.avatar_target img').outerHeight(true) + $('.author').outerHeight(true)+$('.nav-left .icon').outerHeight(true)+$('.left-bottom').outerHeight(true))+'px)');
     if ($('#local-search-result').length>0) {
         // 全文搜索
-        $.getScript('/js/search.js', function () {
-            searchFunc("/search.xml", 'local-search-input', 'local-search-result');
+        $.getScript(blog_path + '/js/search.js', function () {
+            searchFunc(blog_path + "/search.xml", 'local-search-input', 'local-search-result');
         })
     }
     //搜索框下的tag搜索事件

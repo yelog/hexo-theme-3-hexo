@@ -2,6 +2,10 @@
 avatar: /img/avatar.jpg
 favicon: /img/avatar.jpg
 
+#如果博客放置位置不是根目录，则可以通过配置此路径解决静态文件路径错误问题
+# 比如访问地址为 yelog.org/blog 那就需要配置为 blog_path: /blog 才能正常访问
+blog_path: /
+
 #链接图标 显示顺序和下面顺序一致
 link:
   theme: color # 链接样式，color: 彩色图标  white: 黑白图标
