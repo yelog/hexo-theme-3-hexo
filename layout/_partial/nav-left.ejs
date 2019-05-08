@@ -1,4 +1,4 @@
-<a href="/" class="avatar_target">
+<a href="<%=theme.blog_path?theme.blog_path.lastIndexOf("/") === theme.blog_path.length-1?theme.blog_path.slice(0, theme.blog_path.length-1):theme.blog_path:'' %>/" class="avatar_target">
     <img class="avatar" src="<%=theme.blog_path?theme.blog_path.lastIndexOf("/") === theme.blog_path.length-1?theme.blog_path.slice(0, theme.blog_path.length-1):theme.blog_path:'' %><%=theme.avatar %>" />
 </a>
 <div class="author">
