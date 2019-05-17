@@ -27,7 +27,7 @@
 <%}%>
 <ul>
     <li class="all active">全部文章</li>
-    <% site.categories.forEach(function(category, i){ %>
+    <% site.categories.sort('name').forEach(function(category, i){ %>
     <li data-rel="<%=category.name%>"> <%=category.name%> </li>
     <% }) %>
 </ul>
