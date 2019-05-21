@@ -103,7 +103,7 @@ $(".nav-left ul li>div").on("click", function (e) {
 
 /* 渲染子类高度 */
 $('.nav-left ul.sub').each(function () {
-    $(this).height($(this).children().length * 26)
+    $(this).height($(this).children().length * 26 - 1)
 })
 
 /* 展开子类 */
@@ -114,8 +114,6 @@ $('.nav-left ul>li>div>.fold').on('click', function (e) {
     $(_this).parent().next().toggleClass('hide')
     $(_this).parents('ul.sub').each(function () {
         if ($(_this).hasClass('unfold')) {
-            console.log($(_this).parent().next().height())
-            console.log()
             $(this).height($(this).height() + parseInt($(_this).parent().next().attr('style').match(/\d+/g)[0]) + 1)
         } else {
             $(this).height($(this).height() - parseInt($(_this).parent().next().attr('style').match(/\d+/g)[0]) - 1)
@@ -459,7 +457,14 @@ function bind() {
     });
     //绑定文章内分类的点击事件
     $(".post .pjax article .article-meta .book a").on("click", function (e) {
-        $(".nav-left ul li[data-rel='" + $(this).data("rel") + "']").trigger("click");
+        $(".nav-left ul li>div[data-rel='" + $(this).data("rel") + "']").parents('.hide').each(function () {
+            var _this = this;
+            $(_this).removeClass('hide').prev().children('.fold').addClass('unfold');
+            $(_this).parents('ul.sub').each(function () {
+                $(this).height(parseInt($(this).attr('style').match(/\d+/g)[0]) + parseInt($(_this).attr('style').match(/\d+/g)[0]) + 1)
+            })
+        })
+        $(".nav-left ul li>div[data-rel='" + $(this).data("rel") + "']").trigger("click");
         if ($(window).width() <= 1024) {
             $(".full-toc .full").trigger("click");
         } else if ($(".full-toc .full span").hasClass("max")) {

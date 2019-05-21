@@ -12,7 +12,7 @@
         <% if (post.categories && post.categories.length){ %>
         <span class="book">
             <% post.categories.forEach(function(category, i){ %>
-            <a href="javascript:" data-rel="<%=category.name%>"><%=category.name%></a>
+                <a href="javascript:" data-rel="<%=category.name%>"><%=category.name%></a><% if (i !== post.categories.length - 1) { %>/<% } %>
             <% }) %>
         </span>
         <% } %>
