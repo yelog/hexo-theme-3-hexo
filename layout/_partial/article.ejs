@@ -102,3 +102,11 @@
         <%- partial('mathjax') %>
     <% }%>
 <% } %>
+
+<% if (page.bgImg) {%>
+    <style>
+        .post {
+            background: url(<%=page.bgImg%>) !important;
+        }
+    </style>
+<% }%>

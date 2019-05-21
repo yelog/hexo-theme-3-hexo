@@ -376,6 +376,19 @@
     }
     <%}%>
 
+    /* 背景图样式 */
+    <% if (theme.index_bg_img) { %>
+    .post {
+        background: url(<%=theme.index_bg_img%>);
+    }
+    <% } %>
+    <% if (theme.other_bg_img) { %>
+    .post.index {
+        background: url(<%=theme.other_bg_img%>);
+    }
+    <% } %>
+
+
     /*引用块样式*/
     <%if(theme.blockquote=="bracket"){%>
     .post .pjax article blockquote {

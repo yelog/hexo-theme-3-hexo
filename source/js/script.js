@@ -48,6 +48,14 @@ $(document).on({
     }
 });
 function afterPjax() {
+
+    // 文章默认背景
+    if (blog_path===''?location.pathname==='/':blog_path === location.pathname.split('/')[1]) {
+       $('.post').addClass('index')
+    } else {
+        $('.post').removeClass('index')
+    }
+
     /*渲染MathJax数学公式*/
     if($("script[type='text/x-mathjax-config']").length>0){
         $.getScript($("#MathJax-js").val(),function () {

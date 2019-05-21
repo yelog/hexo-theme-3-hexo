@@ -133,6 +133,11 @@ article_bg_img:
   on: true
   src: http://img.xiangzhangshugongyi.com/FlSExUGfRSaqxkK5v42CpuI-tXAL.jpg
 
+# 首页背景图
+index_bg_img:
+# 其他页面背景图
+other_bg_img:
+
 # 点击图片放大样式
 img_resize: default
 # 可选值：
