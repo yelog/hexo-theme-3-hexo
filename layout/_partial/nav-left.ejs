@@ -41,7 +41,7 @@ if (theme.category && theme.category.sub) {
 
 %>
 <ul>
-    <li class="all active"><div>全部文章<% if (theme.category && theme.category.num) { %><small>(<%=site.posts.length%>)</small><%}%></div></li>
+    <li><div class="all active">全部文章<% if (theme.category && theme.category.num) { %><small>(<%=site.posts.length%>)</small><%}%></div></li>
     <% site.categories.forEach(function(category){ %>
         <% if (theme.category && theme.category.sub) { %>
             <% if(!category.parent) { %>
