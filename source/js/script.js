@@ -79,10 +79,10 @@ function afterPjax() {
 }
 
 /*切换文章分类*/
-$(".nav-left ul li").on("click", function (e) {
-    $('.friend').removeClass('friend');
+$(".nav-left ul li>div").on("click", function (e) {
+    $('.friend').removeClass('friend'); // 如果当前正在友链页，则先回显
     $(".nav-right form .search").val("").change();
-    $(this).siblings(".active").removeClass("active");
+    $(".nav-left li>div.active").removeClass("active");
     $(this).addClass("active");
     var $handle = $(".nav-right nav a");
     if ($(this).hasClass("all")) {
@@ -92,6 +92,29 @@ $(".nav-left ul li").on("click", function (e) {
         $(".nav-right").find("." + $(this).data("rel") + "").css("display", "block");
     }
 });
+
+/* 渲染子类高度 */
+$('.nav-left ul.sub').each(function () {
+    $(this).height($(this).children().length * 26)
+})
+
+/* 展开子类 */
+$('.nav-left ul>li>div>.fold').on('click', function (e) {
+    var _this = this;
+    e.stopPropagation();
+    $(_this).toggleClass('unfold')
+    $(_this).parent().next().toggleClass('hide')
+    $(_this).parents('ul.sub').each(function () {
+        if ($(_this).hasClass('unfold')) {
+            console.log($(_this).parent().next().height())
+            console.log()
+            $(this).height($(this).height() + parseInt($(_this).parent().next().attr('style').match(/\d+/g)[0]) + 1)
+        } else {
+            $(this).height($(this).height() - parseInt($(_this).parent().next().attr('style').match(/\d+/g)[0]) - 1)
+        }
+    })
+
+})
 
 /*鼠标移出文章列表后，去掉文章标题hover样式*/
 $(".nav-right nav a").mouseenter(function (e) {
@@ -346,7 +369,7 @@ $(function () {
         $('.mobile-menus').removeClass('show');
     })
 
-    $('.nav-left ul').css('height', 'calc(100vh - '+($('.avatar_target img').outerHeight(true) + $('.author').outerHeight(true)+$('.nav-left .icon').outerHeight(true)+$('.left-bottom').outerHeight(true))+'px)');
+    $('.nav-left>ul').css('height', 'calc(100vh - '+($('.avatar_target img').outerHeight(true) + $('.author').outerHeight(true)+$('.nav-left .icon').outerHeight(true)+$('.left-bottom').outerHeight(true))+'px)');
     if ($('#local-search-result').length>0) {
         // 全文搜索
         $.getScript(blog_path + '/js/search.js', function () {

@@ -25,10 +25,48 @@
 <% if (menus>0){%>
 <a class="more-menus">更多菜单</a>
 <%}%>
+<%
+if (theme.category && theme.category.sub) {
+    var childCategory = {};
+    site.categories.forEach(function (category) {
+        if (category.parent) {
+            if (childCategory[category.parent]) {
+                childCategory[category.parent].push(category);
+            } else {
+                childCategory[category.parent] = [category];
+            }
+        }
+    })
+}
+
+%>
 <ul>
-    <li class="all active">全部文章</li>
-    <% site.categories.sort('name').forEach(function(category, i){ %>
-    <li data-rel="<%=category.name%>"> <%=category.name%> </li>
+    <li class="all active"><div>全部文章<% if (theme.category && theme.category.num) { %><small>(<%=site.posts.length%>)</small><%}%></div></li>
+    <% site.categories.forEach(function(category){ %>
+        <% if (theme.category && theme.category.sub) { %>
+            <% if(!category.parent) { %>
+            <li><div data-rel="<%=category.name%>"><% if (childCategory[category._id]) {%><i class="fold iconfont icon-right"></i><% } %><%=category.name%><% if (theme.category && theme.category.num) { %><small>(<%= category.posts.length %>)</small><%}%></div>
+                <% if (childCategory[category._id]) {%>
+                    <ul class="sub hide">
+                        <% childCategory[category._id].forEach(function (child) { %>
+                        <li><div data-rel="<%=child.name%>"><% if (childCategory[child._id]) {%><i class="fold iconfont icon-right"></i><% } %><%=child.name%><% if (theme.category && theme.category.num) { %><small>(<%= child.posts.length %>)</small><%}%></div>
+                            <% if (childCategory[child._id]) {%>
+                                <ul class="sub hide">
+                                    <% childCategory[child._id].forEach(function (child2) { %>
+                                    <li><div data-rel="<%=child2.name%>"><% if (childCategory[child2._id]) {%><i class="fold iconfont icon-right"></i><% } %><%=child2.name%><% if (theme.category && theme.category.num) { %><small>(<%= child2.posts.length %>)</small><%}%></div>
+                                    </li>
+                                    <% }) %>
+                                </ul>
+                            <% } %>
+                        </li>
+                            <% }) %>
+                    </ul>
+                <% } %>
+            </li>
+            <% } %>
+        <% } else { %>
+            <li><div data-rel="<%=category.name%>"><%=category.name%><% if (theme.category && theme.category.num) { %><small>(<%= category.posts.length %>)</small><%}%></div></li>
+        <% } %>
     <% }) %>
 </ul>
 <div class="left-bottom">

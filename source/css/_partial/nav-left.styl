@@ -62,20 +62,44 @@
     border-top 1px solid #fff
     list-style none
     overflow-y auto
+    &.sub
+      transition height .3s, border-top .3s
+      border-left: solid 2px red;
+      &.hide
+        height 0 !important
+        border-top hidden
+      li
+        line-height 25px
+        font-size 14px
+        &:last-child
+          border-bottom hidden
+        &>div
+          height 25px
     li
-      color rgba(255,255,255,0.7)
       line-height 40px
       text-align center
       border-bottom 1px solid #fff
       cursor pointer
-      transition color .15s linear,box-shadow .3s cubic-bezier(.77, 0, .175, 1)
-      &:hover
-        color #f7f7f7
-        box-shadow inset 6px 0 0 #fff
-      &.active
-        color #020202
-        box-shadow inset 165px 0 0 #fff
+      &>div
+        height 40px
+        color rgba(255,255,255,0.7)
+        transition color .15s linear,box-shadow .3s cubic-bezier(.77, 0, .175, 1)
         position relative
+        &:hover
+          color #f7f7f7
+          box-shadow inset 6px 0 0 #fff
+        &.active
+          color #020202
+          box-shadow inset 165px 0 0 #fff
+          position relative
+        &>.fold
+          left: 4px
+          font-size 0.7em
+          position: absolute
+          transition transform .3s
+          &.unfold
+            transform: rotate(90deg)
+
   .left-bottom
     position absolute
     display table
