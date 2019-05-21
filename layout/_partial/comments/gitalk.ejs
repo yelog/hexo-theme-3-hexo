@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
 <script type="text/javascript">
-    $.getScript('https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', function () {
+    $.getScript('<%=theme.blog_path?theme.blog_path.lastIndexOf("/") === theme.blog_path.length-1?theme.blog_path.slice(0, theme.blog_path.length-1):theme.blog_path:'' %>/js/gitalk.js', function () {
         var gitalk = new Gitalk({
             clientID: '<%=theme.gitalk.ClientID %>',
             clientSecret: '<%=theme.gitalk.ClientSecret %>',
