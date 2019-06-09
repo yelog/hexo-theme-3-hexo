@@ -34,12 +34,15 @@
         /*高亮代码块行号*/
         <%if(theme.highlight && theme.highlight.on&& theme.highlight.lineNum){%>
         $('pre code').each(function(){
-            var lines = $(this).text().split('\n').length - 1;
-            var $numbering = $('<ul/>').addClass('pre-numbering').attr("unselectable","on");
-            $(this).addClass('has-numbering')
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
                     .parent()
                     .append($numbering);
-            for(i=1;i<=lines;i++){
+            for(var i=1;i<=lines;i++){
                 $numbering.append($('<li/>').text(i));
             }
         });
@@ -328,6 +331,9 @@
     code.has-numbering{
         margin-left: 30px;
     }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
     .pre-numbering{
         margin: 0px;
         position: absolute;
@@ -339,6 +345,9 @@
         text-align: right;
         color: <% if(theme.highlight.theme=="brown-paper"){ %>#616161<%}else{%>#AAA<%}%>;
         background-color: <% if(theme.highlight.theme=="atom-light"){ %>#fafafa<%}%>;
+    }
+    .pre-numbering.widther {
+        width: 35px;
     }
 </style>
 <%}%>
