@@ -14,11 +14,17 @@
         font-size 16px
     &-right
       width 390px
-      .title-list nav a
-        .post-title
-          font-size 15px
-        .post-date
-          font-size 14px
+      .title-list
+        form span
+          #tagswitch:checked +#tagsWitchIcon:after
+            top 9px
+          #tagsWitchIcon:after
+            top 9px
+        nav a
+          .post-title
+            font-size 15px
+          .post-date
+            font-size 14px
     .hide-list
       left 492px
       &.fullscreen
