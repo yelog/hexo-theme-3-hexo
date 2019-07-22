@@ -130,7 +130,7 @@ list: thread
 # thread : 列表外圈有一个线框
 
 # 引用块样式
-blockquote: bracket
+blockquote: github
 # github : 类似于github的引用快
 # bracket : 类似于左右两个大括号的样式
 
