@@ -1,4 +1,4 @@
-version: 1.0
+version: 1.0.1
 # 你的头像url
 avatar: /img/avatar.jpg
 favicon: /img/avatar.jpg
@@ -111,10 +111,18 @@ toc:
 
 #文章列表 鼠标移上去的样式, 为空时使用默认效果
 article_list:
+  title: '#383636' # 文章列表标题颜色
+  datetime: '#5e5e5f' # 文章发布日期颜色
   hover:
     background: '#e2e0e0'  # 背景色:提供几种：'#c1bfc1'  '#fbf4a8'
     color:     # 文字颜色 提供几种：'#ffffff'
 # 注意：由于颜色如果包含#，使用单引号 ' 引起来
+
+# 文章列表背景图
+article_bg_img:
+  on: true # 是否开启
+  src: /img/article-list-background.jpeg
+  opacity: 0.3 # 背景图透明度，范围 0 ～ 1
 
 # 列表样式
 list: thread
@@ -131,11 +139,6 @@ table: green_title
 # 为空时类似github的table样式
 # green 绿色样式
 # green_title 头部为青色的table样式
-
-# 文章列表背景图
-article_bg_img:
-  on: true
-  src: http://img.xiangzhangshugongyi.com/FlSExUGfRSaqxkK5v42CpuI-tXAL.jpg
 
 # 首页背景图
 index_bg_img:
