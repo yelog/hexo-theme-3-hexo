@@ -76,7 +76,7 @@ if (theme.category && theme.category.sub) {
     <a class="dynamic-menu <%=(theme.menu.menus[menu].type==1 ?'site_url':'')%>" <%if(theme.menu.menus[menu].type==2){%>target="_self" <%}else if(theme.menu.menus[menu].type==3){%>target="_blank"<%}%>  href="<%=theme.menu.menus[menu].url%>"><%=menu %></a>
     <%}}%>
     </div>
-    <div><% if (theme.menu.about.on) {%><a <%if(theme.menu.friend.on){%>style="border-right: 1px solid #fff; width: 49%" <%}%> class="about <%=(theme.menu.about.type==1 ?'site_url':'')%>" <%if(theme.menu.about.type==2){%>target="_self" <%}else if(theme.menu.about.type==3){%>target="_blank"<%}%> href="/about">关于</a><% } %><% if (theme.menu.friend.on){%><a <% if (theme.menu.about.on) {%>style="width: 50%" <%}%> class="friends">友链</a><%}%></div>
+    <div><% if (theme.menu.about.on) {%><a class="about <%if(theme.menu.friend.on){%> hasFriend <%}%> <%=(theme.menu.about.type==1 ?'site_url':'')%>" <%if(theme.menu.about.type==2){%>target="_self" <%}else if(theme.menu.about.type==3){%>target="_blank"<%}%> href="/about">关于</a><% } %><% if (theme.menu.friend.on){%><a <% if (theme.menu.about.on) {%>style="width: 50%" <%}%> class="friends">友链</a><%}%></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="<%=site.posts.length%>">
 <% if(theme.word_count){%><input type="hidden" id="yelog_site_word_count" value="<%=totalcount(site)%>"><%}%>

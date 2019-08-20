@@ -92,8 +92,12 @@
         color: white;
         display: block;
         z-index: 100;
-        bottom: 5px;
-        right: 30px;
+        bottom: 32px;
+        right: 0;
+        border: solid 1px;
+        border-right: none;
+        border-radius: 10px 0 0 10px;
+        line-height: 20px;
       .left-bottom
         top 108px
         text-align center
@@ -103,6 +107,9 @@
           border-top none
           border-right none!important
           display inline
+          margin-right 126px
+          &.hasFriend
+            margin-right 0
           &:after
             content '·'
             margin-left: 7px;
