@@ -190,6 +190,18 @@ mathjax:
   on: true #是否启用
   per_page: false # 若只渲染单个页面，此选项设为false，页面内加入 mathjax: true
 
+# Mermaid 支持
+mermaid:
+  on: false
+  cdn: //cdn.jsdelivr.net/npm/mermaid@8.4.2/dist/mermaid.min.js
+  #cdn: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js
+  options: # 更多配置信息可以参考 https://mermaidjs.github.io/#/mermaidAPI
+    theme: 'default'
+    startOnLoad: true
+    flowchart:
+      useMaxWidth: false
+      htmlLabels: true
+
 ##############################
 
 # 友情链接

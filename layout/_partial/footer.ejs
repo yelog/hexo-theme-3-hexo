@@ -305,6 +305,26 @@
             initPhotoSwipeFromDOM(gallerySelector);
         }
         <% } %>
+        <% if (theme.mermaid.on) { %>
+        /* 渲染*/
+        function HTMLDecode(text) {
+            var temp = document.createElement("div");
+            temp.innerHTML = text;
+            var output = temp.innerText || temp.textContent;
+            temp = null;
+            return output;
+        }
+        if (window.mermaid){
+            window.mermaid = null
+        }
+        $.getScript("<%=theme.mermaid.cdn%>", function () {
+            var mermaidOptions = JSON.parse(HTMLDecode("<%=JSON.stringify(theme.mermaid.options) %>"))
+            if (window.mermaid) {
+                mermaid.initialize(mermaidOptions)
+                mermaid.contentLoaded()
+            }
+        })
+        <% } %>
     }
 
     /*打赏页面隐藏与展示*/
