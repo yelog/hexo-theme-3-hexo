@@ -4,22 +4,22 @@
     <% } %>
     <div class="article-meta">
         <% if (post.top){ %>
-        <span class="top"><a href="javascript:">置顶</a></span>
+        <span class="top"><a>置顶</a></span>
         <%}%>
         <% if (theme.author.on==true && post.author) {%>
-        <span class="author"><a href="javascript:"><%=post.author %></a></span>
+        <span class="author"><a><%=post.author %></a></span>
         <%}%>
         <% if (post.categories && post.categories.length){ %>
         <span class="book">
             <% post.categories.forEach(function(category, i){ %>
-                <a href="javascript:" data-rel="<%=category.name%>"><%=category.name%></a><% if (i !== post.categories.length - 1) { %>/<% } %>
+                <a  data-rel="<%=category.name%>"><%=category.name%></a><% if (i !== post.categories.length - 1) { %>/<% } %>
             <% }) %>
         </span>
         <% } %>
         <% if (post.tags && post.tags.length){ %>
         <span class="tag">
             <% post.tags.forEach(function(tag, i){ %>
-            <a href="javascript:" class="color<%= tag.name.length % 5 + 1 %>"><%=tag.name%></a>
+            <a class="color<%= tag.name.length % 5 + 1 %>"><%=tag.name%></a>
             <% }) %>
         </span>
         <% } %>
@@ -90,7 +90,7 @@
 
 <% if(theme.reward){%>
 <p>
-    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
 </p>
 <%}%>
 <%- partial('_partial/article_copyright')%>
