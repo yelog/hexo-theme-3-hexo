@@ -12,7 +12,7 @@ link:
   theme: color # 链接样式，color: 彩色图标  white: 黑白图标
   items:
     rss: /atom.xml
-    github: https://github.com/yelog
+    github: https://github.com/AveryHuo
     facebook: https://www.facebook.com/faker.tops
     twitter:
     linkedin:
@@ -24,8 +24,8 @@ link:
     csdn:
     oschina: https://my.oschina.net/yelog
     juejin:
-    email: jaytp@qq.com
-    qq: 872336115
+    email: 1024037035@qq.com
+    qq: 1024037035
     kugou: https://www.kugou.com/
     neteasemusic: https://music.163.com/#/user/home?id=88151013
 
@@ -74,9 +74,9 @@ menu:
       type: 3  # 跳转类型 3：打开新的tab页
 
 # 文末声明
-article_txt: 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com
+article_txt: 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1024037035@qq.com
 
-bottom_text: ©2016-2019 Yelog
+bottom_text: ©2016-2019 AveryHuo
 # 自定义页面最下方的站点版权信息
 # 如果不填，则自定义为 ©2017 author (这个author为hexo根目录_config.yml中配置的)
 
@@ -96,7 +96,7 @@ searchAll: false
 copyright: true
 # Copyright info. of post | 文末版权信息
 
-word_count: false
+word_count: true
 # true 开启字数统计
 # 开启此功能需要安装插件 ：在 hexo根目录 执行npm i hexo-wordcount --save
 
@@ -192,7 +192,7 @@ mathjax:
 
 # Mermaid 支持
 mermaid:
-  on: false
+  on: true
   cdn: //cdn.jsdelivr.net/npm/mermaid@8.4.2/dist/mermaid.min.js
   #cdn: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js
   options: # 更多配置信息可以参考 https://mermaidjs.github.io/#/mermaidAPI
@@ -211,7 +211,7 @@ friends:
 ##########评论设置#############
 comment:
   on: false
-  type: gitalk  # 评论系统：gitalk、disqus、gentie、gitment,注意：使用时，在下方对应位置进行配置
+  type: disqus  # 评论系统：gitalk、disqus、gentie、gitment,注意：使用时，在下方对应位置进行配置
   comment_count: true  # 文章标题下方显示评论数
   preload_comment: false  # 预加载评论区
   ## false: 当点击评论条等区域时再加载评论模块
@@ -230,11 +230,11 @@ gentie:
   # 网易云跟帖暂时不支持查询评论数，所以启用时，把评论数关掉，上方comment_count: false。
 
 gitalk:
-  githubID: yelog
-  repo: yelog.github.io
+  githubID: AveryHuo
+  repo: AveryHuo.github.io
   ClientID:
   ClientSecret:
-  adminUser: yelog
+  adminUser: AveryHuo
   distractionFreeMode: true
   language: zh-CN
   perPage: 10
@@ -251,8 +251,8 @@ gitalk:
 
 
 gitment:
-  owner: yelog
-  repo: yelog.github.io
+  owner: AveryHuo
+  repo: AveryHuo.github.io
   client_id:
   client_secret:
   # gitment : 通过github issue实现的评论系统
