@@ -210,16 +210,16 @@ friends:
 
 ##########评论设置#############
 comment:
-  on: false
+  on: true
   type: disqus  # 评论系统：gitalk、disqus、gentie、gitment,注意：使用时，在下方对应位置进行配置
   comment_count: true  # 文章标题下方显示评论数
-  preload_comment: false  # 预加载评论区
+  preload_comment: true  # 预加载评论区
   ## false: 当点击评论条等区域时再加载评论模块
   ## true: 页面加载时加载评论区
 # 各评论系统配置 ↓↓
 
 disqus:
-  shortname:
+  shortname:AveryBlog
   # disqus评论系统， 2016年9月被GFW认证，大陆不能使用。
   # 获取shortname：https://help.disqus.com/customer/en/portal/articles/466208-what-s-a-shortname-
 
