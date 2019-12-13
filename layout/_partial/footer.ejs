@@ -4,6 +4,16 @@
 <script src="<%=theme.CDN.photoswipe_ui_js%>"></script>
 <% } %>
 <script src="<%=theme.blog_path?theme.blog_path.lastIndexOf("/") === theme.blog_path.length-1?theme.blog_path.slice(0, theme.blog_path.length-1):theme.blog_path:'' %>/js/script.js?v=<%=theme.version%>" ></script>
+
+<%# 渲染打赏样式 %>
+<% if(theme.reward){%>
+    <%- js('js/reward.js') %>
+<%}%>
+<%# 高亮代码块行号 %>
+<%if(theme.highlight && theme.highlight.on&& theme.highlight.lineNum){%>
+    <%- js('js/code_highlightlinenumber.js') %>
+<%}%>
+
 <script>
     var img_resize = '<%=theme.img_resize %>';
     /*作者、标签的自动补全*/
@@ -20,34 +30,6 @@
             $(".post .pjax table").addClass("<%=theme.table%>");
         <% } %>
 
-        /*渲染打赏样式*/
-        <% if(theme.reward){%>
-        $("input[name=pay]").on("click", function () {
-            if($("input[name=pay]:checked").val()=="weixin"){
-                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
-            } else {
-                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
-            }
-        })
-        <%}%>
-
-        /*高亮代码块行号*/
-        <%if(theme.highlight && theme.highlight.on&& theme.highlight.lineNum){%>
-        $('pre code').each(function(){
-            var lines = $(this).text().split('\n').length - 1, widther='';
-            if (lines>99) {
-                widther = 'widther'
-            }
-            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
-            $(this).addClass('has-numbering ' + widther)
-                    .parent()
-                    .append($numbering);
-            for(var i=1;i<=lines;i++){
-                $numbering.append($('<li/>').text(i));
-            }
-        });
-        <%}%>
-
         /*访问数量*/
         <%if(theme.visit_counter && theme.visit_counter.on) {%>
         $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
@@ -56,8 +38,8 @@
         /*代码高亮，行号对齐*/
         $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
 
+        <%# photoSwipe %>
         <% if (theme.img_resize == 'photoSwipe') {%>
-
         // PhotoSwipe
         $('article').each(function(i){
             $(this).find('img').each(function(){
@@ -77,7 +59,6 @@
             var gallerySelector = '.article-gallery, article';
 
             var initPhotoSwipeFromDOM = function(gallerySelector) {
-
                 // parse slide data (url, title, size ...) from DOM elements
                 // (children of gallerySelector)
                 var parseThumbnailElements = function(el) {
@@ -326,89 +307,84 @@
         })
         <% } %>
     }
-
-    /*打赏页面隐藏与展示*/
-    <% if(theme.reward){%>
-    function dashangToggle() {
-        $(".shang_box").fadeToggle();
-        $(".hide_box").fadeToggle();
-    }
-    <%}%>
-
 </script>
 
 <!--加入行号的高亮代码块样式-->
 <%if(theme.highlight && theme.highlight.on && theme.highlight.lineNum){%>
-<style>
-    pre{
-        position: relative;
-        margin-bottom: 24px;
-        border-radius: 10px;
-        border: 1px solid #e2dede;
-        background: #FFF;
-        overflow: hidden;
-    }
-    code.has-numbering{
-        margin-left: 30px;
-    }
-    code.has-numbering.widther{
-        margin-left: 35px;
-    }
-    .pre-numbering{
-        margin: 0px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 20px;
-        padding: 0.5em 3px 0.7em 5px;
-        border-right: 1px solid #C3CCD0;
-        text-align: right;
-        color: <% if(theme.highlight.theme=="brown-paper"){ %>#616161<%}else{%>#AAA<%}%>;
-        background-color: <% if(theme.highlight.theme=="atom-light"){ %>#fafafa<%}%>;
-    }
-    .pre-numbering.widther {
-        width: 35px;
-    }
-</style>
+    <%- css('css/code_highlightlinenumber.css') %>
+<%}%>
+<%# 列表样式 %>
+<%if(theme.list=="thread"){%>
+    <%- css('css/list_thread.css') %>
+<%}%>
+
+<%# 引用块样式 %>
+<%if(theme.blockquote=="bracket"){%>
+    <%- css('css/blockquote_bracket.css') %>
+<%}%>
+<%if(theme.code.theme == 'github') {%>
+    <%- css('css/code_github.css') %>
+<%}%>
+<%# 文章列表背景图 %>
+<%if(theme.article_bg_img.on){%>
+    <%- css('css/articlebgimg.css') %>
 <%}%>
 <!--自定义样式设置-->
 <style>
     <%if(theme.category && theme.category.width){%>
     <%if(theme.category.width.lg){%>
     .nav {
-        width: <%=(theme.category.width.lg+422)%>px;
+        width: <%=(theme.category.width.lg?theme.category.width.lg+422:542)%>px;
     }
     .nav.fullscreen {
-        margin-left: -<%=(theme.category.width.lg+422)%>px;
+        margin-left: -<%=(theme.category.width.lg?theme.category.width.lg+422:542)%>px;
     }
     .nav-left {
-        width: <%=theme.category.width.lg%>px;
+        width: <%=theme.category.width.lg?theme.category.width.lg:120%>px;
+    }
+    .nav .hide-list {
+        left: <%=theme.category.width.lg?theme.category.width.lg+422:542%>px;
+    }
+    .nav .hide-list.fullscreen {
+        left: 0px;
     }
     <%}%>
     <%if(theme.category.width.md){%>
     @media screen and (max-width: 1468px) {
         .nav {
-            width: <%=(theme.category.width.md+392)%>px;
+            width: <%=(theme.category.width.md?theme.category.width.md+392:492 )%>px;
         }
         .nav.fullscreen {
-            margin-left: -<%=(theme.category.width.md+392)%>px;
+            margin-left: -<%=(theme.category.width.md?theme.category.width.md+392:492 )%>px;
         }
         .nav-left {
-            width: <%=theme.category.width.md%>px;
+            width: <%=theme.category.width.md?theme.category.width.md:100 %>px;
+        }
+        .nav .hide-list {
+            left: <%=theme.category.width.md?theme.category.width.md+392:492 %>px;
+        }
+        .nav .hide-list.fullscreen {
+            left: 0px;
         }
     }
     <%}%>
     <%if (theme.category.width.sm){%>
     @media screen and (max-width: 1024px) {
         .nav {
-            width: <%=theme.category.width.md+392%>px;
-            margin-left: -<%=theme.category.width.md+392%>px
+            width: <%=theme.category.width.sm?theme.category.width.sm+392:492 %>px;
+            margin-left: -<%=theme.category.width.sm?theme.category.width.sm+392:492 %>px;
         }
         .nav.fullscreen {
             margin-left: 0;
         }
+        .nav-left {
+            width: <%=theme.category.width.sm?theme.category.width.sm:100 %>px;
+        }
+        .nav .hide-list {
+            left: <%=theme.category.width.sm?theme.category.width.sm+392:492 %>px;
+        }
         .nav .hide-list.fullscreen {
-            left: <%=theme.category.width.md?theme.category.width.md+392:492 %>px
+            left: <%=theme.category.width.sm?theme.category.width.sm+392:492 %>px;
         }
     }
     <%}%>
@@ -421,6 +397,7 @@
         }
     }
     <%}%>
+
     <%if(theme.article_list.title){ %>
     .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
         color: <%=theme.article_list.title %>;
@@ -442,27 +419,6 @@
     }
     <%}%>
 
-    /*列表样式*/
-    <%if(theme.list=="thread"){%>
-    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
-        border: #e2dede solid 1px;
-        border-radius: 10px;
-        padding: 10px 32px 10px 56px;
-    }
-    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
-        padding-top: 5px;
-        padding-bottom: 5px;
-    }
-    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
-        margin-bottom: auto;
-        margin-left: auto;
-    }
-    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
-        margin-bottom: auto;
-        margin-left: auto;
-    }
-    <%}%>
-
     /* 背景图样式 */
     <% if (theme.index_bg_img) { %>
     .post {
@@ -475,50 +431,11 @@
     }
     <% } %>
 
-
-    /*引用块样式*/
-    <%if(theme.blockquote=="bracket"){%>
-    .post .pjax article blockquote {
-        padding: 10px 20px;
-        background-color: white;
-        border: none;
-        border-left: 4px solid #42b983;
-        border-right: 4px solid #42b983;
-        border-radius: 10px;
-    }
-    <%}%>
-
     /*文章列表背景图*/
     <%if(theme.article_bg_img.on){%>
     .nav-right:before {
-        content: ' ';
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
         opacity: <%= typeof theme.article_bg_img.opacity === 'undefined' ? 0.1 : theme.article_bg_img.opacity %>;
         background: url("<%=theme.blog_path?theme.blog_path.lastIndexOf("/") === theme.blog_path.length-1?theme.blog_path.slice(0, theme.blog_path.length-1):theme.blog_path:'' %><%=theme.article_bg_img.src %>");
-        background-repeat: no-repeat;
-        background-position: 50% 0;
-        -ms-background-size: cover;
-        -o-background-size: cover;
-        -moz-background-size: cover;
-        -webkit-background-size: cover;
-        background-size: cover;
-    }
-    <%}%>
-
-    <%if(theme.code.theme == 'github') {%>
-    .post .pjax article :not(pre) > code {
-        color: #24292e;
-        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
-        background-color: rgba(27,31,35,.05);
-        border-radius: 3px;
-        font-size: 85%;
-        margin: 0;
-        padding: .2em .4em;
     }
     <%}%>
 </style>
