@@ -92,6 +92,7 @@ miit:
 
 reward: true
 # true 开启打赏功能
+# 替换img/alipay.jpg和img/weixin.jpg
 
 searchAll: false
 # true 启用全文搜索
