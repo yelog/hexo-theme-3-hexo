@@ -1,2 +1,2 @@
-<p class="footer-entry"><%if(theme.bottom_text){%><%=theme.bottom_text%><%} else {%>©2017 <%=config.author%><%}%></p>
+<p class="footer-entry"><%if(theme.bottom_text){%><%-theme.bottom_text%><%} else {%>©2020 <%=config.author%><%}%><%if(theme.miit && theme.miit.on && theme.miit.miitInfo){%><%if(theme.miit.separator){%> <%=theme.miit.separator%> <%} else {%> · <%}%><a href="http://beian.miit.gov.cn" target="_blank"><%=theme.miit.miitInfo%></a><%}%></p>
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>

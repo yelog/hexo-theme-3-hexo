@@ -78,7 +78,17 @@ article_txt: 转载请注明来源，欢迎对文章中的引用来源进行考�
 
 bottom_text: ©2016-2019 Yelog
 # 自定义页面最下方的站点版权信息
-# 如果不填，则自定义为 ©2017 author (这个author为hexo根目录_config.yml中配置的)
+# 如果不填，则自定义为 ©2020 author (这个author为hexo根目录_config.yml中配置的)
+
+# 工信部备案号
+miit:
+  on: false
+  miitInfo: XXXXXXXXXX
+  separator: ·
+  # miitInfo: 备案号，自动附带工信部超链接
+  # separator: 分隔符号，默认为中文间隔号·（前后自带空格）
+  # 默认效果为bottom_text后面跟上分隔符再跟上备案号
+  # 如果不喜欢这种方式可以不开启并在bottom_text中用html标签自定义
 
 reward: true
 # true 开启打赏功能
