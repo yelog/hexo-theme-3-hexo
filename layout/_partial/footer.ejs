@@ -317,11 +317,11 @@
 <%if(theme.list=="thread"){%>
     <%- css('css/list_thread.css') %>
 <%}%>
-
 <%# 引用块样式 %>
 <%if(theme.blockquote=="bracket"){%>
     <%- css('css/blockquote_bracket.css') %>
 <%}%>
+<%# GitHub内联代码样式 %>
 <%if(theme.code.theme == 'github') {%>
     <%- css('css/code_github.css') %>
 <%}%>
@@ -331,6 +331,13 @@
 <%}%>
 <!--自定义样式设置-->
 <style>
+    /* 加入行号的高亮代码块样式 */
+    .pre-numbering{
+        color: <% if(theme.highlight.theme=="brown-paper"){ %>#616161<%}else{%>#AAA<%}%>;	
+        background-color: <% if(theme.highlight.theme=="atom-light"){ %>#fafafa<%}%>;	
+    }
+
+    /* 侧边栏宽度自定义，调整侧边栏左边和右边的大小及位置，调整侧边栏隐藏按钮的水平位置 */
     <%if(theme.category && theme.category.width){%>
     <%if(theme.category.width.lg){%>
     .nav {
@@ -398,6 +405,7 @@
     }
     <%}%>
 
+    /* 文章列表颜色自定义 */
     <%if(theme.article_list.title){ %>
     .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
         color: <%=theme.article_list.title %>;
