@@ -1,7 +1,7 @@
 hexo-theme-3-hexo
 ================
-3-hexo 是为 [hexo](https://github.com/tommy351/hexo) 制作的主题。三段式设计、方便。      
-你可以点击: [我的博客](https://yelog.org/) 查看效果    
+3-hexo 是为 [hexo](https://github.com/tommy351/hexo) 制作的主题。三段式设计、方便。你可以点击: [我的博客](https://yelog.org/) 查看效果
+
 如果想要体验手机浏览效果，可以扫以下二维码：
 
 ![二维码图片_1月28日11时25分02秒.png](https://i.loli.net/2020/01/28/OqXkYuf8ipED6QM.png)
