@@ -1,6 +1,6 @@
 <div class="title-list">
-    <form onkeydown="if(event.keyCode==13){return false;}">
-        <input class="search" type="text" placeholder="<% if (theme.searchAll){%>以 in: 开头进行全文搜索<%} else {%>Search...<%}%>" autocomplete="off"id="local-search-input" >
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="<% if (theme.searchAll){%>以 in: 开头进行全文搜索<%} else {%>Search...<%}%>" />
         <i class="cross"></i>
         <span>
             <label for="tagswitch">Tags:</label>
