@@ -20,7 +20,7 @@ demo: [yelog.org](https://yelog.org/)  
 git clone https://github.com/yelog/hexo-theme-3-hexo.git themes/3-hexo
 ```
 修改hexo根目录的`_config.yml`，如下
-```xml
+```yaml
 theme: 3-hexo
 ```
 
