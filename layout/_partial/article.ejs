@@ -26,7 +26,7 @@
     </div>
     <div class="article-meta">
         <% if (post.date){ %>
-        创建时间:<time class="date" title='更新时间: <%= date(post.updated, 'YYYY-MM-DD HH:mm:ss')%>'><%= date(post.date, 'YYYY-MM-DD HH:mm') %></time>
+            <%= __('post.created_at') %> : <time class="date" title='更新时间: <%= date(post.updated, 'YYYY-MM-DD HH:mm:ss')%>'><%= date(post.date, 'YYYY-MM-DD HH:mm') %></time>
         <% } %>
     </div>
     <div class="article-meta">
@@ -35,7 +35,7 @@
         <%}%>
         <%if(theme.visit_counter && theme.visit_counter.on && theme.visit_counter.page_visit) {%>
         <span id="busuanzi_container_page_pv">
-            阅读:<span id="busuanzi_value_page_pv">
+            <%= __('post.views') %> :<span id="busuanzi_value_page_pv">
                 <span class="count-comment">
                     <span class="spinner">
                       <div class="cube1"></div>
@@ -90,7 +90,7 @@
 
 <% if(theme.reward){%>
 <p>
-    <a  class="dashang" onclick="dashangToggle()">赏</a>
+    <a  class="dashang" onclick="dashangToggle()"><%= __('donation.button') %></a>
 </p>
 <%}%>
 <%- partial('_partial/article_copyright')%>

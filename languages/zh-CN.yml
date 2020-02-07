@@ -1,0 +1,17 @@
+all_articles: "全部文章"
+about: "关于"
+friends: "友链"
+links: "友情链接"
+post:
+  title: "文章标题"
+  author: "本文作者"
+  created_at: "发布时间"
+  updated_at: "最后更新"
+  url: "原始链接"
+  copyright: "版权声明"
+  views: "阅读"
+donation:
+  button: "赏"
+  headline: "喜欢就点赞,疼爱就打赏"
+  alipay: "支付宝"
+  weixin: "微信"

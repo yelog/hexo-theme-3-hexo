@@ -1,0 +1,17 @@
+all_articles: "All Articles"
+about: "About"
+friends: "Friends"
+links: "Links"
+post:
+  title: "Title"
+  author: "Author"
+  created_at: "Created At"
+  updated_at: "Updated At"
+  url: "Url"
+  copyright: "Copyright"
+  views: "Views 👀"
+donation:
+  button: "💰"
+  headline: "Help us with donation"
+  alipay: "alipay"
+  weixin: "weixin"
