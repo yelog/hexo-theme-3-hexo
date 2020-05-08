@@ -2,7 +2,7 @@
 <div class="shang_box">
     <a class="shang_close"  onclick="dashangToggle()">×</a>
     <div class="shang_tit">
-        <p>喜欢就点赞,疼爱就打赏</p>
+        <p><%= __('donation.headline') %></p>
     </div>
     <div class="shang_payimg">
         <div class="pay_img">
@@ -11,6 +11,6 @@
         </div>
     </div>
     <div class="shang_payselect">
-        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+        <span><label><input type="radio" name="pay" checked value="alipay"><%= __('donation.alipay') %></label></span><span><label><input type="radio" name="pay" value="weixin"><%= __('donation.weixin') %></label></span>
     </div>
 </div>
