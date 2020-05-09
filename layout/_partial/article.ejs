@@ -26,12 +26,12 @@
     </div>
     <div class="article-meta">
         <% if (post.date){ %>
-            <%= __('post.created_at') %> : <time class="date" title='更新时间: <%= date(post.updated, 'YYYY-MM-DD HH:mm:ss')%>'><%= date(post.date, 'YYYY-MM-DD HH:mm') %></time>
+            <%= __('post.created_at') %> : <time class="date" title='<%= __('post.updated_at') %>: <%= date(post.updated, 'YYYY-MM-DD HH:mm:ss')%>'><%= date(post.date, 'YYYY-MM-DD HH:mm') %></time>
         <% } %>
     </div>
     <div class="article-meta">
         <%if(theme.word_count){%>
-        <span>字数:<%=wordcount(post.content) %></span>
+        <span><%= __('post.word_count') %>:<%=wordcount(post.content) %></span>
         <%}%>
         <%if(theme.visit_counter && theme.visit_counter.on && theme.visit_counter.page_visit) {%>
         <span id="busuanzi_container_page_pv">
@@ -48,7 +48,7 @@
         <%if(theme.comment.on && theme.comment.type && theme.comment.comment_count){%>
         <span class="top-comment" title="跳转至评论区">
             <a href="#comments">
-                评论:<span class="count-comment">
+                <%= __('post.comment') %>:<span class="count-comment">
                     <span class="spinner">
                       <div class="cube1"></div>
                       <div class="cube2"></div>
