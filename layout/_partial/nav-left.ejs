@@ -41,7 +41,7 @@ if (theme.category && theme.category.sub) {
 
 %>
 <ul>
-    <li><div class="all active"><%= __('all_articles') %><% if (theme.category && theme.category.num) { %><small>(<%=site.posts.length%>)</small><%}%></div></li>
+    <li><div class="all active" data-rel="<%= __('all_articles') %>"><%= __('all_articles') %><% if (theme.category && theme.category.num) { %><small>(<%=site.posts.length%>)</small><%}%></div></li>
     <% site.categories.forEach(function(category){ %>
         <% if (theme.category && theme.category.sub) { %>
             <% if(!category.parent) { %>

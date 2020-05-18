@@ -31,22 +31,25 @@
         left 0
   .post
     font-size 17px
-    .pjax
-      max-width 780px
+
+@media screen and (max-width 1366px)
+  .post > .pjax
+    margin 0
+  .full-toc > .full
+    right 30px
 
 @media screen and (max-width 1024px)
   .nav
     position absolute
-    top 0px
-    left 0px
+    top 0
+    left 0
     z-index 30
     -webkit-overflow-scrolling touch
-    position absolute
     margin-left -492px
     &.fullscreen
-      margin-left 0px
+      margin-left 0
     &.mobile
-      margin-left 0px
+      margin-left 0
     .hide-list
       .brackets.first
         display none
@@ -56,7 +59,6 @@
           display block
   .post
     .pjax,.pjax.fullscreen
-      padding 0 18px
       article .div_img
         margin 0 -18px 25px
   .full-toc
@@ -140,9 +142,9 @@
           top 21px
       .title-list
         nav
-          top 64px
+          top 43px
           bottom 160px
-          height calc(100vh - 235px)
+          height calc(100vh - 214px)
           a
             .post-title
               width calc(100vw - 32px)
@@ -160,8 +162,6 @@
   .post
     font-size 16px
     .pjax
-      padding 0 18px
-      max-width 100%
       article
         padding-top 1em
         .article-meta
@@ -178,19 +178,19 @@
       font-size 14px
   .full-toc
     .full
-      top 0px
-      right 0px
+      top 0
+      right 0
       opacity 0.7
     .post-toc-menu
       top 43px
-      right 0px
+      right 0
       opacity 0.7
     #rocket
       right -7px
   .shang_box
     width: 100%;
     height 400px;
-    bottom: 0px;
+    bottom: 0;
     left: initial;
     top: initial;
     margin-left: initial;
@@ -221,7 +221,7 @@
     font-size 6px
   .shang_box
     height 331px;
-    bottom: 0px;
+    bottom: 0;
     left: initial;
     top: initial;
     margin-left: initial;

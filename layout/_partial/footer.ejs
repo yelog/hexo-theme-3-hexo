@@ -8,11 +8,13 @@
     var img_resize = '<%=theme.img_resize %>';
     /*作者、标签的自动补全*/
     $(function () {
-        $('.search').AutoComplete({
-            'data': [<% if (theme.author && theme.author.on==true && theme.author.authors.length !=0){ %><% for (var i in theme.author.authors){ %>'@<%=theme.author.authors[i] %>',<%}%><%}%><% site.tags.forEach(function(tag, i){ %>'#<%=tag.name%>',<%})%>],
-            'itemHeight': 20,
-            'width': 418
-        }).AutoComplete('show');
+        $('#local-search-input').AutoComplete({
+            data: [<% if (theme.author && theme.author.on==true && theme.author.authors.length !=0){ %><% for (var i in theme.author.authors){ %>'@<%=theme.author.authors[i] %>',<%}%><%}%><% site.tags.forEach(function(tag, i){ %>'#<%=tag.name%>',<%})%>],
+            itemHeight: 20,
+            width: $('.nav-right').width() - 47,
+            left: $('.nav-right').offset().left,
+			selectFirst: true
+        });
     })
     function initArticle() {
         /*渲染对应的表格样式*/
@@ -355,7 +357,7 @@
         margin-left: 35px;
     }
     .pre-numbering{
-        margin: 0px;
+        margin: 0;
         position: absolute;
         top: 0;
         left: 0;
