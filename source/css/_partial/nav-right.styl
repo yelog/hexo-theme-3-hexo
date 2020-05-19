@@ -38,6 +38,8 @@ right-top-height = 45px
           font-size 16px
           &.icon-search
             left 15px
+            &.active
+              color #007fff
           &.icon-file-tree
             right 15px
             font-size 18px
@@ -45,24 +47,34 @@ right-top-height = 45px
             right 15px
       #search-panel
         height right-top-height
+        line-height right-top-height
         display none
-        .icon-left
+        .iconfont
           position absolute
           top 50%
           transform: translate(0, -50%) 
           cursor pointer
-          left 15px
+          &.icon-left
+            left 15px
+          &.icon-case-sensitive
+            right 50px
+            &:hover::before,&.active:before
+              background #bfbcbc
+              padding: 1px
+              border 1px solid #979696
+          &.icon-tag
+            right 15px
         #local-search-input
           font-size 18px
           color #333333
           height 32px
-          width calc(100% - 45px)
-          margin auto 10px auto 45px
+          width calc(100% - 90px)
+          margin auto 45px auto 45px
           border none
           border-bottom 1px solid #e5e8ec
           outline none
           &:focus + .border-line
-            width calc(100% - 55px)
+            width calc(100% - 90px)
         .border-line
           position absolute
           left 45px
@@ -77,64 +89,57 @@ right-top-height = 45px
       display none
       margin 15px 10px 15px
       padding 10px
-      float left
       background #f1f1f1
       border-radius 25px
       list-style none outside none
-      position absolute
-      top 65px
-      width 100%
-      li
-        float left
-        a
-          height 18px
-          line-height 18px
-          font-size 17px
-          float left
-          padding 0 5px 0 10px
-          color #fff
+      width: 150px;
+      position: fixed;
+      z-index: 200;
+      left: 200px;
+      top: 45px;
+      box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+      border: 1px solid #ebeef5;
+      #tag-search
+        display: block;
+        width: 100%;
+        height: 28px;
+        font-size: 17px;
+        padding-left: 10px;
+        border-radius: 14px;
+        border: none;
+        outline: none;
+        box-sizing border-box
+      .tag-wrapper
+        max-height: 500px
+        overflow-y: auto
+        overflow-x hidden
+        margin-top 10px
+        &::-webkit-scrollbar
+          width 3px
+        &::-webkit-scrollbar-thumb
+          background #309E85
+        li
+          float none
+          cursor pointer
           position relative
-          border-radius 0 5px 5px 0
-          margin 5px 9px 5px 8px
-          &:before
-            content " "
-            width 0
-            height 0
-            position absolute
-            top 0
-            left -18px
-            border 9px solid transparent
-            border-right-color #d0d0d0
-          &:after
-            content " "
-            width 4px
-            height 4px
-            background-color #fff
-            border-radius 4px
-            box-shadow 0 0 0 1px rgba(0,0,0,.3)
-            position absolute
-            top 7px
-            left 2px
-          &.color1
-            background  #FF945C
-            &:before
-              border-right-color #FF945C
-          &.color2
-            background  #cc8167
-            &:before
-              border-right-color #cc8167
-          &.color3
-            background  #BA8F6C
-            &:before
-              border-right-color #BA8F6C
-          &.color4
-            background #94635c
-            &:before
-              border-right-color#94635c
-          &.color5
-            background #7B5D5F
-            &:before
-              border-right-color#7B5D5F
+          font-size 14px
+          color #333
+          padding 0 20px
+          &:hover
+            background #fff
+          .icon-tag
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translate(0, -50%);
+          a
+            height 18px
+            line-height 18px
+            padding 0 5px 0 10px
+            position relative
+            border-radius 0 5px 5px 0
+            margin 5px 9px 5px 8px
+            display inline-block
 
     #outline-list
       display none
