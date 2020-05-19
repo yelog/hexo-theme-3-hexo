@@ -431,6 +431,7 @@ $(function () {
         $('#title-list-nav').hide()
         $('#outline-panel').show()
         $('#outline-list').show()
+        syncOutline(container[0])
     })
 
     // 回到默认面板
@@ -551,8 +552,13 @@ function bind() {
         container.animate({scrollTop: container.scrollTop > targetOffsetTop ? (targetOffsetTop + 20) : (targetOffsetTop - 20)}, 500, 'swing', function () {
             clickScrollTo = false
         });
-        if ($this.attr("href") === "#comments") {
-            load$hide();
+        if ($(window).width() <= 1024) {
+
+        }
+        if ($(window).width() <= 1024) {
+            $(".full-toc .full").trigger("click");
+        } else if ($(".full-toc .full span").hasClass("max")) {
+            $(".full-toc .full").trigger("click");
         }
         return false;
     });
@@ -568,7 +574,7 @@ function bind() {
     $(document).pjax('.post .pjax article a[target!=_blank]', '.pjax', {fragment: '.pjax', timeout: 8000});
 
     /*初始化 img*/
-    if (img_resize != 'photoSwipe') {
+    if (img_resize !== 'photoSwipe') {
         $(".pjax").find('img').each(function () {
             if (!$(this).parent().hasClass('div_img')) {
                 $(this).wrap("<div class='div_img'></div>");
