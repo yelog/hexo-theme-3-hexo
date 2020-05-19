@@ -6,16 +6,6 @@
 <script src="<%=theme.blog_path?theme.blog_path.lastIndexOf("/") === theme.blog_path.length-1?theme.blog_path.slice(0, theme.blog_path.length-1):theme.blog_path:'' %>/js/script.js?v=<%=theme.version%>" ></script>
 <script>
     var img_resize = '<%=theme.img_resize %>';
-    /*作者、标签的自动补全*/
-    $(function () {
-        $('#local-search-input').AutoComplete({
-            data: [<% if (theme.author && theme.author.on==true && theme.author.authors.length !=0){ %><% for (var i in theme.author.authors){ %>'@<%=theme.author.authors[i] %>',<%}%><%}%><% site.tags.forEach(function(tag, i){ %>'#<%=tag.name%>',<%})%>],
-            itemHeight: 20,
-            width: $('.nav-right').width() - 47,
-            left: $('.nav-right').offset().left,
-			selectFirst: true
-        });
-    })
     function initArticle() {
         /*渲染对应的表格样式*/
         <% if(theme.table){ %>

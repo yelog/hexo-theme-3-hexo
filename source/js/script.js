@@ -167,11 +167,11 @@ $(document).keydown(function (e) {
 
 $(document).keyup(function (e) {
     if (!$searchInput.is(":focus") && !$tagSearchInput.is(':focus') && !$('#comments textarea').is(':focus')) {
-        if (e.keyCode === 83) { /* S - 显示/隐藏文章列表 */
+        if (e.which === 83) { /* S - 显示/隐藏文章列表 */
             $fullBtn.trigger("click");
-        } else if ((e.keyCode === 73 || e.keyCode === 105) && ($(".nav").css('margin-left')==='0px') && !$('.title-list').hasClass('friend')) { /* I */
+        } else if ((e.which === 73 || e.which === 105) && ($(".nav").css('margin-left')==='0px') && !$('.title-list').hasClass('friend')) { /* I */
             inputChange()
-        } else if (e.keyCode === 87) { /* W - 切换大纲视图 */
+        } else if (e.which === 87) { /* W - 切换大纲视图 */
             if ($outlineList.is(':visible')) {
                 $('#outline-panel > .icon-list').trigger('click')
             } else {
@@ -191,9 +191,9 @@ $(document).keyup(function (e) {
                 $('.friends-area .icon-left').trigger('click')
             }
 
-        } else if (e.keyCode === 74 || e.keyCode === 75) { /* J K - 上滑/下滑*/
+        } else if (e.which === 74 || e.which === 75) { /* J K - 上滑/下滑*/
             container.stop(true);
-        } else if (e.keyCode === 16) {
+        } else if (e.which === 16) {
             publickey.shift = false;
         }
     }
@@ -205,7 +205,7 @@ $searchInput.blur(function (e) {
 })
 /*输入框焦点时的快捷键捕获*/
 $searchInput.keydown(function (e) {
-    if ($(".nav-right nav a:not(:hidden), #local-search-result a:not(:hidden)").length > 0 && !$(".ac").is(":visible")) {
+    if ($(".nav-right nav a:not(:hidden), #local-search-result a:not(:hidden)").length > 0) {
         if (e.which === 13) { /* 回车 */
             var $handle = $(".nav-right nav a.hover:not(:hidden), #local-search-result a.hover:not(:hidden)");
             if ($handle.length === 0) {
@@ -291,6 +291,13 @@ $searchInput.keydown(function (e) {
             }
         }
     }
+    if (e.which === 27) { /* esc */
+        if ($searchInput.val() === '') {
+            $('#search-panel > .icon-left').trigger('click')
+        } else {
+            $searchInput.val('').change()
+        }
+    }
 });
 $searchInput.on("input", function (e) {
     inputChange();
@@ -327,8 +334,6 @@ function inputChange() {
     } else if (val.substr(0, 1) === "#") {
         searchType = '标签'
         containType = '为'
-        $("div.ac > ul").attr("class", "tag");
-        $("div.acParent").css("display", "block");
         if (val.substr(1).length !== 0) {
             $(".nav-right nav a").css("display", "none");
             $(".nav-right nav").find("a." + activeTitle + ":contains_tag('" + val.substr(1) + "')").css("display", "block");
@@ -336,8 +341,6 @@ function inputChange() {
     } else if (val.substr(0, 1) === "@") {
         searchType = '作者'
         containType= '为'
-        $("div.ac > ul").attr("class", "author");
-        $("div.acParent").css("display", "block");
         if (val.substr(1).length !== 0) {
             $(".nav-right nav a").css("display", "none");
             $(".nav-right nav").find("a." + activeTitle + ":contains_author('" + val.substr(1) + "')").css("display", "block");
@@ -345,7 +348,6 @@ function inputChange() {
     } else {
         searchType = '标题'
         containType = '包含'
-        $("div.acParent").css("display", "none");
         $(".nav-right nav a").css("display", "none");
         $(".nav-right nav").find("a." + activeTitle + ":"+ ($('#search-panel > .icon-case-sensitive').hasClass('active') ? 'containsSensitive' : 'contains') + "('" + val + "')").css("display", "block");
     }
@@ -354,7 +356,7 @@ function inputChange() {
         if (val === 'in:') {
             $('#no-item-tips').show().html('正在进行全局关键字搜索，请输入关键字');
         } else if (!val.startsWith('in:') && $(".nav-right nav a:visible").length === 0) {
-            $('#no-item-tips').show().html('未在 <span>' + activeTitle + '</span> 分类中找到'+ searchType + containType + ' <span>' + val + '</span> 的文章');
+            $('#no-item-tips').show().html('未在 <span>' + activeTitle + '</span> 分类中找到'+ searchType + containType + ' <span>' + val.replace(/^[@|#]/g,'') + '</span> 的文章');
         }
     } else {
         $('#default-panel .icon-search').removeClass('active')
