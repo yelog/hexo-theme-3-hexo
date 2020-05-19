@@ -192,7 +192,7 @@ $("#local-search-input").keydown(function (e) {
                         if ($(this).is(":visible")) {
                             $("#local-search-result a.hover").removeClass("hover");
                             $(this).children().addClass("hover");
-                            if (($(this).offset().top) - $(".nav-right form").height() < 0) {
+                            if ($(this).offset().top - $(".nav-right .right-top").height() < 0) {
                                 $("#local-search-result").scrollTop($("#local-search-result").scrollTop() - $(this).height());
                             }
                             return false;
@@ -209,7 +209,7 @@ $("#local-search-input").keydown(function (e) {
                         if ($(this).is(":visible")) {
                             $(".nav-right nav a.hover").removeClass("hover");
                             $(this).addClass("hover");
-                            if (($(this).offset().top) - $(".nav-right form").height() < 0) {
+                            if ($(this).offset().top - $(".nav-right .right-top").height() < 0) {
                                 $("nav").scrollTop($("nav").scrollTop() - $(this).height());
                             }
                             return false;
@@ -228,7 +228,7 @@ $("#local-search-input").keydown(function (e) {
                         if ($(this).is(":visible")) {
                             $(".nav-right nav a.hover").removeClass("hover");
                             $(this).addClass("hover");
-                            if (($("nav").height() + $(".nav-right form").height() - $(this).offset().top) < 20) {
+                            if (($("nav").height() + $(".nav-right .right-top").height() - $(this).offset().top) < 20) {
                                 $("nav").scrollTop($("nav").scrollTop() + $(this).height());
                             }
                             return false;
@@ -245,7 +245,7 @@ $("#local-search-input").keydown(function (e) {
                         if ($(this).is(":visible")) {
                             $("#local-search-result a.hover").removeClass("hover");
                             $(this).children().addClass("hover");
-                            if (($("#local-search-result").height() + $(".nav-right form").height() - $(this).offset().top) < 20) {
+                            if (($("#local-search-result").height() + $(".nav-right .right-top").height() - $(this).offset().top) < 20) {
                                 $("#local-search-result").scrollTop($("#local-search-result").scrollTop() + $(this).prev().height());
                             }
                             return false;
@@ -256,15 +256,6 @@ $("#local-search-input").keydown(function (e) {
             if (e.which === 9) {
                 return false;
             }
-        }
-    }
-
-    if (e.which === 27) { /* esc */
-        var $handle = $(".nav-right form .cross");
-        if ($handle.is(":visible")) {
-            $(".nav-right form .cross").trigger("click");
-        } else {
-            $(".nav-right form input").blur();
         }
     }
 });
@@ -336,7 +327,7 @@ $('#tagsWitchIcon').on('click', function () {
 $("#tagswitch").on("change", function (e) {
     $(".nav-right .tags-list").css("display", $(this).prop("checked") ? "block" : "none");
     // 51 为 .tags-list 的 margin-top + margin-bottom + form 的 border-bottom  || 1 为 form 的 border-bottom
-    var top = $(this).prop("checked") ? $(".nav-right form").height() + $(".nav-right .tags-list").height() + 51 : $(".nav-right form").height() + 1;
+    var top = $(this).prop("checked") ? $(".nav-right .right-top").height() + $(".nav-right .tags-list").height() + 51 : $(".nav-right .right-top").height() + 1;
     if ($(window).width() > 426) {
         var height = $(document).height() - top - 11;// 11 为nav的border-top + padding-bottom
     }  else {
@@ -379,7 +370,6 @@ function syncOutline(_this) {
         $('#outline-list .toc-link').each(function (index) {
             var diff = _this.scrollTop - $(_this).find($(this).attr('href'))[0].offsetTop
             if (diff < -20) {
-                console.log(_this.scrollTop, $(_this).find($(this).attr('href'))[0].offsetTop)
                 activeIndex = index === 0 ? 0 : index - 1
                 return false
             }
@@ -389,6 +379,11 @@ function syncOutline(_this) {
             $('#outline-list .toc-link:last').addClass('active')
         } else {
             $('#outline-list .toc-link:eq(' + activeIndex + ')').addClass('active')
+        }
+        if ($('#outline-list .toc-link.active')[0].offsetTop - $('#outline-list').height() - $('#outline-list')[0].scrollTop > -80) {
+            $('#outline-list').scrollTop($('#outline-list .toc-link.active')[0].offsetTop + 80 - $('#outline-list').height())
+        } else if ($('#outline-list .toc-link.active')[0].offsetTop < $('#outline-list')[0].scrollTop) {
+            $('#outline-list').scrollTop($('#outline-list .toc-link.active')[0].offsetTop)
         }
     }
 }
@@ -455,7 +450,7 @@ $(function () {
     }
     //搜索框下的tag搜索事件
     $(".nav-right .tags-list li a").on("click", function (e) {
-        $(".nav-right form input").val("#" + $(this).text().trim()).change();
+        $(" #local-search-input").val("#" + $(this).text().trim()).change();
     });
     //文章toc的显示隐藏事件
     $(".full-toc .post-toc-menu").on('click', function () {
@@ -508,7 +503,7 @@ function bind() {
     $(".post .pjax .index h1:eq(0)").addClass("article-title");
     //绑定文章内tag的搜索事件
     $(".post .pjax article .article-meta .tag a").on("click", function (e) {
-        $(".nav-right form input").val("#" + $(this).text().trim()).change();
+        $(" #local-search-input").val("#" + $(this).text().trim()).change();
         if ($(window).width() <= 1024) {
             $(".full-toc .full").trigger("click");
         } else if ($(".full-toc .full span").hasClass("max")) {
@@ -533,7 +528,7 @@ function bind() {
     });
     //绑定文章内作者的点击事件
     $(".post .pjax article .article-meta .author").on("click", function (e) {
-        $(".nav-right form input").val("@" + $(this).text().trim()).change();
+        $(" #local-search-input").val("@" + $(this).text().trim()).change();
         if ($(window).width() <= 1024) {
             $(".full-toc .full").trigger("click");
         } else if ($(".full-toc .full span").hasClass("max")) {

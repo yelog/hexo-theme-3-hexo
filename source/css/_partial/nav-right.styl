@@ -19,9 +19,9 @@ right-top-height = 45px
       margin-left 421px
     .right-top
       height right-top-height
-      position: absolute;
-      top: 0;
-      width: 100%;
+      position: absolute 
+      top: 0 
+      width: 100% 
       font-size 15px
       #default-panel, #outline-panel
         text-align center
@@ -33,7 +33,7 @@ right-top-height = 45px
         .iconfont
           position absolute
           top 50%
-          transform: translate(0, -50%);
+          transform: translate(0, -50%) 
           cursor pointer
           font-size 16px
           &.icon-search
@@ -49,7 +49,7 @@ right-top-height = 45px
         .icon-left
           position absolute
           top 50%
-          transform: translate(0, -50%);
+          transform: translate(0, -50%) 
           cursor pointer
           left 15px
         #local-search-input
@@ -142,63 +142,71 @@ right-top-height = 45px
       top right-top-height
       width 100%
       padding 0 25px
-      box-sizing: border-box;
+      box-sizing border-box
+      height calc(100vh - 45px)
+      overflow-y auto
+      overflow-x hidden
+      &::-webkit-scrollbar
+        width 3px
+      &::-webkit-scrollbar-thumb
+        background #309E85
       .toc
-        list-style-type: none;
-        font-size: 1rem;
-        line-height: 1.3;
+        list-style-type: none 
+        font-size: 1rem 
+        line-height: 1.3 
         padding 0
-        color rgb(51, 51, 51);
+        color rgb(51, 51, 51) 
         font-weight 400
         position relative
         &:before
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 7px;
-          bottom: 0;
-          width: 2px;
-          background-color: #ebedef;
-          opacity: .5;
+          content: "" 
+          position: absolute 
+          top: 0 
+          left: 7px 
+          bottom: 0 
+          width: 2px 
+          background-color: #ebedef 
+          opacity: .5 
         .toc-level-1, .toc-level-2
           &>a
-            font-weight: 600;
-            color: #333;
-            margin: 6px 0;
-            padding: 4px 0 4px 21px;
+            font-weight: 600 
+            color: #333 
+            margin: 6px 0 
+            padding: 4px 0 4px 21px 
             &:before
-              left: 5px;
-              margin-top: -3px;
-              width: 6px;
-              height: 6px;
+              left: 5px 
+              margin-top: -3px 
+              width: 6px 
+              height: 6px 
         ol
-          list-style-type: none;
+          list-style-type: none 
         a
-          display: block;
-          position: relative;
-          padding: 4px 0 4px 12px;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
+          display: block 
+          position: relative 
+          padding: 4px 0 4px 12px 
+          white-space: nowrap 
+          overflow: hidden 
+          text-overflow: ellipsis 
           transition none
           &:hover
-            background-color: #ebedef;
+            background-color: #ebedef 
           &.active
-            background-color: #ebedef;
+            background-color: #ebedef 
             color #007fff
           &:before
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 0;
-            margin-top: -2px;
-            width: 4px;
-            height: 4px;
-            background-color: currentColor;
-            border-radius: 50%;
+            content: "" 
+            position: absolute 
+            top: 50% 
+            left: 0 
+            margin-top: -2px 
+            width: 4px 
+            height: 4px 
+            background-color: currentColor 
+            border-radius: 50% 
     nav, #local-search-result
       clear both
       width 100%
+      height calc(100vh - 45px)
       padding-bottom 10px
       color #64717f
       text-shadow -1px 1px 0 rgba(125, 139, 153, 0.1)
@@ -215,6 +223,7 @@ right-top-height = 45px
       #no-item-tips
         display none
         height 32px
+        line-height 1.5
         padding 15px
         span
           color: #FF5722
@@ -285,9 +294,9 @@ right-top-height = 45px
       .icon-left
         position absolute
         top 50%
-        transform: translate(0, -50%) rotateZ(180deg);
+        transform: translate(0, -50%) rotateZ(180deg) 
         cursor pointer
-        //transform: rotateZ(180deg);
+        //transform: rotateZ(180deg) 
         right 15px
     .friends-content
       overflow-y auto
