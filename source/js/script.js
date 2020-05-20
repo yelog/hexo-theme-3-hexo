@@ -316,6 +316,7 @@ function inputChange() {
     if ($('#local-search-result').length>0) {
         if (val.length>3 && (val.substr(0,3).toLowerCase() === 'in:' || val.substr(0,3).toLowerCase()==='in：')) {
             $outlineList.hide();
+            $('#title-list-nav').hide()
             $('#local-search-result').show();
             searchAll(val.substr(3))
         } else {

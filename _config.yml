@@ -129,7 +129,7 @@ article_bg_img:
   opacity: 0.3 # 背景图透明度，范围 0 ～ 1
 
 # 列表样式
-list: thread
+list: normal
 # normal : 普通样式
 # thread : 列表外圈有一个线框
 
@@ -164,7 +164,7 @@ code:
 
 highlight:
   on: true # true开启代码高亮
-  lineNum: true # true显示行号
+  lineNum: false # true显示行号
   theme: atom-light
 # 代码高亮主题,效果可以查看 https://highlightjs.org/static/demo/
 # 支持主题：

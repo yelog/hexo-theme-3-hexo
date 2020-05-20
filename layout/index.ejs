@@ -41,11 +41,11 @@
             return partial('_partial/copyright');
         }) %>
     </div>
-    <div class="full-toc">
-        <%- fragment_cache('toc', function(){
-            return partial('_partial/full-toc');
-        }) %>
-    </div>
+</div>
+<div class="full-toc">
+    <%- fragment_cache('toc', function(){
+        return partial('_partial/full-toc');
+    }) %>
 </div>
 <% if (theme.reward) {%>
 <%- fragment_cache('dashang', function(){

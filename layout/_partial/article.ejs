@@ -11,13 +11,15 @@
         <%}%>
         <% if (post.categories && post.categories.length){ %>
         <span class="book">
+            <i class="iconfont icon-category"></i>
             <% post.categories.forEach(function(category, i){ %>
-                <a  data-rel="<%=category.name%>"><%=category.name%></a><% if (i !== post.categories.length - 1) { %>/<% } %>
+            <a  data-rel="<%=category.name%>"><%=category.name%></a><% if (i !== post.categories.length - 1) { %> <% if (theme.category && theme.category.sub) {%>><%} else {%>/<%}%> <% } %>
             <% }) %>
         </span>
         <% } %>
         <% if (post.tags && post.tags.length){ %>
         <span class="tag">
+            <i class="iconfont icon-tag"></i>
             <% post.tags.forEach(function(tag, i){ %>
             <a class="color<%= tag.name.length % 5 + 1 %>"><%=tag.name%></a>
             <% }) %>
