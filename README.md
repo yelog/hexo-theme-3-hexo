@@ -56,6 +56,14 @@ git pull
 ### 返回头部
 ![返回头部](http://img.saodiyang.com/FjpVByJViwYEWHHMTeayiQ-FD_qG.gif)
 
+## 效果博客
+[程忧点滴](https://www.chenuon.cn/)
+[COCO56个人博客](https://coco56.gitee.io/blog/)
+[wallleap](https://wallleap.cn)
+[黑刀的个人博客](https://dingguanyu.com/)
+[黑刀的个人博客](https://dingguanyu.com/)
+
+
 ## 致谢
  作者Peiwen Lu的jekyll主题：[3-jekyll](https://github.com/P233/3-Jekyll)主题  
  作者Yansu的[blog](http://yansu.org/)  
