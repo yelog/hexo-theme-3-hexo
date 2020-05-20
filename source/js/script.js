@@ -323,6 +323,9 @@ function inputChange() {
             $('#title-list-nav').show();
             $('#local-search-result').hide();
         }
+    } else {
+        $outlineList.hide();
+        $('#title-list-nav').show();
     }
 
     var activeTitle = $(".nav-left ul li>div.active").data('rel');
