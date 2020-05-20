@@ -31,7 +31,17 @@ site.posts.data.sort(function(a, b) {
 
 // 对 tag 进行排序
 site.tags.data.sort(function(a,b){
-  console.log(a.name)
-  return String(a.name).localeCompare(String(b.name))
+  return String(a.name).localeCompare(String(b.name), 'zh')
+})
+
+// 对 category 进行排序
+site.categories.data.sort(function (a, b) {
+  if (theme.category && theme.category.sort) {
+    return theme.category.sort.indexOf(a.name) === -1
+            ? theme.category.sort.indexOf(b.name) === -1 ? String(a.name).localeCompare(String(b.name), 'zh') : 1
+            : theme.category.sort.indexOf(b.name) !== -1 ? theme.category.sort.indexOf(a.name) - theme.category.sort.indexOf(b.name) : -1
+  } else {
+    return String(a.name).localeCompare(String(b.name), 'zh')
+  }
 })
 %>
