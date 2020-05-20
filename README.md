@@ -61,7 +61,6 @@ git pull
 - [COCO56个人博客](https://coco56.gitee.io/blog/)
 - [wallleap](https://wallleap.cn)
 - [黑刀的个人博客](https://dingguanyu.com/)
-- [黑刀的个人博客](https://dingguanyu.com/)
 
 
 ## 致谢
