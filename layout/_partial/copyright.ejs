@@ -1,2 +1,8 @@
-<p class="footer-entry"><%if(theme.bottom_text){%><%=theme.bottom_text%><%} else {%>©2017 <%=config.author%><%}%></p>
+<p class="footer-entry"><% if (theme.miit && theme.miit.on) {%><span class="miit">
+                <img src="<%=theme.blog_path?theme.blog_path.lastIndexOf("/") === theme.blog_path.length-1?theme.blog_path.slice(0, theme.blog_path.length-1):theme.blog_path:'' %>/img/gov.png" title="中华人民共和国工业和信息化部">
+                <a href="<%= theme.miit.url || 'http://beian.miit.gov.cn/'%>"><%=theme.miit.info%></a>
+        </span>
+    <%}%>
+    <%if(theme.bottom_text){%><%=theme.bottom_text%><%} else {%>©2017 <%=config.author%><%}%>
+</p>
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
