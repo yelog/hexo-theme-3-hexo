@@ -275,7 +275,11 @@ gitment:
   # gitment : 通过github issue实现的评论系统
   # 开源地址 : https://github.com/imsun/gitment
   # 使用说明 :
-  #
+
+livere:
+  data_uid:
+  # 来必力: http://livere.com/
+  # 使用说明 : https://yelog.org//2020/05/23/3-hexo-comment/
 
 ##############################
 

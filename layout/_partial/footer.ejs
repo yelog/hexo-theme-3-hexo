@@ -9,7 +9,7 @@
     function initArticle() {
         /*渲染对应的表格样式*/
         <% if(theme.table){ %>
-            $(".post .pjax table").addClass("<%=theme.table%>");
+            $("#post .pjax table").addClass("<%=theme.table%>");
         <% } %>
 
         /*渲染打赏样式*/
@@ -433,20 +433,20 @@
 
     /*列表样式*/
     <%if(theme.list=="thread"){%>
-    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+    #post .pjax article .article-entry>ol, #post .pjax article .article-entry>ul, #post .pjax article>ol, #post .pjax article>ul{
         border: #e2dede solid 1px;
         border-radius: 10px;
         padding: 10px 32px 10px 56px;
     }
-    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+    #post .pjax article .article-entry li>ol, #post .pjax article .article-entry li>ul,#post .pjax article li>ol, #post .pjax article li>ul{
         padding-top: 5px;
         padding-bottom: 5px;
     }
-    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+    #post .pjax article .article-entry>ol>li, #post .pjax article .article-entry>ul>li,#post .pjax article>ol>li, #post .pjax article>ul>li{
         margin-bottom: auto;
         margin-left: auto;
     }
-    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+    #post .pjax article .article-entry li>ol>li, #post .pjax article .article-entry li>ul>li,#post .pjax article li>ol>li, #post .pjax article li>ul>li{
         margin-bottom: auto;
         margin-left: auto;
     }
@@ -454,12 +454,12 @@
 
     /* 背景图样式 */
     <% if (theme.index_bg_img) { %>
-    .post {
+    #post {
         background: url(<%=theme.index_bg_img%>);
     }
     <% } %>
     <% if (theme.other_bg_img) { %>
-    .post.index {
+    #post .index {
         background: url(<%=theme.other_bg_img%>);
     }
     <% } %>
@@ -467,7 +467,7 @@
 
     /*引用块样式*/
     <%if(theme.blockquote=="bracket"){%>
-    .post .pjax article blockquote {
+    #post .pjax article blockquote {
         padding: 10px 20px;
         background-color: white;
         border: none;
@@ -500,7 +500,7 @@
     <%}%>
 
     <%if(theme.code.theme == 'github') {%>
-    .post .pjax article :not(pre) > code {
+    #post .pjax article :not(pre) > code {
         color: #24292e;
         font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
         background-color: rgba(27,31,35,.05);

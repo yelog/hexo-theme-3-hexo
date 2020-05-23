@@ -23,7 +23,7 @@ blog_path= blog_path.lastIndexOf("/") === blog_path.length-1?blog_path.slice(0, 
 
 /*使用pjax加载页面，速度更快，交互更友好*/
 var content = $(".pjax");
-var container = $(".post");
+var container = $("#post");
 var $searchInput = $("#local-search-input");
 var $tagSearchInput = $("#tag-search");
 var $outlineList = $('#outline-list');
@@ -67,9 +67,9 @@ function afterPjax() {
 
     // 文章默认背景
     if (blog_path===''?location.pathname==='/':blog_path === location.pathname.split('/')[1]) {
-       $('.post').addClass('index')
+        container.addClass('index')
     } else {
-        $('.post').removeClass('index')
+        container.removeClass('index')
     }
 
     /*渲染MathJax数学公式*/
@@ -573,10 +573,10 @@ function bind() {
     $("#busuanzi_value_site_pv").bind("DOMNodeInserted", function (e) {
         $(".site_pv").text($(this).text())
     });
-    $(".post .pjax .index").find("br").remove();
-    $(".post .pjax .index h1:eq(0)").addClass("article-title");
+    $("#post .pjax .index").find("br").remove();
+    $("#post .pjax .index h1:eq(0)").addClass("article-title");
     //绑定文章内tag的搜索事件
-    $(".post .pjax article .article-meta .tag a").on("click", function (e) {
+    $("#post .pjax article .article-meta .tag a").on("click", function (e) {
         $searchInput.val("#" + $(this).text().trim()).change();
         if ($(window).width() <= 1024) {
             $fullBtn.trigger("click");
@@ -585,7 +585,7 @@ function bind() {
         }
     });
     //绑定文章内分类的点击事件
-    $(".post .pjax article .article-meta .book a").on("click", function (e) {
+    $("#post .pjax article .article-meta .book a").on("click", function (e) {
         $(".nav-left ul li>div[data-rel='" + $(this).data("rel") + "']").parents('.hide').each(function () {
             var _this = this;
             $(_this).removeClass('hide').prev().children('.fold').addClass('unfold');
@@ -601,7 +601,7 @@ function bind() {
         }
     });
     //绑定文章内作者的点击事件
-    $(".post .pjax article .article-meta .author").on("click", function (e) {
+    $("#post .pjax article .article-meta .author").on("click", function (e) {
         $searchInput.val("@" + $(this).text().trim()).change();
         if ($(window).width() <= 1024) {
             $fullBtn.trigger("click");
@@ -610,8 +610,8 @@ function bind() {
         }
     });
     //初始化文章toc
-    // $(".post-toc-content").html($(".post .pjax article .toc-ref .toc").clone());
-    $("#outline-list").html($(".post .pjax article .toc-ref .toc").clone());
+    // $(".post-toc-content").html($("#post .pjax article .toc-ref .toc").clone());
+    $("#outline-list").html($("#post .pjax article .toc-ref .toc").clone());
     syncOutline(container[0])
     //绑定文章toc的滚动事件
     $("a[href^='#']").click(function () {
@@ -644,7 +644,7 @@ function bind() {
         });
     }
     /*给文章中的站内跳转绑定pjax*/
-    $(document).pjax('.post .pjax article a[target!=_blank]', '.pjax', {fragment: '.pjax', timeout: 8000});
+    $(document).pjax('#post .pjax article a[target!=_blank]', '.pjax', {fragment: '.pjax', timeout: 8000});
 
     /*初始化 img*/
     if (img_resize !== 'photoSwipe') {
