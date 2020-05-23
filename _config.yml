@@ -228,11 +228,9 @@ friends:
 ##########评论设置#############
 comment:
   on: false
-  type: gitalk  # 评论系统：gitalk、disqus、gitment,注意：使用时，在下方对应位置进行配置
-  comment_count: true  # 文章标题下方显示评论数
-  preload_comment: false  # 预加载评论区
-  ## false: 当点击评论条等区域时再加载评论模块
-  ## true: 页面加载时加载评论区
+  type: gitalk  # 评论系统：gitalk、disqus、gitment、utteranc、livere,注意：使用时，在下方对应位置进行配置
+  comment_count: true  # 文章标题下方显示评论数 目前仅支持 gitalk 和 disqus
+  ## 使用说明 https://yelog.org//2020/05/23/3-hexo-comment/
 # 各评论系统配置 ↓↓
 
 disqus:
@@ -275,6 +273,14 @@ livere:
   data_uid:
   # 来必力: http://livere.com/
   # 使用说明 : https://yelog.org//2020/05/23/3-hexo-comment/
+
+utteranc:
+  repo: xxx/xxx.github.io # 承载评论的仓库，填上自己新建的仓库
+  issue_term: pathname    # Issue 与 博客文章 之间映射关系
+  label: utteranc         # 创建的 Issue 添加的标签
+  theme: github-light     # 主题，可选主题请查看官方文档 https://utteranc.es/#heading-theme
+# 官方文档 https://utteranc.es/
+# 使用说明 https://yelog.org//2020/05/23/3-hexo-comment/
 
 ##############################
 
