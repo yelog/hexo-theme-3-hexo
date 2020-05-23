@@ -74,7 +74,7 @@
     </div>
     <%}%>
     <%- partial('_partial/toc-ref', {index: false}) %>
-    <% post.content = post.content.replace(/@\[TOC\]/gi, "<div class='inner-toc'><h2>目录</h2>" + toc(post.content, {list_number: false}) + '</div>') %>
+    <% post.content = post.content.replace(/\[TOC\]/gi, "<div class='inner-toc'>" + toc(post.content, {list_number: false}) + '</div>') %>
     <div class="article-entry" itemprop="articleBody">
       <% if (post.excerpt && index){ %>
         <%- post.excerpt %>

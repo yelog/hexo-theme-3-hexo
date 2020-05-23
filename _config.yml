@@ -1,4 +1,4 @@
-version: 1.0.1
+version: 1.1.0
 # 你的头像url
 avatar: /img/avatar.jpg
 favicon: /img/avatar.jpg
@@ -50,7 +50,7 @@ category:
     - 运维
   width:
     lg: 120 # 1468px<屏幕宽度 左侧分类宽度
-    md: 150 # 1024px<屏幕宽度<=1468px 左侧分类宽度
+    md: 100 # 1024px<屏幕宽度<=1468px 左侧分类宽度
     sm: 100 # 426px<屏幕宽度<=1024px 左侧分类宽度（ipad）
 # 多级分类说明：
 # 比如在文章中设置多个菜单，则默认为多级菜单，即：工具>hexo
