@@ -59,7 +59,7 @@ category:
 #   - hexo
 
 # 快捷键
-shortcutKey: false
+shortcutKey: true
 
 # 左下角自定义菜单
 menu:
