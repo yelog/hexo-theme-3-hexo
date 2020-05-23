@@ -32,6 +32,7 @@ var $titleList = $("nav");
 var $localSearchResult = $("#local-search-result")
 var isFullScreen = $(window).width() <= 1024
 var isFriend = false
+var shortcutKey = $('#theme_shortcut').val() !== 'false'
 $(document).pjax('.nav-right nav a,.nav-left .avatar_target,.site_url', '.pjax', {fragment: '.pjax', timeout: 8000});
 $(document).on({
     /*点击链接后触发的事件*/
@@ -145,60 +146,63 @@ $(".nav-right nav a").mouseleave(function (e) {
 
 /*快捷键/组合键*/
 var publickey = {"shift": false, "ctrl": false, "alt": false, "last": 0};
-$(document).keydown(function (e) {
-    var tobottom = container.prop("scrollHeight") - container.scrollTop() - container.height();
-    var totop = container.scrollTop();
-    if (!$searchInput.is(":focus") && !$tagSearchInput.is(':focus') && !$('#comments textarea').is(':focus')) {
-        if (e.keyCode === 74) { /* J */
-            container.animate({scrollTop: container.prop("scrollHeight") - container.height()}, tobottom, "linear");
-        } else if (e.keyCode === 75) { /* K */
-            container.animate({scrollTop: 0}, totop, "linear");
-        } else if (e.keyCode === 71) { /* G */
-            if (publickey.shift) {
-                container.animate({scrollTop: container.prop("scrollHeight")}, 800);
-            } else if (publickey.last === 71) { /* G */
-                container.animate({scrollTop: 0}, 800);
+if (shortcutKey) {
+    $(document).keydown(function (e) {
+        var tobottom = container.prop("scrollHeight") - container.scrollTop() - container.height();
+        var totop = container.scrollTop();
+        if (!$searchInput.is(":focus") && !$tagSearchInput.is(':focus') && !$('#comments textarea').is(':focus')) {
+            if (e.keyCode === 74) { /* J */
+                container.animate({scrollTop: container.prop("scrollHeight") - container.height()}, tobottom, "linear");
+            } else if (e.keyCode === 75) { /* K */
+                container.animate({scrollTop: 0}, totop, "linear");
+            } else if (e.keyCode === 71) { /* G */
+                if (publickey.shift) {
+                    container.animate({scrollTop: container.prop("scrollHeight")}, 800);
+                } else if (publickey.last === 71) { /* G */
+                    container.animate({scrollTop: 0}, 800);
+                }
+            } else if (e.keyCode === 16) { /* shift */
+                publickey.shift = true;
             }
-        } else if (e.keyCode === 16) { /* shift */
-            publickey.shift = true;
         }
-    }
-})
+    })
 
-$(document).keyup(function (e) {
-    if (!$searchInput.is(":focus") && !$tagSearchInput.is(':focus') && !$('#comments textarea').is(':focus')) {
-        if (e.which === 83) { /* S - 显示/隐藏文章列表 */
-            $fullBtn.trigger("click");
-        } else if ((e.which === 73 || e.which === 105) && ($(".nav").css('margin-left')==='0px') && !$('.title-list').hasClass('friend')) { /* I */
-            inputChange()
-        } else if (e.which === 87) { /* W - 切换大纲视图 */
-            if ($outlineList.is(':visible')) {
-                $('#outline-panel > .icon-list').trigger('click')
-            } else {
-                $('#default-panel').hide()
-                $('#title-list-nav').hide()
-                $('#search-panel').hide()
-                $('#outline-panel').show()
-                $outlineList.show()
-                syncOutline(container[0])
-            }
-            // 如果是全屏，则推出全屏
-            if (isFullScreen) {
+    $(document).keyup(function (e) {
+        if (!$searchInput.is(":focus") && !$tagSearchInput.is(':focus') && !$('#comments textarea').is(':focus')) {
+            if (e.which === 83) { /* S - 显示/隐藏文章列表 */
                 $fullBtn.trigger("click");
-            }
-            // 如果在友链界面，则推出友链
-            if (isFriend) {
-                $('.friends-area .icon-left').trigger('click')
-            }
+            } else if ((e.which === 73 || e.which === 105) && ($(".nav").css('margin-left')==='0px') && !$('.title-list').hasClass('friend')) { /* I */
+                inputChange()
+            } else if (e.which === 87) { /* W - 切换大纲视图 */
+                if ($outlineList.is(':visible')) {
+                    $('#outline-panel > .icon-list').trigger('click')
+                } else {
+                    $('#default-panel').hide()
+                    $('#title-list-nav').hide()
+                    $('#search-panel').hide()
+                    $('#outline-panel').show()
+                    $outlineList.show()
+                    syncOutline(container[0])
+                }
+                // 如果是全屏，则推出全屏
+                if (isFullScreen) {
+                    $fullBtn.trigger("click");
+                }
+                // 如果在友链界面，则推出友链
+                if (isFriend) {
+                    $('.friends-area .icon-left').trigger('click')
+                }
 
-        } else if (e.which === 74 || e.which === 75) { /* J K - 上滑/下滑*/
-            container.stop(true);
-        } else if (e.which === 16) {
-            publickey.shift = false;
+            } else if (e.which === 74 || e.which === 75) { /* J K - 上滑/下滑*/
+                container.stop(true);
+            } else if (e.which === 16) {
+                publickey.shift = false;
+            }
         }
-    }
-    publickey.last = e.keyCode;
-})
+        publickey.last = e.keyCode;
+    })
+}
+
 
 $searchInput.blur(function (e) {
     $(".nav-right nav a.hover").removeClass("hover");

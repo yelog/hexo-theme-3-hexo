@@ -58,6 +58,9 @@ category:
 #   - 工具
 #   - hexo
 
+# 快捷键
+shortcutKey: false
+
 # 左下角自定义菜单
 menu:
   about:  # '关于' 按钮
