@@ -397,7 +397,7 @@ container.hover(function () {
 })
 var clickScrollTo = false
 function syncOutline(_this) {
-    if (!clickScrollTo) {
+    if ($('#outline-list .toc-link').length > 0 && !clickScrollTo) {
         var activeIndex = null
         $('#outline-list .toc-link').each(function (index) {
             var diff = _this.scrollTop - $(_this).find($(this).attr('href'))[0].offsetTop
