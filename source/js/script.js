@@ -648,7 +648,7 @@ function bind() {
 
     /*初始化 img*/
     if (img_resize !== 'photoSwipe') {
-        content.find('img').each(function () {
+        content.find('img:not([data-ignore])').each(function () {
             if (!$(this).parent().hasClass('div_img')) {
                 $(this).wrap("<div class='div_img'></div>");
                 var alt = this.alt;

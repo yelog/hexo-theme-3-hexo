@@ -30,13 +30,25 @@ site.posts.data.sort(function(a, b) {
   else return b.date - a.date; // 都没定义按照文章日期降序排
 });
 
-// 对 tag 进行排序
-site.tags.data.sort(function(a,b){
-  return String(a.name).localeCompare(String(b.name), 'zh')
+site['myTags'] = []
+site.tags.forEach(function (item) {
+  site['myTags'].push(item.name)
+})
+site.myTags.sort(function(a,b){
+  return String(a).localeCompare(String(b), 'zh')
 })
 
 // 对 category 进行排序
-site.categories.data.sort(function (a, b) {
+site['myCategories']= []
+site.categories.forEach(function (item) {
+  site.myCategories.push({
+    _id: item._id,
+    name: item.name,
+    parent: item.parent,
+    posts: item.posts
+  })
+})
+site.myCategories.sort(function (a, b) {
   if (theme.category && theme.category.sort) {
     return theme.category.sort.indexOf(a.name) === -1
             ? theme.category.sort.indexOf(b.name) === -1 ? String(a.name).localeCompare(String(b.name), 'zh') : 1
