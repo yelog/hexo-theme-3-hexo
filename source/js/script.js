@@ -464,7 +464,7 @@ $(function () {
         var isPhone = $(window).width() <= 426
         $(".nav-right .tags-list").css({'left': isPhone ? 'auto' : (_offset.left - 95) + 'px', 'top': (_offset.top + 30) + 'px', 'right': isPhone ? '0' : 'auto'}).toggle(100);
         setTimeout(function () {
-            $tagSearchInput.val('').focus()
+            $tagSearchInput.val('').change().focus()
         }, 150)
     })
     // 选择 tag
