@@ -49,11 +49,11 @@ if (theme.category && theme.category.sub) {
                 <% if (childCategory[category._id]) {%>
                     <ul class="sub hide">
                         <% childCategory[category._id].forEach(function (child) { %>
-                        <li><div data-rel="<%=child.name%>"><% if (childCategory[child._id]) {%><i class="fold iconfont icon-right"></i><% } %><%=child.name%><% if (theme.category && theme.category.num) { %><small>(<%= child.posts.length %>)</small><%}%></div>
+                        <li><div data-rel="<%=category.name%><---><%=child.name%>"><% if (childCategory[child._id]) {%><i class="fold iconfont icon-right"></i><% } %><%=child.name%><% if (theme.category && theme.category.num) { %><small>(<%= child.posts.length %>)</small><%}%></div>
                             <% if (childCategory[child._id]) {%>
                                 <ul class="sub hide">
                                     <% childCategory[child._id].forEach(function (child2) { %>
-                                    <li><div data-rel="<%=child2.name%>"><% if (childCategory[child2._id]) {%><i class="fold iconfont icon-right"></i><% } %><%=child2.name%><% if (theme.category && theme.category.num) { %><small>(<%= child2.posts.length %>)</small><%}%></div>
+                                    <li><div data-rel="<%=category.name%><---><%=child.name%><%=child2.name%>"><% if (childCategory[child2._id]) {%><i class="fold iconfont icon-right"></i><% } %><%=child2.name%><% if (theme.category && theme.category.num) { %><small>(<%= child2.posts.length %>)</small><%}%></div>
                                     </li>
                                     <% }) %>
                                 </ul>
