@@ -331,7 +331,12 @@ function inputChange() {
         $outlineList.hide();
         $('#title-list-nav').show();
     }
-    var categories = $(".nav-left ul li>div.active").data('rel').split('<--->');
+    var categories = $(".nav-left ul li>div.active").data('rel').split('<--->')
+    // 处理特殊字符
+    for (var i = 0; i < categories.length; i++) {
+        categories[i] =  categories[i]
+          .replace(/(?=\/|\\|#|\(|\)|\[|\]|\.)/g, "\\")
+    }
     var activeTitle = categories.join('.');
     var searchType = '';
     var containType = '';
