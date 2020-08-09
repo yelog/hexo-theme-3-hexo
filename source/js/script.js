@@ -570,7 +570,7 @@ function bind() {
     /*渲染高亮代码块结构与样式*/
     if ($('#theme_highlight_on').val() === 'true') {
         $('pre code').each(function (i, block) {
-            var codeClass = $(this).attr('class')
+            var codeClass = $(this).attr('class') || ''
             var hasCopy = $('#theme_code_copy').val() !== 'false'
             // 添加复制功能
             $(this).after('<div class="code-embed"><span class="code-embed-type">'+ (codeClass.indexOf('hljs') === -1 ? codeClass : codeClass.replace(/[\s]?hljs/g, ''))+'</span>'+(hasCopy ? '<span class="code-embed-copy" onclick="copyCode(this)">复制代码</span>' : '')+'</div>')
