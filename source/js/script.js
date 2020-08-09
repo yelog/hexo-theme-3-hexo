@@ -173,6 +173,10 @@ if (shortcutKey) {
                 if ($outlineList.is(':visible')) {
                     $('#outline-panel > .icon-list').trigger('click')
                 } else {
+                    if ($('#local-search-result').is(":visible")) {
+                        $searchInput.val('')
+                        inputChange()
+                    }
                     $('#default-panel').hide()
                     $('#title-list-nav').hide()
                     $('#search-panel').hide()
@@ -492,6 +496,10 @@ $(function () {
 
     // 回到默认面板
     $('#search-panel > .icon-left').on('click', function () {
+        if ($('#local-search-result').is(":visible")) {
+            $searchInput.val('')
+            inputChange()
+        }
         $(this).parent().hide()
         $('#default-panel').show()
     })
@@ -505,6 +513,7 @@ $(function () {
     $('#default-panel > .icon-file-tree').on('click', function (e) {
         $(this).parent().hide()
         $('#title-list-nav').hide()
+        $('#local-search-result').hide() // 隐藏全文搜索面板
         $('#outline-panel').show()
         $outlineList.show()
         syncOutline(container[0])
