@@ -82,10 +82,6 @@ function afterPjax() {
         });
     }
 
-    /*渲染高亮代码块结构与样式*/
-    $('pre code').each(function (i, block) {
-        hljs.highlightBlock(block);
-    });
     /*新内容淡入*/
     content.css({'opacity': 1}).removeClass('fadeOuts').addClass('fadeIns');
     bind();
@@ -562,6 +558,20 @@ $(function () {
 
 /*绑定新加载内容的点击事件*/
 function bind() {
+    /*渲染高亮代码块结构与样式*/
+    if ($('#theme_highlight_on').val() === 'true') {
+        $('pre code').each(function (i, block) {
+            var codeClass = $(this).attr('class')
+            var hasCopy = $('#theme_code_copy').val() !== 'false'
+            // 添加复制功能
+            $(this).after('<div class="code-embed"><span class="code-embed-type">'+ (codeClass.indexOf('hljs') === -1 ? codeClass : codeClass.replace(/[\s]?hljs/g, ''))+'</span>'+(hasCopy ? '<span class="code-embed-copy" onclick="copyCode(this)">复制代码</span>' : '')+'</div>')
+            // 渲染样式
+            if (codeClass.indexOf('hljs') === -1) {
+                hljs.highlightBlock(block);
+            }
+        });
+    }
+
     initArticle();
     $(".article_number").text($("#yelog_site_posts_number").val());
     $(".site_word_count").text($("#yelog_site_word_count").val());
@@ -711,4 +721,50 @@ function bind() {
         });
     }
 
+}
+
+/**
+ * 复制代码
+ */
+function copyCode(e) {
+    $(e).parent().prev().text()
+    if (copy($(e).parent().prev().text())) {
+        $(e).html('复制成功')
+        setTimeout(function () {
+            $(e).html('复制代码')
+        }, 1000)
+    }
+}
+
+// 复制功能1
+function copy (text) {
+    var isSuccess = false
+    var target;
+    if (text) {
+        target = document.createElement('div');
+        target.id = 'tempTarget';
+        target.style.opacity = '0';
+        target.innerText = text;
+        document.body.appendChild(target);
+    } else {
+        target = document.querySelector('#' + id);
+    }
+
+    try {
+        var range = document.createRange();
+        range.selectNode(target);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+        isSuccess = true
+    } catch (e) {
+        console.log('复制失败')
+    }
+
+    if (text) {
+        // remove temp target
+        target.parentElement.removeChild(target);
+    }
+    return isSuccess
 }

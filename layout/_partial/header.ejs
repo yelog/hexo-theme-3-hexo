@@ -12,6 +12,8 @@
   <input class="theme_preload_comment" value="<%=theme.comment.preload_comment%>">
   <input class="theme_blog_path" value="<%=theme.blog_path?theme.blog_path.lastIndexOf("/") === theme.blog_path.length-1?theme.blog_path.slice(0, theme.blog_path.length-1):theme.blog_path:'' %>">
   <input id="theme_shortcut" value="<%=theme.shortcutKey%>" />
+  <input id="theme_highlight_on" value="<%=theme.highlight.on%>" />
+  <input id="theme_code_copy" value="<%=theme.highlight.copy%>" />
 </div>
 
 <%

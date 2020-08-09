@@ -24,7 +24,7 @@
         <%}%>
 
         /*高亮代码块行号*/
-        <%if(theme.highlight && theme.highlight.on&& theme.highlight.lineNum){%>
+        <%if(theme.highlight && theme.highlight.on && theme.highlight.lineNum){%>
         $('pre code').each(function(){
             var lines = $(this).text().trim().split('\n').length, widther='';
             if (lines>99) {
