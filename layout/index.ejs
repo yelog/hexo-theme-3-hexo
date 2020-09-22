@@ -17,13 +17,13 @@
         }) %>
     </div>
     <div class="hide-list">
-        <div class="semicircle">
+        <div class="semicircle" data-title="切换全屏<% if (theme.shortcutKey != false) {%> 快捷键 s<%}%>">
             <div class="brackets first"><</div>
             <div class="brackets">&gt;</div>
         </div>
     </div>
 </aside>
-<div class="post index">
+<div id="post" class="index">
     <div class="pjax">
         <article class="index">
             <%- partial('_partial/toc-ref', {index: true}) %>
@@ -41,13 +41,12 @@
             return partial('_partial/copyright');
         }) %>
     </div>
-    <div class="full-toc">
-        <%- fragment_cache('toc', function(){
-            return partial('_partial/full-toc');
-        }) %>
-    </div>
 </div>
-<div class="acParent"></div>
+<div class="full-toc">
+    <%- fragment_cache('toc', function(){
+        return partial('_partial/full-toc');
+    }) %>
+</div>
 <% if (theme.reward) {%>
 <%- fragment_cache('dashang', function(){
     return partial('_partial/dashang');

@@ -1,13 +1,14 @@
-.post
+#post
   height 100%
-  font-size 18px
-  line-height 1.6
-  background white
+  font-weight: 400;
+  font-size: 16px;
+  line-height 1.75
+  background #f4f5f5
   overflow-x hidden
   overflow-y auto
   -webkit-overflow-scrolling touch
+  font-family -apple-system,system-ui,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial,sans-serif
   color #2f2f2f
-  font-weight normal
   margin-left 1px
   & ::selection
     color white
@@ -33,7 +34,8 @@
       -o-animation fadeOuts .2s
       animation fadeOuts .2s
     article
-      padding-top 2.5em
+      padding 2.5em
+      background white
       .article-entry>p:nth-child(1)
         margin-top 20px
       .article-meta
@@ -41,6 +43,8 @@
         color #BCC1C4
         border-left: 3px solid #b4b4b4;
         padding-left: 10px;
+        & > span
+          margin-right 8px
         .origin
           a
             color inherit
@@ -59,6 +63,7 @@
           a
             color inherit
             margin-left 5px
+            border-bottom none
             &:hover
               text-decoration none
               cursor text
@@ -73,17 +78,13 @@
             &:hover
               text-decoration none
         .book
-          &:before
-            content "\f02d"
           a
             cursor pointer
-            margin-left -6px
             color inherit
             &:hover
               color: #4078c0
         .tag
-          &:before
-            content "\e936"
+          margin-left 8px
           a
             height 18px
             line-height 18px
@@ -94,6 +95,7 @@
             border-radius 0 5px 5px 0
             margin 5px 4px 5px 8px
             white-space nowrap
+            display inline-block
             &:hover
               text-decoration none
             &:before
@@ -138,22 +140,22 @@
       .article-title
         margin 0
         font-size 1.8em
-        border-bottom 0px
+        border-bottom 0
         line-height: 31px
         margin-bottom: 10px
       .toc-ref
         display none
       a
-        color #4078c0
+        color #0269c8
         word-break break-all
-        font-family sans-serif
+        border-bottom 1px solid #d1e9ff
         &:hover
           text-decoration underline
       .div_img,figure
         margin 0
         padding 10px 0
         text-align center
-      img
+      img:not([data-ignore])
         max-width 95%
         display inline-block
         margin auto
@@ -168,29 +170,28 @@
           font-family  "Open Sans","Hiragino Sans GB",sans-serif
           display inline-block
       blockquote
-        padding 20px
-        margin 1em 0
-        background-color #f7f7f7
-        border-left .25em solid #b4b4b4
-        word-break break-word
-        font-size 16px
-        font-weight 400
-        line-height 30px
+        color: #666;
+        padding: 1px 23px;
+        margin: 22px 0;
+        border-left: 4px solid #cbcbcb;
+        background-color: #f8f8f8;
         p
-          margin-bottom 0px
+          margin: 10px 0;
+      strong
+        font-weight 700
       p
-        margin 0 0 16px
+        line-height: inherit;
+        margin-top: 22px;
+        margin-bottom: 22px;
       .inner-toc
         border: #e2dede solid 1px;
-        border-radius: 10px;
         h2
           border-bottom: none;
           margin: 10px 20px;
         ol
           list-style none
-      ol>li
-        margin-bottom 10px
-        margin-left -9px
+      ol
+        padding-left: 28px;
       ul:not(.pre-numbering)>li
         margin-bottom 10px
         margin-left -20px
@@ -237,36 +238,53 @@
             background-color: #009688
       /* Inline code */
       :not(pre) > code
-        color #BF1827
-        font-family sans-serif
+        background-color: #fff5f5;
+        color: #ff502c;
+        font-size: .87em;
+        padding: .065em .4em;
       pre.mermaid
         border none
         text-align center
-      pre > code
-        font-size 15px
-        border-radius 3px
-        /* 滚动条 */
-        &::-webkit-scrollbar-thumb:horizontal  /*水平滚动条的样式*/
-          width: 5px;
-          background-color: #CCCCCC;
-          -webkit-border-radius: 6px;
-        &::-webkit-scrollbar-track-piece
-          background-color: #fff; /*滚动条的背景颜色*/
-          -webkit-border-radius: 0; /*滚动条的圆角宽度*/
-        &::-webkit-scrollbar
-          width: 10px /*滚动条的宽度*/
-          height: 8px /*滚动条的高度*/
-        &::-webkit-scrollbar-thumb:vertical  /*垂直滚动条的样式*/
-          height: 50px;
-          background-color: #999;
-          -webkit-border-radius: 4px;
-          outline: 2px solid #fff;
-          outline-offset: -2px;
-          border: 2px solid #fff;
-        &::-webkit-scrollbar-thumb:hover  /*滚动条的hover样式*/
-          height: 50px;
-          background-color: #9f9f9f;
-          -webkit-border-radius: 4px;
+      pre
+        position relative
+        .code-embed
+          position absolute
+          font-size 12px
+          top 3px
+          right 15px
+          color hsla(0,0%,54.9%,.8)
+          &-copy
+            cursor pointer
+            padding-left 10px
+
+        & > code
+          font-size: 14px;
+          border-radius 3px
+          padding: 18px 15px 12px;
+          font-family: Menlo,Monaco,Consolas,Courier New,monospace;
+          /* 滚动条 */
+          &::-webkit-scrollbar-thumb:horizontal  /*水平滚动条的样式*/
+            width: 5px;
+            background-color: #CCCCCC;
+            -webkit-border-radius: 6px;
+          &::-webkit-scrollbar-track-piece
+            background-color: #fff; /*滚动条的背景颜色*/
+            -webkit-border-radius: 0; /*滚动条的圆角宽度*/
+          &::-webkit-scrollbar
+            width: 10px /*滚动条的宽度*/
+            height: 8px /*滚动条的高度*/
+          &::-webkit-scrollbar-thumb:vertical  /*垂直滚动条的样式*/
+            height: 50px;
+            background-color: #999;
+            -webkit-border-radius: 4px;
+            outline: 2px solid #fff;
+            outline-offset: -2px;
+            border: 2px solid #fff;
+          &::-webkit-scrollbar-thumb:hover  /*滚动条的hover样式*/
+            height: 50px;
+            background-color: #9f9f9f;
+            -webkit-border-radius: 4px;
+
 
   .dashang
     display: block;
@@ -284,21 +302,24 @@
     -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12)
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12)
     -webkit-transition: 0.4s ease-in-out
-    -webkit-transition: 0.4s ease-in-out
     -moz-transition: 0.4s ease-in-out
     -ms-transition: 0.4s ease-in-out
     transition: 0.4s ease-in-out
   .copyright
     margin-top 50px
     padding-bottom 30px
-    font-size 16px
     line-height 14px
     text-align center
     color #BCC1C4
+    .miit
+      display inline-block
+      padding-right: 10px;
+      img
+        height 15px
     a
-      color #4078c0
-      word-break break-all
-      font-family sans-serif
+      color: #0269c8;
+      word-break: break-all;
+      border-bottom: 1px solid #d1e9ff;
       &:hover
         text-decoration underline
   .article_copyright

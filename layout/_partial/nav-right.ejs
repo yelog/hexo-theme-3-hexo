@@ -1,13 +1,23 @@
 <div class="title-list">
-    <form onkeydown="if(event.keyCode==13){return false;}">
-        <input class="search" type="text" placeholder="<% if (theme.searchAll){%>以 in: 开头进行全文搜索<%} else {%>Search...<%}%>" autocomplete="off"id="local-search-input" >
-        <i class="cross"></i>
-        <span>
-            <label for="tagswitch">Tags:</label>
-            <input id="tagswitch" type="checkbox" style="display: none" />
-            <i id="tagsWitchIcon"></i>
-        </span>
-    </form>
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索<% if (theme.shortcutKey != false) {%> 快捷键 i<%}%>"></i>
+            <div class="right-title"><%= __('all_articles') %></div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图<% if (theme.shortcutKey != false) {%> 快捷键 w<%}%>"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" />
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
     <%- partial('_partial/tag') %>
     <% if (theme.searchAll) { %>
     <div id="local-search-result">
@@ -16,7 +26,7 @@
     <% } %>
     <nav id="title-list-nav">
         <% site.posts.forEach(function(post, i){  %>
-        <a <% if(post.top){%>id="top"<%}%> class="<% post.categories.forEach(function(category, i){ %><%=category.name%> <% }) %>"
+        <a <% if(post.top){%>id="top"<%}%> class="<%= __('all_articles') %> <% post.categories.forEach(function(category, i){ %><%=category.name%> <% }) %>"
            href="<%- url_for(post.path) %>"
            data-tag="<% post.tags.forEach(function(tag, i){ %><%=tag.name%><% if (i+1<post.tags.length){%>,<%}})%>"
            data-author="<% if(theme.author && theme.author.on==true && post.author) {%><%=post.author %><%}%>" >
@@ -24,5 +34,10 @@
             <span class="post-date" title="<%= date(post.date, 'YYYY-MM-DD HH:mm:ss')%>"><%= date(post.date, 'YYYY/MM/DD') %></span>
         </a>
         <% }) %>
+        <div id="no-item-tips">
+
+        </div>
     </nav>
+    <div id="outline-list">
+    </div>
 </div>

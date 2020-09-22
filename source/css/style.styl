@@ -21,15 +21,20 @@ a
   transition color .35s
 
 h1, h2, h3, h4, h5, h6
-  font-family inherit
-  font-weight normal
-  margin-top 30px
-  color #283444
-  text-rendering optimizelegibility
-  border-bottom 1px solid #eee
+  color: #333;
+  line-height: 1.5;
+  margin-top: 35px;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
 h1
-  font-size 1.8em
+  font-size: 2em;
+  margin: .67em 0;
+h2
+  padding-bottom: 12px;
+  font-size: 24px;
+  border-bottom: 1px solid #ececec;
 .nav
+  position relative
   width 542px
   height 100%
   float left
@@ -45,12 +50,12 @@ h1
   height 40px
   position absolute
   z-index 30
-  left 542px
+  left auto
+  right -20px
   top 50vh
   overflow hidden
   transition left 0.5s cubic-bezier(0.77, 0, 0.175, 1)
   &.fullscreen
-    left 0
     .brackets.first
       display none
   .semicircle
@@ -62,6 +67,7 @@ h1
     margin-left -20px
     transition margin-left .5s cubic-bezier(0.77, 0, 0.175, 1)
     .brackets
+      color: white
       padding-top 12px
       padding-left 4px
       font-weight bolder
@@ -69,10 +75,10 @@ h1
 
 div.img_max
   position: fixed;
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  bottom: 0px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   height: 100%;
   width: 100%;
   z-index: 50;
@@ -106,7 +112,7 @@ img.pswp__img
   background: white;
   height: auto;
   width: 0;
-  font-size: 0px
+  font-size: 0
   padding 0
   z-index: 200;
   top: 50%;

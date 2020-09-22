@@ -1,4 +1,4 @@
-version: 1.0.1
+version: 1.1.0
 # 你的头像url
 avatar: /img/my.jpeg
 favicon: /img/my.jpg
@@ -33,7 +33,7 @@ link:
 author:
   on: false
   authors:
-    author1: 阿杰
+    author1: 阁主
     author2: 小马哥
 ##############################
 
@@ -41,6 +41,13 @@ author:
 category:
   num: true # 分类显示文章数
   sub: true # 开启多级分类
+  sort:
+    - 读书
+    - 工具
+    - 大前端
+    - 后端
+    - 数据库
+    - 运维
   width:
     lg: 120 # 1468px<屏幕宽度 左侧分类宽度
     md: 100 # 1024px<屏幕宽度<=1468px 左侧分类宽度
@@ -50,6 +57,9 @@ category:
 # categories:
 #   - 工具
 #   - hexo
+
+# 快捷键
+shortcutKey: true
 
 # 左下角自定义菜单
 menu:
@@ -80,6 +90,13 @@ bottom_text: ©2016-2019 AveryHuo
 # 自定义页面最下方的站点版权信息
 # 如果不填，则自定义为 ©2017 author (这个author为hexo根目录_config.yml中配置的)
 
+# 底部备案号
+miit:
+  on: false
+  info: 京ICP证030173号
+  url: http://beian.miit.gov.cn/ # 默认链接为 http://beian.miit.gov.cn/
+
+
 reward: true
 # true 开启打赏功能
 
@@ -93,7 +110,7 @@ searchAll: false
 #   field: post
 
 
-copyright: true
+copyright: false
 # Copyright info. of post | 文末版权信息
 
 word_count: true
@@ -124,12 +141,12 @@ article_list:
 
 # 文章列表背景图
 article_bg_img:
-  on: true # 是否开启
+  on: false # 是否开启
   src: https://i.loli.net/2019/07/22/5d3521411f3f169375.png
   opacity: 0.3 # 背景图透明度，范围 0 ～ 1
 
 # 列表样式
-list: thread
+list: normal
 # normal : 普通样式
 # thread : 列表外圈有一个线框
 
@@ -163,8 +180,9 @@ code:
 # github: github样式（灰色底，黑字）
 
 highlight:
-  on: true # true开启代码高亮
-  lineNum: true # true显示行号
+  on: true # true开启代码高亮，开启需要关闭博客 _config.yml 中的 highlight
+  lineNum: false # true显示行号
+  copy: true # 复制功能
   theme: atom-light
 # 代码高亮主题,效果可以查看 https://highlightjs.org/static/demo/
 # 支持主题：
@@ -223,11 +241,6 @@ disqus:
   # disqus评论系统， 2016年9月被GFW认证，大陆不能使用。
   # 获取shortname：https://help.disqus.com/customer/en/portal/articles/466208-what-s-a-shortname-
 
-gentie:
-  product_key:
-  # 网易云跟帖评论系统，https://gentie.163.com/
-  # 注册后，进入后台管理，获取代码：复制其中的productKey到product_key中。
-  # 网易云跟帖暂时不支持查询评论数，所以启用时，把评论数关掉，上方comment_count: false。
 
 gitalk:
   githubID: AveryHuo
@@ -258,24 +271,33 @@ gitment:
   # gitment : 通过github issue实现的评论系统
   # 开源地址 : https://github.com/imsun/gitment
   # 使用说明 :
-  #
+
+livere:
+  data_uid:
+  # 来必力: http://livere.com/
+  # 使用说明 : https://yelog.org//2020/05/23/3-hexo-comment/
+
+utteranc:
+  repo: xxx/xxx.github.io # 承载评论的仓库，填上自己新建的仓库
+  issue_term: pathname    # Issue 与 博客文章 之间映射关系
+  label: utteranc         # 创建的 Issue 添加的标签
+  theme: github-light     # 主题，可选主题请查看官方文档 https://utteranc.es/#heading-theme
+# 官方文档 https://utteranc.es/
+# 使用说明 https://yelog.org//2020/05/23/3-hexo-comment/
 
 ##############################
 
 ##########CND设置#############
 CDN:
-  jquery: //cdn.bootcss.com/jquery/2.2.4/jquery.min.js
-  jquery_cookie: //cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js
-  jquery_ui: //cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js
-  jquery_ui_css: //cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.css
-  highlight: //cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js
-  pjax: //cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js
-  animate: //cdn.bootcss.com/animate.css/3.5.2/animate.min.css
-  font_awsome: //cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css
-  nprogres_js: //cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js
-  mathjax: //cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML
-  photoswipe_js: //cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.js
-  photoswipe_ui_js: //cdn.bootcss.com/photoswipe/4.1.2/photoswipe-ui-default.min.js
-  photoswipe_css: //cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.css
-  photoswipe_skin_css: //cdn.bootcss.com/photoswipe/4.1.2/default-skin/default-skin.min.css
+  jquery: //cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js
+  jquery_cookie: //cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js
+  highlight: //cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js
+  pjax: //cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js
+  animate: //cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css
+  nprogres_js: //cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js
+  mathjax: //cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML
+  photoswipe_js: //cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js
+  photoswipe_ui_js: //cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js
+  photoswipe_css: //cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css
+  photoswipe_skin_css: //cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css
 ##############################

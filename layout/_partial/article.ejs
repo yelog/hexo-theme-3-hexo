@@ -11,13 +11,16 @@
         <%}%>
         <% if (post.categories && post.categories.length){ %>
         <span class="book">
-            <% post.categories.forEach(function(category, i){ %>
-                <a  data-rel="<%=category.name%>"><%=category.name%></a><% if (i !== post.categories.length - 1) { %>/<% } %>
+            <i class="iconfont icon-category"></i>
+            <% var categoryPath = []%>
+            <% post.categories.forEach(function(category, i){ categoryPath.push(category.name)%>
+            <a  data-rel="<%=categoryPath.join('<--->')%>"><%=category.name%></a><% if (i !== post.categories.length - 1) { %> <% if (theme.category && theme.category.sub) {%>><%} else {%>/<%}%> <% } %>
             <% }) %>
         </span>
         <% } %>
         <% if (post.tags && post.tags.length){ %>
         <span class="tag">
+            <i class="iconfont icon-tag"></i>
             <% post.tags.forEach(function(tag, i){ %>
             <a class="color<%= tag.name.length % 5 + 1 %>"><%=tag.name%></a>
             <% }) %>
@@ -26,16 +29,16 @@
     </div>
     <div class="article-meta">
         <% if (post.date){ %>
-        创建时间:<time class="date" title='更新时间: <%= date(post.updated, 'YYYY-MM-DD HH:mm:ss')%>'><%= date(post.date, 'YYYY-MM-DD HH:mm') %></time>
+            <%= __('post.created_at') %> : <time class="date" title='<%= __('post.updated_at') %>: <%= date(post.updated, 'YYYY-MM-DD HH:mm:ss')%>'><%= date(post.date, 'YYYY-MM-DD HH:mm') %></time>
         <% } %>
     </div>
     <div class="article-meta">
         <%if(theme.word_count){%>
-        <span>字数:<%=wordcount(post.content) %></span>
+        <span><%= __('post.word_count') %>:<%=wordcount(post.content) %></span>
         <%}%>
         <%if(theme.visit_counter && theme.visit_counter.on && theme.visit_counter.page_visit) {%>
         <span id="busuanzi_container_page_pv">
-            阅读:<span id="busuanzi_value_page_pv">
+            <%= __('post.views') %> :<span id="busuanzi_value_page_pv">
                 <span class="count-comment">
                     <span class="spinner">
                       <div class="cube1"></div>
@@ -48,7 +51,7 @@
         <%if(theme.comment.on && theme.comment.type && theme.comment.comment_count){%>
         <span class="top-comment" title="跳转至评论区">
             <a href="#comments">
-                评论:<span class="count-comment">
+                <%= __('post.comment') %>:<span class="count-comment">
                     <span class="spinner">
                       <div class="cube1"></div>
                       <div class="cube2"></div>
@@ -72,7 +75,7 @@
     </div>
     <%}%>
     <%- partial('_partial/toc-ref', {index: false}) %>
-    <% post.content = post.content.replace(/@\[TOC\]/gi, "<div class='inner-toc'><h2>目录</h2>" + toc(post.content, {list_number: false}) + '</div>') %>
+    <% post.content = post.content.replace(/\[TOC\]/gi, "<div class='inner-toc'>" + toc(post.content, {list_number: false}) + '</div>') %>
     <div class="article-entry" itemprop="articleBody">
       <% if (post.excerpt && index){ %>
         <%- post.excerpt %>
@@ -90,7 +93,7 @@
 
 <% if(theme.reward){%>
 <p>
-    <a  class="dashang" onclick="dashangToggle()">赏</a>
+    <a  class="dashang" onclick="dashangToggle()"><%= __('donation.button') %></a>
 </p>
 <%}%>
 <%- partial('_partial/article_copyright')%>
@@ -106,7 +109,7 @@
 
 <% if (page.bgImg) {%>
     <style>
-        .post {
+        #post {
             background: url(<%=page.bgImg%>) !important;
         }
     </style>

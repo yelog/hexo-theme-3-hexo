@@ -15,7 +15,7 @@
     height 100px
     margin 55px auto 15px
     border-radius 50%
-    box-shadow 0 0 0px 4px white, 0 0 4px 4px #eee
+    box-shadow 0 0 0 4px white, 0 0 4px 4px #eee
     background-repeat no-repeat
     background-size 100px 100px
     display block
@@ -90,7 +90,7 @@
       &>div
         height 40px
         color rgba(255,255,255,0.7)
-        transition color .15s linear,box-shadow .3s cubic-bezier(.77, 0, .175, 1)
+        transition all .15s linear
         position relative
         &:hover
           color #f7f7f7
@@ -98,7 +98,6 @@
         &.active
           color #020202
           box-shadow inset 165px 0 0 #fff
-          position relative
         &>.fold
           left: 4px
           font-size 0.7em
@@ -111,7 +110,7 @@
     position absolute
     display table
     border-collapse collapse
-    bottom 0px
+    bottom 0
     width 100%
     font-size 17px
     color rgba(255,255,255,0.7)

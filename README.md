@@ -1,7 +1,11 @@
 hexo-theme-3-hexo
 ================
-3-hexo 是为 [hexo](https://github.com/tommy351/hexo) 制作的主题。  
-demo: [yelog.org](https://yelog.org/)    
+3-hexo 是为 [hexo](https://github.com/tommy351/hexo) 制作的主题。三段式设计、方便。你可以点击: [我的博客](https://yelog.org/) 查看效果
+
+如果想要体验手机浏览效果，可以扫以下二维码：
+
+![二维码图片_1月28日11时25分02秒.png](https://i.loli.net/2020/01/28/OqXkYuf8ipED6QM.png)
+
 配置及说明： [3-hexo使用说明](http://yelog.org/2017/03/23/3-hexo-instruction/)  
 功能更新日志：[3-hexo开发日志-持续更新](http://yelog.org/2017/03/13/3-hexo-logs/)  
 ——————————————          
@@ -20,7 +24,7 @@ demo: [yelog.org](https://yelog.org/)  
 git clone https://github.com/yelog/hexo-theme-3-hexo.git themes/3-hexo
 ```
 修改hexo根目录的`_config.yml`，如下
-```xml
+```yaml
 theme: 3-hexo
 ```
 
@@ -51,6 +55,13 @@ git pull
 ![文章置顶](http://img.saodiyang.com/FhQLLqrRCr4yFGl9nDb_9oc4yME-.png)
 ### 返回头部
 ![返回头部](http://img.saodiyang.com/FjpVByJViwYEWHHMTeayiQ-FD_qG.gif)
+
+## 效果博客
+- [程忧点滴](https://www.chenuon.cn/)
+- [COCO56个人博客](https://coco56.gitee.io/blog/)
+- [wallleap](https://wallleap.cn)
+- [黑刀的个人博客](https://dingguanyu.com/)
+
 
 ## 致谢
  作者Peiwen Lu的jekyll主题：[3-jekyll](https://github.com/P233/3-Jekyll)主题  

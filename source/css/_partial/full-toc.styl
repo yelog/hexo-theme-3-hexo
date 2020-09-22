@@ -2,8 +2,8 @@
   .full
     display block
     position fixed
-    top 20px
-    right 30px
+    top 30px
+    right 40px
     z-index 31
     width 42px
     height 42px
@@ -34,76 +34,6 @@
       float left
       width 50%
       content "\e98c"
-  .post-toc-menu
-    display block
-    position fixed
-    top 63px
-    right 30px
-    z-index 20
-    width 42px
-    height 42px
-    padding 0
-    background transparent
-    border none
-    border-radius 2px
-    outline none
-    overflow hidden
-    cursor pointer
-    &-icons
-      display block
-      padding-top 9px
-      width 200%
-      height 42px
-      font-size 24px
-      line-height 42px
-      color #fff
-      background #2A2935
-      overflow hidden
-      &:before
-        float left
-        width 50%
-        content "\e9ba"
-  .post-toc
-    width 200px
-    padding-top 10px
-    position fixed
-    top 106px
-    bottom 0
-    right -200px
-    z-index 20
-    background rgba(250,250,250,0.9)
-    border-top 1px solid #e5e8ec
-    border-left 1px solid #e5e8ec
-    border-radius 10px 0 0 0
-    display block
-    overflow-y scroll
-    -webkit-user-select none
-    -moz-user-select none
-    -ms-user-select none
-    -o-user-select none
-    user-select none
-    transition transform .35s cubic-bezier(.77, 0, .175, 1)
-    &.open
-      transform translateX(-100%)
-    .post-toc-title
-      padding 0 0 5px 11px
-      color #2C353D
-      font-size 1em
-      display block
-    .post-toc-content
-      ol
-        margin 0
-        padding 0 10px 10px 15px
-        line-height 1.6
-        li
-          font-size 1em
-          color #7D8B99
-          white-space nowrap
-          text-overflow ellipsis
-          display block
-          overflow hidden
-    a:hover
-      color #309e85
   #rocket
     position fixed
     bottom 30px
@@ -121,7 +51,7 @@
     &:before
       content "\e900"
       position absolute
-      bottom 0px
+      bottom 0
       right -4px
       transition color .5s
     &.launch
@@ -130,7 +60,7 @@
       &:before
         content "\e900"
         position absolute
-        bottom 0px
+        bottom 0
         right -4px
         color #449fdb
       &:after

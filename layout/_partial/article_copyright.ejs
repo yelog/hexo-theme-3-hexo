@@ -1,13 +1,13 @@
 <% if ((post.original != false && !is_page() && theme.copyright) || post.original){ %>
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span><%= post.title %></p>
-    <%if(theme.word_count){%><p><span class="copy-title">文章字数:</span><span class="post-count"><%=wordcount(post.content) %></span></p><%}%>
-    <p><span class="copy-title">本文作者:</span><a  title="<%=config.author%>"><%=config.author%></a></p>
-    <p><span class="copy-title">发布时间:</span><%= post.date.format("YYYY-MM-DD, HH:mm:ss") %></p>
-    <p><span class="copy-title">最后更新:</span><%= post.updated.format("YYYY-MM-DD, HH:mm:ss") %></p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="<%- url_for(post.path) %>" title="<%= post.title %>"><%= post.permalink %></a>
+    <p><span class="copy-title"><%= __('post.title') %>:</span><%= post.title %></p>
+    <%if(theme.word_count){%><p><span class="copy-title"><%= __('post.word_count') %>:</span><span class="post-count"><%=wordcount(post.content) %></span></p><%}%>
+    <p><span class="copy-title"><%= __('post.author') %>:</span><a  title="<%=config.author%>"><%=config.author%></a></p>
+    <p><span class="copy-title"><%= __('post.created_at') %>:</span><%= post.date.format("YYYY-MM-DD, HH:mm:ss") %></p>
+    <p><span class="copy-title"><%= __('post.updated_at') %>:</span><%= post.updated.format("YYYY-MM-DD, HH:mm:ss") %></p>
+    <span class="copy-title"><%= __('post.url') %>:</span><a class="post-url" href="<%- url_for(post.path) %>" title="<%= post.title %>"><%= post.permalink %></a>
     <p>
-        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        <span class="copy-title"><%= __('post.copyright') %>:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank"><%= __('post.copyright1') %></a> <%= __('post.copyright2') %>
     </p>
 </div>
 <% } %>

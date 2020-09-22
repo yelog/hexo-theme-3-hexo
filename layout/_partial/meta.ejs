@@ -11,13 +11,12 @@
 <link href="<%=theme.blog_path?theme.blog_path.lastIndexOf("/") === theme.blog_path.length-1?theme.blog_path.slice(0, theme.blog_path.length-1):theme.blog_path:'' %>/css/hl_theme/<%=theme.highlight.theme %>.css?v=<%=theme.version%>" rel="stylesheet">
 <%}%>
 <link href="<%=theme.CDN.animate %>" rel="stylesheet">
-<link href="<%=theme.CDN.font_awsome %>" rel="stylesheet">
 <% if (theme.img_resize == 'photoSwipe') {%>
 <link href="<%=theme.CDN.photoswipe_css%>" rel="stylesheet">
 <link href="<%=theme.CDN.photoswipe_skin_css%>" rel="stylesheet">
 <% } %>
 <script src="<%=theme.CDN.jquery%>"></script>
-<script src="<%=theme.blog_path?theme.blog_path.lastIndexOf("/") === theme.blog_path.length-1?theme.blog_path.slice(0, theme.blog_path.length-1):theme.blog_path:'' %>/js/jquery.autocomplete.min.js?v=<%=theme.version%>" ></script>
+<script src="<%=theme.blog_path?theme.blog_path.lastIndexOf("/") === theme.blog_path.length-1?theme.blog_path.slice(0, theme.blog_path.length-1):theme.blog_path:'' %>/js/titleTip.js?v=<%=theme.version%>" ></script>
 
 <script src="<%=theme.CDN.highlight %>"></script>
 <script>

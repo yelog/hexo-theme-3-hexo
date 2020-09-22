@@ -11,4 +11,52 @@
   <input class="theme_disqus_on" value="<%=(theme.comment.type=='disqus')%>">
   <input class="theme_preload_comment" value="<%=theme.comment.preload_comment%>">
   <input class="theme_blog_path" value="<%=theme.blog_path?theme.blog_path.lastIndexOf("/") === theme.blog_path.length-1?theme.blog_path.slice(0, theme.blog_path.length-1):theme.blog_path:'' %>">
+  <input id="theme_shortcut" value="<%=theme.shortcutKey%>" />
+  <input id="theme_highlight_on" value="<%=theme.highlight.on%>" />
+  <input id="theme_code_copy" value="<%=theme.highlight.copy%>" />
 </div>
+
+<%
+// 对文章进行排序
+site.posts.data.sort(function(a, b) {
+  if(a.top && b.top) { // 两篇文章top都有定义
+    if(a.top == b.top) return b.date - a.date; // 若top值一样则按照文章日期降序排
+    else return b.top - a.top; // 否则按照top值降序排
+  }
+  else if(a.top && !b.top) { // 以下是只有一篇文章top有定义，那么将有top的排在前面（这里用异或操作居然不行233）
+    return -1;
+  }
+  else if(!a.top && b.top) {
+    return 1;
+  }
+  else return b.date - a.date; // 都没定义按照文章日期降序排
+});
+
+site['myTags'] = []
+site.tags.forEach(function (item) {
+  site['myTags'].push(item.name)
+})
+site.myTags.sort(function(a,b){
+  return String(a).localeCompare(String(b), 'zh')
+})
+
+// 对 category 进行排序
+site['myCategories']= []
+site.categories.forEach(function (item) {
+  site.myCategories.push({
+    _id: item._id,
+    name: item.name,
+    parent: item.parent,
+    posts: item.posts
+  })
+})
+site.myCategories.sort(function (a, b) {
+  if (theme.category && theme.category.sort) {
+    return theme.category.sort.indexOf(a.name) === -1
+            ? theme.category.sort.indexOf(b.name) === -1 ? String(a.name).localeCompare(String(b.name), 'zh') : 1
+            : theme.category.sort.indexOf(b.name) !== -1 ? theme.category.sort.indexOf(a.name) - theme.category.sort.indexOf(b.name) : -1
+  } else {
+    return String(a.name).localeCompare(String(b.name), 'zh')
+  }
+})
+%>

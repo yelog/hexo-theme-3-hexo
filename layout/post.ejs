@@ -17,13 +17,13 @@
         }) %>
     </div>
     <div class="hide-list">
-        <div class="semicircle">
+        <div class="semicircle" data-title="切换全屏<% if (theme.shortcutKey != false) {%> 快捷键 s<%}%>">
             <div class="brackets first"><</div>
             <div class="brackets">&gt;</div>
         </div>
     </div>
 </aside>
-<div class="post">
+<div id="post">
     <div class="pjax">
         <%- partial('_partial/article', {post: page, index: false}) %>
     </div>
@@ -38,7 +38,6 @@
         }) %>
     </div>
 </div>
-<div class="acParent"></div>
 <% if (theme.reward) {%>
 <%- fragment_cache('dashang', function(){
     return partial('_partial/dashang');

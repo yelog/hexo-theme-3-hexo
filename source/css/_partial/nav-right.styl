@@ -1,7 +1,8 @@
+right-top-height = 45px
 .nav-right
   width 420px
   height 100%
-  background rgba(250, 250, 250, 0.95)
+  background white
   border-right 1px solid #e5e8ec
   overflow hidden
   float left
@@ -16,187 +17,223 @@
     transition margin-left .5s
     &.friend
       margin-left 421px
-    form
-      height 65px
-      border-bottom 1px solid #e5e8ec
-      position: absolute;
-      top: 0;
-      width: 100%;
-      .cross
-        position absolute
-        top 36px
-        right 129px
-        display none
-        &:hover
+    .right-top
+      height right-top-height
+      position: absolute 
+      top: 0 
+      width: 100% 
+      font-size 15px
+      #default-panel, #outline-panel
+        text-align center
+        height right-top-height
+        .right-title
+          height right-top-height
+          line-height right-top-height
+          font-size 18px
+        .iconfont
+          position absolute
+          top 50%
+          transform: translate(0, -50%) 
           cursor pointer
-        &:before
-          content "\ea0f"
-      .search
-        width 250px
-        margin-top 12px
-        padding 20px 0 0 20px
-        color #383636
-        font-size 18px
-        font-family inherit
-        background inherit
-        border none
-        outline none
-        &::-webkit-calendar-picker-indicator
-          opacity 0
-      span
-        position absolute
-        top 31px
-        right 10px
-        #tagswitch
-          &:checked +#tagsWitchIcon:before
-            border-color #64bd63
-            box-shadow inset 0 0 0 0.16rem #64bd63
-            background-color #64bd63
-            -webkit-transition border .4s,box-shadow .4s,background-color 1.2s
-            transition border .4s,box-shadow .4s,background-color 1.2s
-          &:checked +#tagsWitchIcon:after
-            left 27px
-            content ''
-            width 14px
-            height 14px
-            position absolute
-            top 10px
-            -webkit-transform translateY(-50%)
-            border-radius 100%
-            background-color #91c0f1
-            box-shadow 0 1px 1px rgba(0,0,0,.4)
-            -webkit-transition left .2s
-            transition left .2s
-            cursor pointer
-        #tagsWitchIcon
-          width 40px
-          height 14px
-          position relative
-          z-index 2
-          border 0
-          background 0 0
-          -webkit-appearance none
-          outline 0
-          &:after{
-            left: 0;
-            content: '';
-            width: 14px;
-            height: 14px;
-            position: absolute;
-            top: 10px;
-            -webkit-transform: translateY(-50%);
-            border-radius: 100%;
-            background-color: #91c0f1;
-            -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.4);
-            box-shadow: 0 1px 1px rgba(0,0,0,0.4);
-            -webkit-transition: left 0.2s;
-            -o-transition: left 0.2s;
-            transition: left 0.2s;
-            cursor: pointer;
-          }
-          &:before {
-            content: '';
-            width: 40px;
-            height: 14px;
-            border: 1px solid #bdcabc;
-            background-color: #fdfdfd;
-            border-radius: 20px;
-            cursor: pointer;
-            display: inline-block;
-            position: relative;
-            vertical-align: middle;
-            -webkit-box-sizing: content-box;
-            box-sizing: content-box;
-            -webkit-box-shadow: inset 0 0 0 0 #dfdfdf;
-            box-shadow: inset 0 0 0 0 #dfdfdf;
-            -webkit-transition: border 0.4s, box-shadow 0.4s;
-            -webkit-transition: border 0.4s, -webkit-box-shadow 0.4s;
-            transition: border 0.4s, -webkit-box-shadow 0.4s;
-            -o-transition: border 0.4s, box-shadow 0.4s;
-            transition: border 0.4s, box-shadow 0.4s;
-            transition: border 0.4s, box-shadow 0.4s, -webkit-box-shadow 0.4s;
-            background-clip: content-box;
-          }
+          font-size 16px
+          &.icon-search
+            left 15px
+            &.active
+              color #007fff
+          &.icon-file-tree
+            right 15px
+            font-size 18px
+          &.icon-list
+            right 15px
+      #search-panel
+        height right-top-height
+        line-height right-top-height
+        display none
+        .iconfont
+          position absolute
+          top 50%
+          transform: translate(0, -50%) 
+          cursor pointer
+          &.icon-left
+            left 15px
+          &.icon-case-sensitive
+            right 50px
+            &:hover::before,&.active:before
+              background #bfbcbc
+              padding: 1px
+              border 1px solid #979696
+          &.icon-tag
+            right 15px
+        #local-search-input
+          font-size 18px
+          color #333333
+          height 32px
+          width calc(100% - 90px)
+          margin auto 45px auto 45px
+          border none
+          border-bottom 1px solid #e5e8ec
+          outline none
+          &:focus + .border-line
+            width calc(100% - 90px)
+        .border-line
+          position absolute
+          left 45px
+          right 0
+          bottom 5px
+          z-index 1
+          height 2px
+          background-color #03A6FF
+          width 0
+          transition all 0.3s
     .tags-list
       display none
       margin 15px 10px 15px
       padding 10px
-      float left
       background #f1f1f1
       border-radius 25px
       list-style none outside none
-      position absolute
-      top 65px
-      width 100%
-      li
-        float left
-        a
-          height 18px
-          line-height 18px
-          font-size 17px
-          float left
-          padding 0 5px 0 10px
-          color #fff
+      width: 150px;
+      position: fixed;
+      z-index: 200;
+      left: 200px;
+      top: 45px;
+      box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+      border: 1px solid #ebeef5;
+      #tag-search
+        display: block;
+        width: 100%;
+        height: 28px;
+        font-size: 17px;
+        padding-left: 10px;
+        border-radius: 14px;
+        border: none;
+        outline: none;
+        box-sizing border-box
+      .tag-wrapper
+        max-height: 500px
+        overflow-y: auto
+        overflow-x hidden
+        margin-top 10px
+        &::-webkit-scrollbar
+          width 3px
+        &::-webkit-scrollbar-thumb
+          background #309E85
+        li
+          float none
+          cursor pointer
           position relative
-          border-radius 0 5px 5px 0
-          margin 5px 9px 5px 8px
-          &:before
-            content " "
-            width 0
-            height 0
-            position absolute
-            top 0
-            left -18px
-            border 9px solid transparent
-            border-right-color #d0d0d0
-          &:after
-            content " "
-            width 4px
-            height 4px
-            background-color #fff
-            border-radius 4px
-            box-shadow 0 0 0 1px rgba(0,0,0,.3)
-            position absolute
-            top 7px
-            left 2px
-          &.color1
-            background  #FF945C
-            &:before
-              border-right-color #FF945C
-          &.color2
-            background  #cc8167
-            &:before
-              border-right-color #cc8167
-          &.color3
-            background  #BA8F6C
-            &:before
-              border-right-color #BA8F6C
-          &.color4
-            background #94635c
-            &:before
-              border-right-color#94635c
-          &.color5
-            background #7B5D5F
-            &:before
-              border-right-color#7B5D5F
+          font-size 14px
+          color #333
+          padding 0 20px
+          &:hover
+            background #fff
+          .icon-tag
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translate(0, -50%);
+          a
+            height 18px
+            line-height 18px
+            padding 0 5px 0 10px
+            position relative
+            border-radius 0 5px 5px 0
+            margin 5px 9px 5px 8px
+            display inline-block
+            white-space nowrap
+            text-overflow ellipsis
 
+    #outline-list
+      display none
+      position absolute
+      top right-top-height
+      width 100%
+      padding 0 25px
+      box-sizing border-box
+      height calc(100vh - 45px)
+      overflow-y auto
+      overflow-x hidden
+      &::-webkit-scrollbar
+        width 3px
+      &::-webkit-scrollbar-thumb
+        background #309E85
+      .toc
+        list-style-type: none 
+        font-size: 1rem 
+        line-height: 1.3 
+        padding 0
+        color rgb(51, 51, 51) 
+        font-weight 400
+        position relative
+        &:before
+          content: "" 
+          position: absolute 
+          top: 0 
+          left: 7px 
+          bottom: 0 
+          width: 2px 
+          background-color: #ebedef 
+          opacity: .5 
+        .toc-level-1, .toc-level-2
+          &>a
+            font-weight: 600 
+            color: #333 
+            margin: 6px 0 
+            padding: 4px 0 4px 21px 
+            &:before
+              left: 5px 
+              margin-top: -3px 
+              width: 6px 
+              height: 6px 
+        ol
+          list-style-type: none 
+        a
+          display: block 
+          position: relative 
+          padding: 4px 0 4px 12px 
+          white-space: nowrap 
+          overflow: hidden 
+          text-overflow: ellipsis 
+          transition none
+          &:hover
+            background-color: #ebedef 
+          &.active
+            background-color: #ebedef 
+            color #007fff
+          &:before
+            content: "" 
+            position: absolute 
+            top: 50% 
+            left: 0 
+            margin-top: -2px 
+            width: 4px 
+            height: 4px 
+            background-color: currentColor 
+            border-radius: 50% 
     nav, #local-search-result
       clear both
-      border-top 1px solid #e5e8ec
       width 100%
+      height calc(100vh - 45px)
       padding-bottom 10px
       color #64717f
       text-shadow -1px 1px 0 rgba(125, 139, 153, 0.1)
       overflow-y auto
       overflow-x hidden
       position absolute
-      top 66px
+      top right-top-height
       bottom 0
       -webkit-overflow-scrolling touch
       &::-webkit-scrollbar
         width 3px
       &::-webkit-scrollbar-thumb
         background #309E85
+      #no-item-tips
+        display none
+        height 32px
+        line-height 1.5
+        padding 15px
+        span
+          color: #FF5722
       .search-result-list
         margin-top 0
         padding-left 0
@@ -254,23 +291,23 @@
     &.friend
       margin-left 0
     .friends-title
-      height 66px
+      height 45px
       text-align center
       vertical-align middle
       display table-cell
       width 420px
-      font-size 23px
-      border-bottom 2px solid #e5e8ec
-      font-weight bold
-      .back-title-list
-        float right
-        padding-right 10px
-        &:before
-          cursor pointer
-          content "\e968"
+      font-size 18px
+      position relative
+      .icon-left
+        position absolute
+        top 50%
+        transform: translate(0, -50%) rotateZ(180deg) 
+        cursor pointer
+        //transform: rotateZ(180deg) 
+        right 15px
     .friends-content
       overflow-y auto
-      height calc(100vh - 66px)
+      height calc(100vh - 45px)
       a
         line-height 30px
         color #4183c4
