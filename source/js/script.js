@@ -56,7 +56,12 @@ $(document).on({
 
         /*移动端打开文章后，自动隐藏文章列表*/
         if ($(window).width() <= 1024) {
-            $fullBtn.trigger("click");
+            if ($fullBtn.children().hasClass("max")) {
+                $fullBtn.trigger("click");
+            } else if ($(".nav").hasClass("mobile")) {
+                $(".nav").removeClass("mobile");
+                $fullBtn.children().removeClass("mobile");
+            }
         }
     },
     'click': function (e) {
@@ -379,11 +384,6 @@ function inputChange() {
 /*隐藏/显示 文章列表*/
 $(".full-toc .full,.semicircle").click(function (e) {
     isFullScreen = !isFullScreen
-    if ($(window).width() <= 1024 && $(".nav").hasClass("mobile")) {
-        $(".nav").removeClass("mobile");
-        $fullBtn.children().removeClass("mobile");
-        return;
-    }
     if ($fullBtn.children().hasClass("min")) {
         $fullBtn.children().removeClass("min").addClass("max");
         $(".nav, .hide-list").addClass("fullscreen");
@@ -649,14 +649,6 @@ function bind() {
         container.animate({scrollTop: container.scrollTop > targetOffsetTop ? (targetOffsetTop + 20) : (targetOffsetTop - 20)}, 500, 'swing', function () {
             clickScrollTo = false
         });
-        if ($(window).width() <= 1024) {
-
-        }
-        if ($(window).width() <= 1024) {
-            $fullBtn.trigger("click");
-        } else if ($(".full-toc .full span").hasClass("max")) {
-            $fullBtn.trigger("click");
-        }
         return false;
     });
     if ($("#comments").hasClass("disqus")) {
