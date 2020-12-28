@@ -88,9 +88,10 @@
     border-collapse collapse
     bottom 0
     width 100%
-    font-size 17px
+    font-size 0
     color rgba(255,255,255,0.7)
     a
+      font-size 17px
       display table-cell
       height 30px
       text-align center
@@ -102,7 +103,7 @@
         display: inline-block
         &.hasFriend
           border-right 1px solid #fff
-          width 49%
+          width calc(49% - 1px)
       &.friends
         display: inline-block
       &.dynamic-menu
