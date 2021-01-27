@@ -299,3 +299,5 @@ CDN:
   photoswipe_css: //cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css
   photoswipe_skin_css: //cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css
 ##############################
+
+theme: jekyll-theme-cayman
