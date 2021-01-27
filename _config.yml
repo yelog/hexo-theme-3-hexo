@@ -99,7 +99,6 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: 3-hexo
-
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
