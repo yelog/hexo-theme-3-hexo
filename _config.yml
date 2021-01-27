@@ -1,303 +1,108 @@
-version: 1.1.0
-# 你的头像url
-avatar: /img/avatar.jpg
-favicon: /img/avatar.jpg
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
 
-#如果博客放置位置不是根目录，则可以通过配置此路径解决静态文件路径错误问题
-# 比如访问地址为 yelog.org/blog 那就需要配置为 blog_path: /blog 才能正常访问
-blog_path: /
+# Site
+title: Hexo
+subtitle: ''
+description: ''
+keywords:
+author: John Doe
+language: en
+timezone: ''
 
-#链接图标 显示顺序和下面顺序一致
-link:
-  theme: color # 链接样式，color: 彩色图标  white: 黑白图标
-  items:
-    rss: /atom.xml
-    github: https://github.com/yelog
-    facebook: https://www.facebook.com/faker.tops
-    twitter:
-    linkedin:
-    instagram: https://www.facebook.com/faker.tops
-    reddit: https://www.reddit.com/user/yelog/
-    weibo: http://weibo.com/u/2307534817
-    jianshu: https://www.jianshu.com/u/ff56736de7cf
-    zhihu: https://www.zhihu.com/people/jaytp/activities
-    csdn:
-    oschina: https://my.oschina.net/yelog
-    juejin:
-    email: jaytp@qq.com
-    qq: 872336115
-    kugou: https://www.kugou.com/
-    neteasemusic: https://music.163.com/#/user/home?id=88151013
+# URL
+## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
+url: http://example.com
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: true # Set to false to remove trailing '.html' from permalinks
 
-##########多作者模式############
-author:
-  on: false
-  authors:
-    author1: 阁主
-    author2: 小马哥
-##############################
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
 
-# 文章分类设置
-category:
-  num: true # 分类显示文章数
-  sub: true # 开启多级分类
-  sort:
-    - 读书
-    - 工具
-    - 大前端
-    - 后端
-    - 数据库
-    - 运维
-  width:
-    lg: 120 # 1468px<屏幕宽度 左侧分类宽度
-    md: 100 # 1024px<屏幕宽度<=1468px 左侧分类宽度
-    sm: 100 # 426px<屏幕宽度<=1024px 左侧分类宽度（ipad）
-# 多级分类说明：
-# 比如在文章中设置多个菜单，则默认为多级菜单，即：工具>hexo
-# categories:
-#   - 工具
-#   - hexo
-
-# 快捷键
-shortcutKey: true
-
-# 左下角自定义菜单
-menu:
-  about:  # '关于' 按钮
-    on: true # 是否显示
-    url: /about  # 跳转链接
-    type: 1 # 跳转类型 1：站内异步跳转 2：当前页面跳转 3：打开新的tab页
-  friend: # '友链' 按钮
-    on: true # 是否展示
-  menus: # 添加的其他菜单写在 menus 下，如下三个菜单：动态菜单1、动态菜单2、动态菜单3
-    相册:
-      on: false
-      url: /photo
-      type: 1  # 跳转类型 1：站内异步跳转
-    叶落阁:
-      on: false
-      url: http://yelog.org/
-      type: 2  # 跳转类型 2：当前页面跳转
-    github:
-      on: false
-      url: https://github.com/yelog
-      type: 3  # 跳转类型 3：打开新的tab页
-
-# 文末声明
-article_txt: 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com
-
-bottom_text: ©2016-2020 Yelog
-# 自定义页面最下方的站点版权信息
-# 如果不填，则自定义为 ©2017 author (这个author为hexo根目录_config.yml中配置的)
-
-# 底部备案号
-miit:
-  on: false
-  info: 京ICP证030173号
-  url: http://beian.miit.gov.cn/ # 默认链接为 http://beian.miit.gov.cn/
-
-
-reward: true
-# true 开启打赏功能
-
-searchAll: false
-# true 启用全文搜索
-# 开启此功能需要下面操作：
-# 1. 在 hexo 根目录 执行 npm install hexo-generator-search --save 安装插件
-# 2. 在 hexo 根目录的 _config.xml 中添加下面内容
-# search:
-#   path: search.xml
-#   field: post
-
-
-copyright: false
-# Copyright info. of post | 文末版权信息
-
-word_count: false
-# true 开启字数统计
-# 开启此功能需要安装插件 ：在 hexo根目录 执行npm i hexo-wordcount --save
-
-
-# 不蒜子网站计数设置
-# http://ibruce.info/2015/04/04/busuanzi/
-visit_counter:
-  on: true
-  site_visit: true
-  page_visit: true
-
-##########自定义样式设置##############
-# Table of contents | 文章目录
-toc:
-  max_depth: 3  # 1 - 6 (h1-h6) 目录最大级数
-
-#文章列表 鼠标移上去的样式, 为空时使用默认效果
-article_list:
-  title: '#383636' # 文章列表标题颜色
-  datetime: '#5e5e5f' # 文章发布日期颜色
-  hover:
-    background: '#e2e0e0'  # 背景色:提供几种：'#c1bfc1'  '#fbf4a8'
-    color:     # 文字颜色 提供几种：'#ffffff'
-# 注意：由于颜色如果包含#，使用单引号 ' 引起来
-
-# 文章列表背景图
-article_bg_img:
-  on: false # 是否开启
-  src: https://i.loli.net/2019/07/22/5d3521411f3f169375.png
-  opacity: 0.3 # 背景图透明度，范围 0 ～ 1
-
-# 列表样式
-list: normal
-# normal : 普通样式
-# thread : 列表外圈有一个线框
-
-# 引用块样式
-blockquote: github
-# github : 类似于github的引用快
-# bracket : 类似于左右两个大括号的样式
-
-# table 的样式
-table: green_title
-# 为空时类似github的table样式
-# green 绿色样式
-# green_title 头部为青色的table样式
-
-# 首页背景图
-index_bg_img:
-# 其他页面背景图
-other_bg_img:
-
-# 点击图片放大样式
-img_resize: default
-# 可选值：
-# default: 默认(自己写的简单的放大)
-# photoSwipe: 使用photoSwipe插件
-
-# 代码段高亮样式，markdown 语法 `demo`
-code:
-  theme: dark-red
-# 支持主题：
-# dark-red: 红字(默认)
-# github: github样式（灰色底，黑字）
-
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link:
+  enable: true # Open external links in new tab
+  field: site # Apply to the whole site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
 highlight:
-  on: true # true开启代码高亮，开启需要关闭博客 _config.yml 中的 highlight
-  lineNum: false # true显示行号
-  copy: true # 复制功能
-  theme: atom-light
-# 代码高亮主题,效果可以查看 https://highlightjs.org/static/demo/
-# 支持主题：
-# sublime : 参考sublime的高亮主题
-# darcula : 参考idea中的darcula的主题
-# atom-dark : 参考Atom的dark主题
-# atom-light : 参考Atom的light主题
-# github : 参考GitHub版的高亮主题
-# github-gist : GitHub-Gist主题
-# brown-paper : 牛皮纸效果
-# gruvbox-light : gruvbox的light主题
-# gruvbox-dark ： gruvbox的dark主题
-# rainbow :
-# railscasts :
-# sunburst :
-# kimbie-dark :
-# kimbie-light :
-# school-book : 纸张效果
-# zenbum : oschina 也选择此高亮主题
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ''
 
-# MathJax 数学公式支持
-mathjax:
-  on: true #是否启用
-  per_page: false # 若只渲染单个页面，此选项设为false，页面内加入 mathjax: true
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
 
-# Mermaid 支持
-mermaid:
-  on: false
-  cdn: //cdn.jsdelivr.net/npm/mermaid@8.4.2/dist/mermaid.min.js
-  #cdn: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js
-  options: # 更多配置信息可以参考 https://mermaidjs.github.io/#/mermaidAPI
-    theme: 'default'
-    startOnLoad: true
-    flowchart:
-      useMaxWidth: false
-      htmlLabels: true
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
 
-##############################
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
 
-# 友情链接
-friends:
-  叶落阁: http://yelog.org/
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+## updated_option supports 'mtime', 'date', 'empty'
+updated_option: 'mtime'
 
-##########评论设置#############
-comment:
-  on: false
-  type: gitalk  # 评论系统：gitalk、disqus、gitment、utteranc、livere,注意：使用时，在下方对应位置进行配置
-  comment_count: true  # 文章标题下方显示评论数 目前仅支持 gitalk 和 disqus
-  ## 使用说明 https://yelog.org//2020/05/23/3-hexo-comment/
-# 各评论系统配置 ↓↓
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
 
-disqus:
-  shortname:
-  # disqus评论系统， 2016年9月被GFW认证，大陆不能使用。
-  # 获取shortname：https://help.disqus.com/customer/en/portal/articles/466208-what-s-a-shortname-
+# Include / Exclude file(s)
+## include:/exclude: options only apply to the 'source/' folder
+include:
+exclude:
+ignore:
 
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: 3-hexo
 
-gitalk:
-  githubID: yelog
-  repo: yelog.github.io
-  ClientID:
-  ClientSecret:
-  adminUser: yelog
-  distractionFreeMode: true
-  language: zh-CN
-  perPage: 10
-# gitalk：利用github issue制作的第三方聊天插件
-# https://github.com/gitalk/gitalk
-# 参数介绍：
-# githubID: github用户名
-# repo: 使用哪个仓库的issue
-# ClientID 和 ClientSecret 创建 OAuth application 就会生成：https://github.com/settings/applications/new
-# adminUser: 必须为上面仓库的合作者（有写入权限），使用自己的 github 用户名即可
-# distractionFreeMode: 全屏遮罩效果
-# language: 语言：支持：en / zh-CN / zh-TW 三种
-# perPage: 每次加载的数据大小，默认10，最大100
-
-
-gitment:
-  owner: yelog
-  repo: yelog.github.io
-  client_id:
-  client_secret:
-  # gitment : 通过github issue实现的评论系统
-  # 开源地址 : https://github.com/imsun/gitment
-  # 使用说明 :
-
-livere:
-  data_uid:
-  # 来必力: http://livere.com/
-  # 使用说明 : https://yelog.org//2020/05/23/3-hexo-comment/
-
-utteranc:
-  repo: xxx/xxx.github.io # 承载评论的仓库，填上自己新建的仓库
-  issue_term: pathname    # Issue 与 博客文章 之间映射关系
-  label: utteranc         # 创建的 Issue 添加的标签
-  theme: github-light     # 主题，可选主题请查看官方文档 https://utteranc.es/#heading-theme
-# 官方文档 https://utteranc.es/
-# 使用说明 https://yelog.org//2020/05/23/3-hexo-comment/
-
-##############################
-
-##########CND设置#############
-CDN:
-  jquery: //cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js
-  jquery_cookie: //cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js
-  highlight: //cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js
-  pjax: //cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js
-  animate: //cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css
-  nprogres_js: //cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js
-  mathjax: //cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML
-  photoswipe_js: //cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js
-  photoswipe_ui_js: //cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js
-  photoswipe_css: //cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css
-  photoswipe_skin_css: //cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css
-##############################
-
-theme: jekyll-theme-cayman
+# Deployment
+## Docs: https://hexo.io/docs/one-command-deployment
+deploy:
+      type:git
+    repository:git@github.com:szszzszs13/szszzszs13.github.io.git
+    branch:master

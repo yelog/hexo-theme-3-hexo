@@ -1,6 +1,0 @@
-<% if (!index && post.comments && theme.comment.on && theme.comment.type){ %>
-    <%- partial('comments/'+theme.comment.type, {
-        shortname: theme.disqus.shortname,
-        url: config.url+url_for(post.path)
-    }) %>
-<% } %>
