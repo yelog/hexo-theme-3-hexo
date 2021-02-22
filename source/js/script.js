@@ -316,6 +316,7 @@ $searchInput.on("change", function (e) {
 });
 /*根据搜索条件，过滤文章列表*/
 function inputChange() {
+    var i;
     setTimeout(function () {
         $searchInput.focus()
     }, 50)
@@ -338,7 +339,7 @@ function inputChange() {
     }
     var categories = $(".nav-left ul li>div.active").data('rel').split('<--->')
     // 处理特殊字符
-    for (var i = 0; i < categories.length; i++) {
+    for (i = 0; i < categories.length; i++) {
         categories[i] =  categories[i]
           .replace(/(?=\/|\\|#|\(|\)|\[|\]|\.)/g, "\\")
     }
@@ -346,6 +347,9 @@ function inputChange() {
     var searchType = '';
     var containType = '';
     $('#no-item-tips').hide()
+    $(".nav-right nav a .post-title .search-keyword").each(function () {
+        $(this).parent().html($(this).parent().attr('title'))
+    })
     if (val === "") {
         $(".nav-right nav a").css("display", "none");
         $(".nav-right nav a." + activeTitle).css("display", "block");
@@ -366,8 +370,34 @@ function inputChange() {
     } else {
         searchType = '标题'
         containType = '包含'
-        $(".nav-right nav a").css("display", "none");
+        // $(".nav-right nav a").css("display", "none");
         $(".nav-right nav").find("a." + activeTitle + ":"+ ($('#search-panel > .icon-case-sensitive').hasClass('active') ? 'containsSensitive' : 'contains') + "('" + val + "')").css("display", "block");
+        $(".nav-right nav a").each(function () {
+            var title = $(this).children('.post-title').attr('title');
+            for (i = 0; i < categories.length; i++) {
+                if (!$(this).hasClass(categories[i])) {
+                    $(this).css('display', 'none').children('.post-title').html(title)
+                    return true;
+                }
+            }
+
+            var caseSensitive = $('#search-panel > .icon-case-sensitive').hasClass('active');
+            var vals = (caseSensitive ? val : val.toUpperCase()).split('');
+            var inputReg = new RegExp(vals.join('[\\s\\S]*'));
+            if (inputReg.test(caseSensitive ? title : title.toUpperCase())) {
+                // 给匹配到的字符添加高亮
+                var nowPos = 0;
+                var titleHtml = title.split('')
+                var titleCase = (caseSensitive ? title : title.toUpperCase()).split('')
+                for (i = 0; i < vals.length; i++) {
+                    nowPos = titleCase.indexOf(vals[i], nowPos)
+                    titleHtml[nowPos] = ['<span class="search-keyword">', titleHtml[nowPos], '</span>'].join('')
+                }
+                $(this).css('display', 'block').children('.post-title').html(titleHtml.join(''))
+            } else {
+                $(this).css('display', 'none').children('.post-title').html(title)
+            }
+        })
     }
     if (val !== '') {
         $('#default-panel .icon-search').addClass('active')
