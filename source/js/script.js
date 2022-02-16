@@ -666,6 +666,23 @@ function bind() {
     //初始化文章toc
     // $(".post-toc-content").html($("#post .pjax article .toc-ref .toc").clone());
     $("#outline-list").html($("#post .pjax article .toc-ref .toc").clone());
+    // 修复自定义标题的关联关系
+    $("#outline-list").find('.toc-link').each(function() {
+        if (!$(this).attr('href')) {
+            var tocText = $(this).text()
+            $(this).attr('href', '#' + encodeURIComponent(tocText))
+            $(this).parent().attr('class').split(' ').forEach(function (item) {
+                if (item.indexOf('toc-level-') !== -1) {
+                    $('#post').find('h'+item.replace('toc-level-', '')).each(function () {
+                        if ($(this).text() === tocText) {
+                            $(this).attr('id', encodeURIComponent(tocText))
+                        }
+                    })
+                }
+            })
+
+        }
+    })
     syncOutline(container[0])
     //绑定文章toc的滚动事件
     $("a[href^='#']").click(function () {
