@@ -669,18 +669,17 @@ function bind() {
     // 修复自定义标题的关联关系
     $("#outline-list").find('.toc-link').each(function() {
         if (!$(this).attr('href')) {
-            var tocText = $(this).text()
+            var tocText = $(this).text().replaceAll(/[^a-zA-Z0-9]/g, '')
             $(this).attr('href', '#' + encodeURIComponent(tocText))
             $(this).parent().attr('class').split(' ').forEach(function (item) {
                 if (item.indexOf('toc-level-') !== -1) {
                     $('#post').find('h'+item.replace('toc-level-', '')).each(function () {
-                        if ($(this).text() === tocText) {
+                        if ($(this).text().replaceAll(/[^a-zA-Z0-9]/g, '') === tocText) {
                             $(this).attr('id', encodeURIComponent(tocText))
                         }
                     })
                 }
             })
-
         }
     })
     syncOutline(container[0])
@@ -812,7 +811,7 @@ function copy (text) {
         window.getSelection().removeAllRanges();
         isSuccess = true
     } catch (e) {
-        console.log('复制失败')
+        console.error('复制失败')
     }
 
     if (text) {
