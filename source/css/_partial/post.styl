@@ -1,4 +1,27 @@
 #post
+  //WW 定制
+  em // 斜体
+    color: #EE7700
+    font-style: normal
+  strong // 黑体
+    color: #F538A0
+  :not(pre) > code // 行内代码块
+    background-color: #ebedef !important
+    color: #00AA55 !important
+  p // 段前段后间距
+    margin-top: 0 !important
+    margin-bottom: 1.5rem !important
+    line-height: 1.5rem !important
+  ul // 无序列表间距
+    margin-top: 0rem !important
+    margin-bottom: 1.5rem !important
+  ol // 有序列表间距
+    margin-top: 0rem !important
+    margin-bottom: 1.5rem !important
+  li // 子列表
+    margin-bottom: 0rem !important
+  
+
   height 100%
   font-weight: 400;
   font-size: 16px;
@@ -15,7 +38,7 @@
     background #33caa6
     text-shadow none
   .pjax
-    max-width 900px
+    max-width 1200px  //WW 扩大文章宽度
     min-height calc(100vh - 143px)
     margin 0 auto
     overflow-y auto
