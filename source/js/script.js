@@ -21,6 +21,10 @@ jQuery.expr[':'].contains_author = function (a, i, m) {
 var blog_path = $('.theme_blog_path').val();
 blog_path= blog_path.lastIndexOf("/") === blog_path.length-1?blog_path.slice(0, blog_path.length-1):blog_path;
 
+//WW 目录栏折叠/展开icon符号
+var ICON_TOC_CLOSE = "⯈"; // 参考图标：▷ 》❯  ⯈⯆ ⮟⏷
+var ICON_TOC_OPEN = "⯆";
+
 /*使用pjax加载页面，速度更快，交互更友好*/
 var content = $(".pjax");
 var container = $("#post");
@@ -463,6 +467,63 @@ function syncOutline(_this) {
     }
 }
 
+//WW 增加目录收缩按钮
+function add_collapse_btn() {
+    if ($("#outline-list").attr("toc-collapse-type") == 0) {
+        // 隐藏一键全部展开/折叠按钮
+        $('#outline-panel > .icon-file-tree').hide();
+        return
+    }
+
+    // 增加收缩/展开按钮
+    $("#outline-list .toc-link").each(function () {
+        var sub_menus = $(this).siblings("ol");
+        // 是否有子菜单
+        if (sub_menus.length == 0) {
+            $(this).prepend($('<span class="toc-collapse-btn">&ensp;&ensp;</span>'))
+        } else {
+            var collapse_btn = $("#outline-list").attr("toc-collapse-type") == 1 ? 
+                '<span class="toc-collapse-btn">' + ICON_TOC_CLOSE + '</span>' :
+                '<span class="toc-collapse-btn">' + ICON_TOC_OPEN + '</span>';
+
+            $(this).prepend($(collapse_btn))
+
+            // 按钮点击事件，收缩/展开菜单
+            $(this).children(".toc-collapse-btn").click(function(){
+                if ($(this).text() == ICON_TOC_OPEN) {
+                    $(this).text(ICON_TOC_CLOSE);
+                } else {
+                    $(this).text(ICON_TOC_OPEN);
+                }
+
+                $($(this).parent()).siblings("ol").each(function() {
+                    if ($(this).is(":visible")) {
+                        $(this).hide()
+                    } else {
+                        $(this).show()
+                    }
+                    
+                });
+                return false // 不再往下执行，防止触发文章跳转。因为span是在a里。
+            });
+        }
+        
+    })
+
+    // 初始化时默认折叠所有二级及二级以上菜单
+    if ($("#outline-list").attr("toc-collapse-type") == 1) {
+        $("#outline-list .toc-child").each(function () {
+            $(this).hide()
+        })
+    } else if ($("#outline-list").attr("toc-collapse-type") == 2) {
+        $("#outline-list .toc-child").each(function () {
+            $(this).show()
+        })
+    }
+
+}
+
+
 $(function () {
     bind();
     $('[data-title]').quberTip({
@@ -564,6 +625,31 @@ $(function () {
         $outlineList.hide()
         $('#default-panel').show()
         $('#title-list-nav').show()
+    })
+
+    //WW 一键展开/折叠全部菜单
+    $('#outline-panel > .icon-file-tree').on('click', function (e) {
+        var is_collapse_all = $(this).attr("toc-collapse-all");
+
+        if (is_collapse_all == "0") {
+            $(this).attr("toc-collapse-all", "1")
+            $(".toc-child").hide() // 全部折叠
+
+            $(".toc-collapse-btn").each(function () {
+                if ($(this).text() == ICON_TOC_CLOSE || $(this).text() == "⯆") {
+                    $(this).text(ICON_TOC_CLOSE)
+                }
+            })
+            
+        } else {
+            $(this).attr("toc-collapse-all", "0")
+            $(".toc-child").show()  // 全部展开
+            $(".toc-collapse-btn").each(function () {
+                if ($(this).text() == ICON_TOC_CLOSE || $(this).text() == "⯆") {
+                    $(this).text(ICON_TOC_OPEN)
+                }
+            })
+        }
     })
 
     $('.nav-left>ul').css('height', 'calc(100vh - '+($('.avatar_target img').outerHeight(true) + $('.author').outerHeight(true)+$('.nav-left .icon').outerHeight(true)+$('.left-bottom').outerHeight(true))+'px)');
@@ -701,6 +787,10 @@ function bind() {
         });
         return false;
     });
+
+    //WW 增加目录自动折叠功能
+    add_collapse_btn()
+
     if ($("#comments").hasClass("disqus")) {
         var $disqusCount = $(".disqus-comment-count");
         $disqusCount.bind("DOMNodeInserted", function (e) {
