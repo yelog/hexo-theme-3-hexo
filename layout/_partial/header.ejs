@@ -32,6 +32,9 @@ site.posts.data.sort(function(a, b) {
   else return b.date - a.date; // 都没定义按照文章日期降序排
 });
 
+// 数量排除隐藏的文章
+site.posts.length = site.posts.length - site.posts.data.filter(i=>i.hidden).length
+
 site['myTags'] = []
 site.tags.forEach(function (item) {
   site['myTags'].push(item.name)
@@ -43,6 +46,8 @@ site.myTags.sort(function(a,b){
 // 对 category 进行排序
 site['myCategories']= []
 site.categories.forEach(function (item) {
+  // 数量排除隐藏的文章
+  item.posts.length = item.posts.length - item.posts.data.filter(i=>i.hidden).length
   site.myCategories.push({
     _id: item._id,
     name: item.name,
