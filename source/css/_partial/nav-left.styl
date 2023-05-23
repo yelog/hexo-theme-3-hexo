@@ -66,16 +66,33 @@
       &>div
         height 40px
         color rgba(255,255,255,0.7)
-        transition all .15s linear
         position relative
         white-space nowrap
         overflow hidden
+        z-index: 1;
+        &::after {
+          content: "";
+          position: absolute;
+          transition all .15s linear;
+          top: 0;
+          left: 0;
+          width: 0;
+          height: 100%;
+          background: #FFFFFF;
+          z-index: -1;
+        }
         &:hover
           color #f7f7f7
-          box-shadow inset 6px 0 0.09px #fff
+          //box-shadow inset 6px 0 0.09px #fff
+          &:after {
+            width: 5px;
+          }
         &.active
           color #020202
-          box-shadow inset 165px 0 0.09px #fff
+          //inset 0 0 0.09px #fff, inset 100% 0 0.09px #fff;
+          &:after {
+            width: 100%;
+          }
         &>.fold
           left: 4px
           font-size 0.7em
