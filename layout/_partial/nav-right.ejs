@@ -13,6 +13,7 @@
             <i class="iconfont icon-tag" data-title="标签"></i>
         </div>
         <div id="outline-panel" style="display: none">
+            <i class="iconfont icon-file-tree" data-title="展开/收缩全部目录"></i>
             <div class="right-title">大纲</div>
             <i class="iconfont icon-list" data-title="切换到文章列表"></i>
         </div>
@@ -39,6 +40,6 @@
 
         </div>
     </nav>
-    <div id="outline-list">
+    <div id="outline-list" toc-collapse-type="<%=theme.toc_collapse.type %>">
     </div>
 </div>

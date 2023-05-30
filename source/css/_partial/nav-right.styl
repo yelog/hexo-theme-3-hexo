@@ -23,7 +23,7 @@ right-top-height = 45px
       top: 0
       width: 100%
       font-size 15px
-      #default-panel, #outline-panel
+      #default-panel
         text-align center
         height right-top-height
         .right-title
@@ -42,6 +42,22 @@ right-top-height = 45px
               color #007fff
           &.icon-file-tree
             right 15px
+            font-size 18px
+      #outline-panel
+        text-align center
+        height right-top-height
+        .right-title
+          height right-top-height
+          line-height right-top-height
+          font-size 18px
+        .iconfont
+          position absolute
+          top 50%
+          transform: translate(0, -50%)
+          cursor pointer
+          font-size 16px
+          &.icon-file-tree
+            left 15px
             font-size 18px
           &.icon-list
             right 15px
@@ -210,6 +226,9 @@ right-top-height = 45px
             height: 4px
             background-color: currentColor
             border-radius: 50%
+        // 折叠目录按钮样式
+        .toc-collapse-btn
+          color: #007fff 
     nav, #local-search-result
       clear both
       width 100%

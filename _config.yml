@@ -61,6 +61,10 @@ category:
 # 快捷键
 shortcutKey: true
 
+#WW 是否启用目录展开/折叠功能
+toc_collapse:
+  type: 0 # 0：关闭该功能 1：启用该功能，并默认全部折叠。2：启用该功能，并默认全部展开
+
 # 左下角自定义菜单
 menu:
   about:  # '关于' 按钮
