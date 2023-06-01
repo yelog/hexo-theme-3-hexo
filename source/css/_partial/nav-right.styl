@@ -23,7 +23,7 @@ right-top-height = 45px
       top: 0
       width: 100%
       font-size 15px
-      #default-panel, #outline-panel
+      #default-panel
         text-align center
         height right-top-height
         .right-title
@@ -39,9 +39,25 @@ right-top-height = 45px
           &.icon-search
             left 15px
             &.active
-              color #007fff
+              color #309e85 //WW #007fff
           &.icon-file-tree
             right 15px
+            font-size 18px
+      #outline-panel
+        text-align center
+        height right-top-height
+        .right-title
+          height right-top-height
+          line-height right-top-height
+          font-size 18px
+        .iconfont
+          position absolute
+          top 50%
+          transform: translate(0, -50%)
+          cursor pointer
+          font-size 16px
+          &.icon-file-tree
+            left 15px
             font-size 18px
           &.icon-list
             right 15px
@@ -159,8 +175,8 @@ right-top-height = 45px
         background #309E85
       .toc
         list-style-type: none
-        font-size: 1rem
-        line-height: 1.3
+        font-size: 0.8rem   //WW  字体大小
+        line-height: 1  //WW  行高
         padding 0
         color rgb(51, 51, 51)
         font-weight 400
@@ -187,10 +203,12 @@ right-top-height = 45px
               height: 6px
         ol
           list-style-type: none
+          padding-left: 10px //WW 左边距
         a
           display: block
           position: relative
           padding: 4px 0 4px 12px
+          padding-left: 0px !important //WW 左边距
           white-space: nowrap
           overflow: hidden
           text-overflow: ellipsis
@@ -199,7 +217,7 @@ right-top-height = 45px
             background-color: #ebedef
           &.active
             background-color: #ebedef
-            color #007fff
+            color #309e85 //WW #007fff
           &:before
             content: ""
             position: absolute
@@ -208,8 +226,13 @@ right-top-height = 45px
             margin-top: -2px
             width: 4px
             height: 4px
-            background-color: currentColor
+            //WW background-color: currentColor
             border-radius: 50%
+        //WW
+        .toc-collapse-btn
+          color: #309e85 //WW #007fff
+          margin-right: 4px
+          float: left
     nav, #local-search-result
       clear both
       width 100%
