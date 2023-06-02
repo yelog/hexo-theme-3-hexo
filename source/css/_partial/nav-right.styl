@@ -148,7 +148,7 @@ right-top-height = 45px
       position absolute
       top right-top-height
       width 100%
-      padding 0 25px
+      padding 0
       box-sizing border-box
       height calc(100vh - 45px)
       overflow-y auto
@@ -165,28 +165,43 @@ right-top-height = 45px
         color rgb(51, 51, 51)
         font-weight 400
         position relative
-        &:before
-          content: ""
-          position: absolute
-          top: 0
-          left: 7px
-          bottom: 0
-          width: 2px
-          background-color: #ebedef
-          opacity: .5
-        .toc-level-1, .toc-level-2
-          &>a
-            font-weight: 600
-            color: #333
-            margin: 6px 0
-            padding: 4px 0 4px 21px
-            &:before
-              left: 5px
-              margin-top: -3px
-              width: 6px
-              height: 6px
+        .toc-item
+
+        .toc-level-1
+          margin-left: 0
+        .toc-level-2
+          margin-left: 10px
+        .toc-level-3
+          margin-left: 20px
+        .toc-level-4
+          margin-left: 30px
+        .toc-level-5
+          margin-left: 40px
+        .toc-level-6
+          margin-left: 50px
+        //&:before
+        //  content: ""
+        //  position: absolute
+        //  top: 0
+        //  left: 7px
+        //  bottom: 0
+        //  width: 2px
+        //  background-color: #ebedef
+        //  opacity: .5
+        //.toc-level-1, .toc-level-2
+        //  &>a
+        //    font-weight: 600
+        //    color: #333
+        //    margin: 6px 0
+        //    padding: 4px 0 4px 21px
+        //    &:before
+        //      left: 5px
+        //      margin-top: -3px
+        //      width: 6px
+        //      height: 6px
         ol
           list-style-type: none
+          padding: 0
         a
           display: block
           position: relative
@@ -200,16 +215,16 @@ right-top-height = 45px
           &.active
             background-color: #ebedef
             color #007fff
-          &:before
-            content: ""
-            position: absolute
-            top: 50%
-            left: 0
-            margin-top: -2px
-            width: 4px
-            height: 4px
-            background-color: currentColor
-            border-radius: 50%
+          //&:before
+          //  content: ""
+          //  position: absolute
+          //  top: 50%
+          //  left: 0
+          //  margin-top: -2px
+          //  width: 4px
+          //  height: 4px
+          //  background-color: currentColor
+          //  border-radius: 50%
     nav, #local-search-result
       clear both
       width 100%

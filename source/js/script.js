@@ -670,6 +670,7 @@ function bind() {
     //初始化文章toc
     // $(".post-toc-content").html($("#post .pjax article .toc-ref .toc").clone());
     $("#outline-list").html($("#post .pjax article .toc-ref .toc").clone());
+    $("#outline-list .toc").append($("#post .pjax article .toc-ref > .toc-item").clone());
     // 修复自定义标题的关联关系
     $("#outline-list").find('.toc-link').each(function() {
         if (!$(this).attr('href')) {
