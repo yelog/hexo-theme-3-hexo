@@ -35,18 +35,37 @@
 <% } %>
 <%
 if (theme.category && theme.category.sub) {
-    var childCategory = {};
+    // 生成一个 parent_id => childrenCategory
+    var childCategoryMap = {};
     site.myCategories.forEach(function (category) {
         if (category.parent) {
-            if (childCategory[category.parent]) {
-                childCategory[category.parent].push(category);
+            if (childCategoryMap[category.parent]) {
+                childCategoryMap[category.parent].push(category);
             } else {
-                childCategory[category.parent] = [category];
+                childCategoryMap[category.parent] = [category];
             }
         }
     })
 }
 %>
+<% function renderCategory(category, refName) {
+    refName = refName ? refName + '<--->' + category.name : category.name
+%>
+    <li>
+        <div data-rel="<%= refName %>">
+            <% if (childCategoryMap[category._id]) { %><i class="fold iconfont icon-right"></i><% } %>
+            <%= category.name %>
+            <% if (theme.category && theme.category.num) { %><small>(<%= category.posts.length %>)</small><% } %>
+        </div>
+        <% if (childCategoryMap[category._id]) { %>
+            <ul class="sub hide">
+                <% childCategoryMap[category._id].forEach(function (child) { %>
+                    <%= renderCategory(child, refName) %>
+                <% }) %>
+            </ul>
+        <% } %>
+    </li>
+<% } %>
 <ul>
     <li>
         <div class="all active" data-rel="<%= __('all_articles') %>"><%= __('all_articles') %>
@@ -58,49 +77,7 @@ if (theme.category && theme.category.sub) {
     <% site.myCategories.forEach(function(category){ %>
         <% if (theme.category && theme.category.sub) { %>
             <% if(!category.parent) { %>
-                <li>
-                    <div data-rel="<%= category.name %>">
-                        <% if (childCategory[category._id]) { %><i class="fold iconfont icon-right"></i>
-                        <% } %>
-                        <%= category.name %>
-                        <% if (theme.category && theme.category.num) { %><small>(<%= category.posts.length %>)</small>
-                        <% } %>
-                    </div>
-                    <% if (childCategory[category._id]) { %>
-                        <ul class="sub hide">
-                            <% childCategory[category._id].forEach(function (child) { %>
-                                <li>
-                                    <div data-rel="<%= category.name %><---><%= child.name %>">
-                                        <% if (childCategory[child._id]) { %><i class="fold iconfont icon-right"></i>
-                                        <% } %>
-                                        <%= child.name %>
-                                        <% if (theme.category && theme.category.num) { %>
-                                            <small>(<%= child.posts.length %>
-                                                )</small>
-                                        <% } %>
-                                    </div>
-                                    <% if (childCategory[child._id]) { %>
-                                        <ul class="sub hide">
-                                            <% childCategory[child._id].forEach(function (child2) { %>
-                                                <li>
-                                                    <div data-rel="<%= category.name %><---><%= child.name %><%= child2.name %>">
-                                                        <% if (childCategory[child2._id]) { %><i
-                                                                class="fold iconfont icon-right"></i>
-                                                        <% } %>
-                                                        <%= child2.name %>
-                                                        <% if (theme.category && theme.category.num) { %>
-                                                            <small>(<%= child2.posts.length %>)</small>
-                                                        <% } %>
-                                                    </div>
-                                                </li>
-                                            <% }) %>
-                                        </ul>
-                                    <% } %>
-                                </li>
-                            <% }) %>
-                        </ul>
-                    <% } %>
-                </li>
+                <%= renderCategory(category) %>
             <% } %>
         <% } else { %>
             <li>
