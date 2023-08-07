@@ -1,7 +1,7 @@
 version: 1.1.0
 # 你的头像url
-avatar: /img/avatar.jpg
-favicon: /img/avatar.jpg
+avatar: /img/avatar.jpeg
+favicon: /img/avatar.jpeg
 
 #如果博客放置位置不是根目录，则可以通过配置此路径解决静态文件路径错误问题
 # 比如访问地址为 yelog.org/blog 那就需要配置为 blog_path: /blog 才能正常访问
@@ -11,30 +11,20 @@ blog_path: /
 link:
   theme: color # 链接样式，color: 彩色图标  white: 黑白图标
   items:
-    rss: /atom.xml
-    github: https://github.com/yelog
-    facebook: https://www.facebook.com/faker.tops
+    github: https://github.com/jasmine-z2a
+    facebook: 
     twitter:
     linkedin:
-    instagram: https://www.facebook.com/faker.tops
-    reddit: https://www.reddit.com/user/yelog/
-    weibo: http://weibo.com/u/2307534817
-    jianshu: https://www.jianshu.com/u/ff56736de7cf
-    zhihu: https://www.zhihu.com/people/jaytp/activities
-    csdn:
-    oschina: https://my.oschina.net/yelog
-    juejin:
-    email: jaytp@qq.com
-    qq: 872336115
-    kugou: https://www.kugou.com/
-    neteasemusic: https://music.163.com/#/user/home?id=88151013
+    instagram: 
+    reddit:
+    email: jasmine7625@163.com
+    
 
 ##########多作者模式############
 author:
   on: false
   authors:
-    author1: 阁主
-    author2: 小马哥
+    author1: Jasmine Tang
 ##############################
 
 # 文章分类设置
@@ -44,7 +34,7 @@ category:
   sort:
     - 读书
     - 工具
-    - 大前端
+    - 前端
     - 后端
     - 数据库
     - 运维
@@ -68,7 +58,7 @@ menu:
     url: /about  # 跳转链接
     type: 1 # 跳转类型 1：站内异步跳转 2：当前页面跳转 3：打开新的tab页
   friend: # '友链' 按钮
-    on: true # 是否展示
+    on: false # 是否展示
   menus: # 添加的其他菜单写在 menus 下，如下三个菜单：动态菜单1、动态菜单2、动态菜单3
     相册:
       on: false
@@ -84,9 +74,9 @@ menu:
       type: 3  # 跳转类型 3：打开新的tab页
 
 # 文末声明
-article_txt: 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com
+article_txt: 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jasmine7625@163.com
 
-bottom_text: ©2016-2020 Yelog
+bottom_text: ©2023 Jasmine Tang 
 # 自定义页面最下方的站点版权信息
 # 如果不填，则自定义为 ©2017 author (这个author为hexo根目录_config.yml中配置的)
 
@@ -141,8 +131,8 @@ article_list:
 
 # 文章列表背景图
 article_bg_img:
-  on: false # 是否开启
-  src: https://i.loli.net/2019/07/22/5d3521411f3f169375.png
+  on: true # 是否开启
+  src: /img/article-list-background.jpeg
   opacity: 0.3 # 背景图透明度，范围 0 ～ 1
 
 # 列表样式
