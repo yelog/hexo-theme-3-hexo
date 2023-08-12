@@ -64,13 +64,13 @@ menu:
       on: false
       url: /photo
       type: 1  # 跳转类型 1：站内异步跳转
-    叶落阁:
+    作者:
       on: false
-      url: http://yelog.org/
+      url: https://jasmine-z2a.github.io
       type: 2  # 跳转类型 2：当前页面跳转
     github:
-      on: false
-      url: https://github.com/yelog
+      on: true
+      url: https://github.com/jasmine-z2a
       type: 3  # 跳转类型 3：打开新的tab页
 
 # 文末声明
