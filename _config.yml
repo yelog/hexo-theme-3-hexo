@@ -11,20 +11,20 @@ blog_path: /
 link:
   theme: color # 链接样式，color: 彩色图标  white: 黑白图标
   items:
+    rss: 
     github: https://github.com/jasmine-z2a
     facebook: 
     twitter:
     linkedin:
-    instagram: 
-    reddit:
+    instagram:
     email: jasmine7625@163.com
-    
+   
 
 ##########多作者模式############
 author:
   on: false
   authors:
-    author1: Jasmine Tang
+    author1: Tang
 ##############################
 
 # 文章分类设置
@@ -34,7 +34,7 @@ category:
   sort:
     - 读书
     - 工具
-    - 前端
+    - 大前端
     - 后端
     - 数据库
     - 运维
@@ -64,19 +64,19 @@ menu:
       on: false
       url: /photo
       type: 1  # 跳转类型 1：站内异步跳转
-    作者:
+    站主:
       on: false
-      url: https://jasmine-z2a.github.io
+      url: https://jasmine-z2a/jasmine-z2a.github.io
       type: 2  # 跳转类型 2：当前页面跳转
     github:
-      on: true
+      on: false
       url: https://github.com/jasmine-z2a
       type: 3  # 跳转类型 3：打开新的tab页
 
 # 文末声明
 article_txt: 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jasmine7625@163.com
 
-bottom_text: ©2023 Jasmine Tang 
+bottom_text: ©2016-2020 Jasmine
 # 自定义页面最下方的站点版权信息
 # 如果不填，则自定义为 ©2017 author (这个author为hexo根目录_config.yml中配置的)
 
@@ -214,7 +214,7 @@ mermaid:
 
 # 友情链接
 friends:
-  叶落阁: http://yelog.org/
+  作者: http://yelog.org/
 
 ##########评论设置#############
 comment:
@@ -231,11 +231,11 @@ disqus:
 
 
 gitalk:
-  githubID: yelog
-  repo: yelog.github.io
+  githubID: jasmine-z2a
+  repo: jasmine-z2a.github.io
   ClientID:
   ClientSecret:
-  adminUser: yelog
+  adminUser: Tang
   distractionFreeMode: true
   language: zh-CN
   perPage: 10
