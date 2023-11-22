@@ -798,30 +798,17 @@ function copy (text) {
     var isSuccess = false
     var target;
     if (text) {
-        target = document.createElement('div');
+        target = document.createElement('textarea');
         target.id = 'tempTarget';
         target.style.opacity = '0';
-        target.innerText = text;
+        target.value = text;
         document.body.appendChild(target);
-    } else {
-        target = document.querySelector('#' + id);
-    }
-
-    try {
-        var range = document.createRange();
-        range.selectNode(target);
-        window.getSelection().removeAllRanges();
-        window.getSelection().addRange(range);
-        document.execCommand('copy');
-        window.getSelection().removeAllRanges();
+        target.select();
+        document.execCommand('copy', true);
+        document.body.removeChild(target)
         isSuccess = true
-    } catch (e) {
-        console.error('复制失败')
-    }
-
-    if (text) {
-        // remove temp target
-        target.parentElement.removeChild(target);
+    } else {
+        isSuccess = false
     }
     return isSuccess
 }
