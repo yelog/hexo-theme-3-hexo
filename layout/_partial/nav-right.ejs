@@ -1,20 +1,20 @@
 <div class="title-list">
     <div class="right-top">
         <div id="default-panel">
-            <i class="iconfont icon-search" data-title="搜索<% if (theme.shortcutKey != false) {%> 快捷键 i<%}%>"></i>
+            <i class="iconfont icon-search" data-title="<%= __('titles.search') %><%= theme.shortcutKey !== false ? ' ' + __('titles.shortcut_key') + ' i' : '' %>"></i>
             <div class="right-title"><%= __('all_articles') %></div>
-            <i class="iconfont icon-file-tree" data-title="切换到大纲视图<% if (theme.shortcutKey != false) {%> 快捷键 w<%}%>"></i>
+            <i class="iconfont icon-file-tree" data-title="<%= __('titles.switch_to_outline_view') %><%= theme.shortcutKey !== false ? ' ' + __('titles.shortcut_key') + ' w' : '' %>"></i>
         </div>
         <div id="search-panel">
-            <i class="iconfont icon-left" data-title="返回"></i>
+            <i class="iconfont icon-left" data-title="<%= __('titles.return') %>"></i>
             <input id="local-search-input" autocomplete="off"/>
             <label class="border-line" for="input"></label>
-            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
-            <i class="iconfont icon-tag" data-title="标签"></i>
+            <i class="iconfont icon-case-sensitive" data-title="<%= __('titles.case_sensitive') %>"></i>
+            <i class="iconfont icon-tag" data-title="<%= __('titles.label') %>"></i>
         </div>
         <div id="outline-panel" style="display: none">
-            <div class="right-title">大纲</div>
-            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+            <div class="right-title"><%= __('titles.outline') %></div>
+            <i class="iconfont icon-list" data-title="<%= __('titles.switch_to_article_list') %>"></i>
         </div>
     </div>
 

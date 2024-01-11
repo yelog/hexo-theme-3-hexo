@@ -17,7 +17,7 @@
         }) %>
     </div>
     <div class="hide-list">
-        <div class="semicircle" data-title="切换全屏<% if (theme.shortcutKey != false) {%> 快捷键 s<%}%>">
+        <div class="semicircle" data-title="<%= __('titles.toggle_full_screen') %><%= theme.shortcutKey !== false ? ' ' + __('titles.shortcut_key') + ' s' : '' %>">
             <div class="brackets first"><</div>
             <div class="brackets">&gt;</div>
         </div>
