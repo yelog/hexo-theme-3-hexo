@@ -229,7 +229,7 @@ friends:
 ##########评论设置#############
 comment:
   on: false
-  type: gitalk  # 评论系统：gitalk、disqus、gitment、utteranc、livere,注意：使用时，在下方对应位置进行配置
+  type: gitalk  # 评论系统：gitalk、disqus、gitment、utteranc、livere、giscus,注意：使用时，在下方对应位置进行配置
   comment_count: true  # 文章标题下方显示评论数 目前仅支持 gitalk 和 disqus
   ## 使用说明 https://yelog.org//2020/05/23/3-hexo-comment/
 # 各评论系统配置 ↓↓
@@ -282,6 +282,21 @@ utteranc:
   theme: github-light     # 主题，可选主题请查看官方文档 https://utteranc.es/#heading-theme
 # 官方文档 https://utteranc.es/
 # 使用说明 https://yelog.org//2020/05/23/3-hexo-comment/
+
+giscus:
+  repo: xxx/xxx             # 用于承载评论的仓库
+  repoId: xxx               # 仓库ID,从giscus网站获取
+  category: General         # Discussion主题分类
+  categoryId: x             # 分类ID,从giscus网站获取
+  mapping: pathname         # Github讨论与博客文章之间的映射关系, pathname url title og:title
+  strict: 0                 # 是否使用严格的标题匹配, 0 1
+  reactionsEnabled: 1       # 是否使用Github讨论的Reactions, 0 1
+  emitMetadata: 1           # 是否输出Github讨论的元数据, 0 1
+  inputPosition: top        # 输入框位置, top bottom
+  theme: light              # 主题, 支持的主题请查看giscus网站
+  lang: zh-CN               # 主题语言,支持的语言请查看giscus网站
+  loading: lazy             # 是否启用懒加载
+  # 官方文档: https://giscus.app/
 
 ##############################
 
