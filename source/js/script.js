@@ -109,7 +109,7 @@ $(".nav-left ul li>div").on("click", function (e) {
     $(".nav-left li>div.active").removeClass("active");
     $(this).addClass("active");
     $searchInput.val("").change();
-    var categories = $(this).data('rel').split('<--->');
+    var categories = String($(this).data('rel')).split('<--->');
     $('#default-panel > .right-title').text(categories[categories.length - 1]);
     $('#default-panel').show().siblings().hide();
     $outlineList.hide()
@@ -337,7 +337,7 @@ function inputChange() {
         $outlineList.hide();
         $('#title-list-nav').show();
     }
-    var categories = $(".nav-left ul li>div.active").data('rel').split('<--->')
+    var categories = String($(".nav-left ul li>div.active").data('rel')).split('<--->')
     // 处理特殊字符
     for (i = 0; i < categories.length; i++) {
         categories[i] =  categories[i]
