@@ -4,7 +4,7 @@
     <% } %>
     <div class="article-meta">
         <% if (post.top){ %>
-        <span class="top"><a>置顶</a></span>
+        <span class="top"><a><%= __('titles.pin_to_top') %></a></span>
         <%}%>
         <% if (theme.author.on==true && post.author) {%>
         <span class="author"><a><%=post.author %></a></span>
@@ -49,7 +49,7 @@
         </span>
         <%}%>
         <%if(theme.comment.on && theme.comment.type && theme.comment.comment_count){%>
-        <span class="top-comment" title="跳转至评论区">
+        <span class="top-comment" title="<%= __('titles.jump_to_comment_area') %>">
             <a href="#comments">
                 <%= __('post.comment') %>:<span class="count-comment">
                     <span class="spinner">
@@ -63,7 +63,7 @@
     </div>
     <%if(post.originUrl){%>
     <div class="article-meta">
-        <span class="origin">原文:
+        <span class="origin"><%= __('titles.original') %>:
             <a href="<%=post.originUrl%>" target="_blank">
                 <%if(post.originView){%>
                 <%= post.originView%>
