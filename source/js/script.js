@@ -10,12 +10,12 @@ jQuery.expr[':'].containsSensitive = function (a, i, m) {
 };
 /*区分大小写，用于搜索标签过滤文章*/
 jQuery.expr[':'].contains_tag = function (a, i, m) {
-    var tags = jQuery(a).data("tag").split(",");
+    var tags = String(jQuery(a).data("tag")).split(",");
     return $.inArray(m[3], tags) !== -1;
 };
 /*区分大小写，用于搜索作者过滤文章*/
 jQuery.expr[':'].contains_author = function (a, i, m) {
-    var tags = jQuery(a).data("author").split(",");
+    var tags = String(jQuery(a).data("author")).split(",");
     return $.inArray(m[3], tags) !== -1;
 };
 var blog_path = $('.theme_blog_path').val();
@@ -109,7 +109,7 @@ $(".nav-left ul li>div").on("click", function (e) {
     $(".nav-left li>div.active").removeClass("active");
     $(this).addClass("active");
     $searchInput.val("").change();
-    var categories = $(this).data('rel').split('<--->');
+    var categories = String($(this).data('rel')).split('<--->');
     $('#default-panel > .right-title').text(categories[categories.length - 1]);
     $('#default-panel').show().siblings().hide();
     $outlineList.hide()
@@ -337,7 +337,7 @@ function inputChange() {
         $outlineList.hide();
         $('#title-list-nav').show();
     }
-    var categories = $(".nav-left ul li>div.active").data('rel').split('<--->')
+    var categories = String($(".nav-left ul li>div.active").data('rel')).split('<--->')
     // 处理特殊字符
     for (i = 0; i < categories.length; i++) {
         categories[i] =  categories[i]
