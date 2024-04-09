@@ -1,0 +1,24 @@
+<div id="comments">
+    <script>
+        {
+            const comments = document.getElementById("comments");
+            const script = document.createElement("script");
+            script.src = "https://giscus.app/client.js";
+            script.setAttribute('data-repo', "<%=theme.giscus.repo%>");
+            script.setAttribute('data-repo-id', "<%=theme.giscus.repoId%>");
+            script.setAttribute('data-category', "<%=theme.giscus.category%>");
+            script.setAttribute('data-category-id', "<%=theme.giscus.categoryId%>");
+            script.setAttribute('data-mapping', "<%=theme.giscus.mapping%>");
+            script.setAttribute('data-strict', "<%=theme.giscus.strict%>");
+            script.setAttribute('data-reactions-enabled', "<%=theme.giscus.reactionsEnabled%>");
+            script.setAttribute('data-emit-metadata', "<%=theme.giscus.emitMetadata%>");
+            script.setAttribute('data-input-position', "<%=theme.giscus.inputPosition%>");
+            script.setAttribute('data-theme', "<%=theme.giscus.theme%>");
+            script.setAttribute('data-lang', "<%=theme.giscus.lang%>");
+            script.setAttribute('data-loading', "<%=theme.giscus.loading%>");
+            script.setAttribute('crossorigin', "anonymous");
+            script.setAttribute('async', "");
+            comments.appendChild(script);
+        }
+    </script>
+</div>
