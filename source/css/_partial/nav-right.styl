@@ -18,6 +18,11 @@ right-top-height = 45px
     &.friend
       margin-left 421px
     .right-top
+      background-color transparent
+      background-image radial-gradient(transparent 1px, #ffffff 1px)
+      background-size 4px 4px
+      backdrop-filter saturate(50%) blur(4px)
+      z-index 10
       height right-top-height
       position: absolute
       top: 0
@@ -235,7 +240,8 @@ right-top-height = 45px
       overflow-y auto
       overflow-x hidden
       position absolute
-      top right-top-height
+      padding-top right-top-height
+      top 0
       bottom 0
       -webkit-overflow-scrolling touch
       &::-webkit-scrollbar
